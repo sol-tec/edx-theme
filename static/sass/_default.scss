@@ -9,16 +9,35 @@
 //  Color variables (from Stanford palette unless noted)
 //-----------------
 
+// MS Blue Color: CourseName, footer links, top left buttons and other buttons (the one on the course page), also the links on the page text get that color
+$ms-color: #0072c6;
+$mainColor : #FFFFFF;
+//$ms-border: #3f3f3f;
+$ms-border: #D2D2D2;
+
+// ms button hover color
+$ms-primary-button-hover: #00188F;
+$ms-secondary-button-hover: #D2D2D2;
+$ms-secondary-button-border: #737373;
+$ms-primary-button-text: #333333;
+
+
 //Main Color Variables
-$main-color: #f7691f;
-$dark-color: #ea281f; //Link Color
+$main-color: $mainColor;
+//$main-color: #f7691f;
+$dark-color: $ms-color; //Link Color
+//$dark-color: #ea281f; //Link Color
 $light-color: #f4e00c; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
 $bg-color: #f7fe81; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
 //Main BG Color Variables
-$main-bg: #822537;
-$main-bg-60: lighten($main-bg, 18.5%); //Main Border/HR Color
-$main-bg-25: lighten($main-bg, 25%); 
+//$main-bg: #822537;
+
+$main-bg: $ms-color;
+
+// Course border color, pop-up takes this color and the course pages lines take the colors here
+$main-bg-60: lighten($ms-border, 18.5%); //Main Border/HR Color
+$main-bg-25: lighten($ms-border, 25%); 
 
 //Secondary Color Variables
 $secondary: #b5a4b7;
@@ -43,14 +62,14 @@ $black-80: #585858;
 //  Font Assignment
 //-----------------
 
-$theme-sans-font: 'Source Sans';
+//$theme-sans-font: 'Source Sans';
+$theme-sans-font: 'Segoe UI';
 $sans-serif: $theme-sans-font, $sans-serif;
 $body-font-family: $sans-serif;
 
-$theme-serif-font: 'Crimson Text';
+//$theme-serif-font: 'Crimson Text';
+$theme-serif-font: 'Segoe UI';
 $serif: $theme-serif-font, $serif;
-
-
 
 
 //-----------------
@@ -62,10 +81,12 @@ $container-bg: $gray-1;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
 $header-image: none;
-$header-bg: transparentize(lighten($secondary, 18.5%), .25);
+$header-bg: #ffffff;
+//$header-bg: transparentize(lighten($secondary, 18.5%), .25);
 $courseware-header-image: none;
 $courseware-header-bg: transparentize(lighten($secondary, 18.5%), .25);
-$footer-bg: $secondary-25;
+$footer-bg: $mainColor;
+//$footer-bg: $secondary-25;
 $courseware-footer-border: 1px solid $main-bg-60;
 $courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, .1));
 $courseware-footer-margin: 50px;
@@ -89,21 +110,25 @@ $site-status-color: $bg-color;
 $header-graphic-super-color: $dark-color;
 $header-graphic-sub-color: $lighter-base-font-color;
 
+//$header-link-color: #ffffff;
 $header-link-color: $dark-color;
 $header-link-hover: $light-color;
 
-$button-color: $main-color;
+$button-color: $ms-color;
+//$button-color: $main-color;
 $button-archive-color: $gray-3;
 
 $shadow-color: $gray;
 
 // actions
 $button-bg-image: none;
-$button-bg-color: $gray-3;
-$button-bg-hover-color: $gray-1;
+//$button-bg-color: $gray-3;
+$button-bg-color: $ms-color;
+//$button-bg-hover-color: $gray-1;
+$button-bg-hover-color: $ms-color;
 
 // actions - primary
-$action-primary-bg: $main-color;
+$action-primary-bg: $ms-color; // $main-color;
 $action-primary-fg: $gray-2;
 $action-primary-shadow: none;
 
@@ -182,10 +207,15 @@ $header_image_margin: -77px;
 //FOOTER MARGIN
 $footer_margin: ($baseline/4) 0;
 
+$a-tags: 'a, a:active, a:hover, a:visited';
+#{$a-tags} {
+	text-decoration: none;
+}
+
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: url('../themes/default/images/sunrise.jpg');
+$homepage-bg-image: url('../themes/default/images/REX_BG_1.png');
 
 $login-banner-image: none;
 $register-banner-image: none;
@@ -212,7 +242,9 @@ $video-thumb-url: '../themes/default/images/edx.png';
 // Override CSS
 //-----------------
 html {
-    background-color: $secondary-25 !important;
+	// The background color of the site
+    background-color: $mainColor !important;
+    //background-color: $secondary-25 !important;
 }
 
 //-----------------
@@ -225,6 +257,191 @@ html {
         padding: 120px 0 !important;
     }
 }
+
+/// REGISTRATION PAGE START
+// The register button on the Registration page
+.register-button{
+	background-color: $ms-color !important;
+	text-shadow: none;
+}
+
+.register-button:hover{
+	background-color: $ms-primary-button-hover !important;
+}
+
+.register-button:focus{
+	border: 1px dotted $ms-color !important;
+}
+
+// The secondary button on the Registration page, .nav-btn
+.nav-btn:focus
+{background-color:$ms-secondary-button-hover !important;
+box-shadow:none !important;
+border: 1px dotted $ms-secondary-button-border !important;
+}
+
+.nav-btn:hover
+{background-color:$ms-secondary-button-hover !important;
+box-shadow:none !important;
+border:none !important;}
+
+
+.nav-btn{
+border:1px solid $ms-secondary-button-border !important;
+color:$ms-primary-button-text !important;
+}
+
+.cta-register{
+background-color:$mainColor !important;
+color:$ms-color !important;
+}
+
+.cta-login:hover{
+	background-color: $ms-primary-button-hover !important;
+}
+
+.cta-register:hover {
+	text-decoration:underline !important;
+}
+
+div.main-cta > a.register {
+border:none !important;
+color: $mainColor;
+background-color: $ms-color;
+background-image: none !important;
+text-shadow:none !important;
+}
+
+div.main-cta > a.register:hover {
+background-color: $ms-primary-button-hover !important;
+}
+
+
+////////////////// REGISTRATION PAGE END
+/////////////////// SIGN IN PAGE START
+.login-button{
+	background-color: $ms-color !important;
+	text-shadow:none;
+}
+
+.login-button:hover{
+	background-color: $ms-primary-button-hover !important;
+}
+
+.login-button:focus{
+	border: 1px dotted $ms-color !important;
+}
+
+/////////////////// SIGN IN PAGE END
+
+.login-button{
+	background-color: $ms-color !important;
+}
+
+//.field-link {
+//	color: $ms-color !important;
+//}
+
+
+
+.forgot-password {
+	a:hover{
+		text-decoration: underline !important;
+	}
+	color: $ms-color !important;
+}
+
+.forgot-password:hover {
+	text-decoration: underline !important;
+}
+
+.field-link:hover{
+ text-decoration: underline !important;
+}
+
+///////////// USER LOGGED IN BUTTONS
+
+//user-link {
+//	color: $mainColor !important;
+//}
+
+// The user dropdown menu on the right hand side we got after signin
+header.global .user a.user-link{padding:5px 12px 10px 10px;position:relative;text-transform:none;font-size:14px;font-weight:500 !important;letter-spacing:0;color:$mainColor;}
+header.global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu li>a:focus{color:$ms-color !important;text-decoration:underline !important;}
+.dashboard .my-courses .empty-dashboard-message a {
+    background: $main-color;
+    background-color: $ms-color;
+    color: $main-color !important;
+    font-family: "Segoe UI","Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+    text-shadow: none;
+	font-weight: 500 !important;
+}
+header.global .user a.user-link .icon {
+    display: inline-block;
+    float: left;
+    margin: 2px 6px -3px 3px;
+    font-size: 1.2em;
+    color: $main-color !important;
+}
+
+//header.global .user .dropdown-menu::before {
+//    color:$mainColor !important;
+//}
+
+header.global .primary > a {
+	color:$mainColor !important;
+}
+
+// TODO: also fix the page that comes after the forgot-password link
+
+// course page
+//div.content-wrapper > section.course-info {
+//	border-bottom:
+//}
+
+//.course-info .course-sidebar > section {
+    //box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.15) !important;
+//    border-bottom-color: #c8c8c8 !important;
+//}
+
+// Course Page
+// View Course
+div.course-actions > a.enter-course {
+	background-color: $ms-color !important;
+}
+
+div.course-actions > a.enter-course:hover {
+	background-color: $ms-primary-button-hover !important;
+}
+//div.submit > input {
+//border:none !important;
+//color: $mainColor;
+//background-color: $ms-color !important;
+//background-image: none !important;
+//text-shadow:none !important;
+//}
+
+//div.submit >input:hover {
+//border:none !important;
+//color: $mainColor;
+//background-color: $ms-primary-button-hover;
+//background-image: none !important;
+//text-shadow:none !important;
+//}
+
+//input[type='submit'], input[type='button'], button, .button {
+//    box-shadow: none;
+//    color: $mainColor;
+//    background-color: $ms-color;
+//    background-image: none !important;
+//    text-align: center;
+//    text-decoration: none;
+//    text-shadow: none !important;
+//}
+
+//input[type='submit'], input[type='button'], button, .button:hover {
+//	background-color: $ms-primary-button-hover !important;
+//}
 
 //-----------------
 // Footer Styling
@@ -246,12 +463,21 @@ html {
                 float: left;
                 margin: 0 20px 20px 0;
             }
+			.nav-colophon a:hover{
+				text-decoration:underline;
+				color:$ms-color !important;
+			}
         }
 
         .references {
             width: 15%;
             float: right;
         }
+		
+		// test if below hover is needed? 
+		a:hover {
+			text-decoration: underline !important;
+		}
     }
 
     .copyright {
@@ -265,8 +491,8 @@ html {
 section.tos {
     box-sizing: border-box;
     padding: 0 50px;
-
+	
     .print {
-        margin: 50px 0;
+        margin: 200px 0;
     }
 }
