@@ -296,9 +296,9 @@ background-color:$mainColor !important;
 color:$ms-color !important;
 }
 
-.cta-login:hover{
-	background-color: $ms-primary-button-hover !important;
-}
+//.cta-login:hover{
+//	background-color: $ms-primary-button-hover !important;
+//}
 
 .cta-register:hover {
 	text-decoration:underline !important;
@@ -443,6 +443,25 @@ div.course-actions > a.enter-course:hover {
 //	background-color: $ms-primary-button-hover !important;
 //}
 
+// Fix the logo height problem on the course view page when the user signs in
+header.global.slim h1.logo img {
+    height: inherit !important;
+}
+
+// Fix the findcourses alignment problem when user signs in
+.nav-global-01 {
+	margin-top:0.2em !important;
+}
+
+// Fix the course name alignment issue on header
+header.global.slim h2.course-header {
+	margin-top:1.2em !important;
+}
+
+/// Hide the birth date on the registration page
+.select-year_of_birth { display:none !important; }
+///
+
 //-----------------
 // Footer Styling
 //-----------------
@@ -456,7 +475,7 @@ div.course-actions > a.enter-course:hover {
         .colophon {
             width: 80%;
             float: left;
-
+			margin-top: 1.1em !important; 
             .nav-colophon li {
                 display: inline-block;
                 height: 35px;
