@@ -296,9 +296,29 @@ background-color:$mainColor !important;
 color:$ms-color !important;
 }
 
-//.cta-login:hover{
-//	background-color: $ms-primary-button-hover !important;
+header.global .cta-login:hover{
+	background-color: $ms-primary-button-hover !important;
+}
+
+div.cta-login a.cta-login-action{
+	color:$ms-primary-button-text !important;
+}
+
+div.cta-login a.cta-login-action:hover{
+	background-color:$ms-secondary-button-hover !important;
+	color:$ms-primary-button-text !important;
+	border:none !important;
+}
+
+//.cta-login > p.instructions{
+//	background-color: $ms-color !important;
+//	color: $mainColor !important;
 //}
+
+//.cta-login > p.instructions:hover{
+//	background-color: $ms-primary-button-hover !important;
+//	color: $mainColor !important;
+//} 
 
 .cta-register:hover {
 	text-decoration:underline !important;
@@ -459,7 +479,8 @@ header.global.slim h2.course-header {
 }
 
 /// Hide the birth date on the registration page
-.select-year_of_birth { display:none !important; }
+//.select-year_of_birth { display:none !important; }
+#field-yob {display:none !important;}
 ///
 
 //-----------------
