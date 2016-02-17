@@ -354,10 +354,9 @@ import calendar
                 if self.stanford_theme_enabled():
                   honor_code_path = marketing_link('TOS') + "#honor"
                 else:
-				  honor_code_path = "https://privacy.microsoft.com/en-us/privacystatement/"
-                  ##honor_code_path = marketing_link('HONOR')
+                  honor_code_path = marketing_link('TOS') + "#disclosure"
               %>
-              <label for="honorcode-yes">${_('I agree to the {link_start}Privacy & Cookies{link_end}').format(
+              <label for="honorcode-yes">${_('I agree to the {link_start}Disclosure Notice{link_end}').format(
                 link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=honor_code_path),
                 link_end='</a>')}</label>
             </div>
