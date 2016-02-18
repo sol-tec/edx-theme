@@ -48,6 +48,16 @@ from branding import api as branding_api
 
   % if not allow_iframing:
       <script type="text/javascript">
+		function closeCookieBanner() {
+          var cookieContainer = document.getElementById("cookie-notice");
+          if (cookieContainer) {
+              cookieContainer.style.display = "none";
+          }
+          var navWrapper = document.getElementsByClassName("nav-wrapper");
+          if (navWrapper.length > 0) {
+              navWrapper[0].className = "nav-wrapper";
+          }
+        }
         /* immediately break out of an iframe if coming from the marketing website */
         (function(window) {
           if (window.location !== window.top.location) {
