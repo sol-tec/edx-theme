@@ -414,13 +414,37 @@ header.global.slim h2.course-header {
 	display:none !important;
 }
 
+// Hide the education-level on the registration page
+#field-education-level {
+	display:none !important;
+}
+
+// Hide the gender information on the registration page
+#field-gender {
+	display:none !important;
+}
+
+// Hide the mailing address on the registration page
+#field-address-mailing {
+	display:none !important;
+}
+
+// Hide the Additional Information section from the account settings page
+div.account-settings-sections > div:nth-of-type(2){
+	display:none !important;
+}
+
 // hide the social media links on the course about page
 .social-sharing {
 	display:none !important;
 }
 
-// Update User View Profile to take the maincolor
+// Update User View Profile/Account Settings to take the maincolor
 body.view-profile {
+	background-color:$main-color;
+}
+
+body.ltr {
 	background-color:$main-color;
 }
 
@@ -488,7 +512,7 @@ section.tos {
 .cookie-notice {
     z-index: 10;
     width: 100%;
-    height:28px;
+    height:26px;
     background-color:#EEEEEE !important;
     vertical-align:central;
 }
