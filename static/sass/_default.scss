@@ -449,6 +449,13 @@ body.ltr {
 }
 
 //-----------------
+// Hide the image on the password reset page
+//-----------------
+.view-passwordreset .introduction header {
+    background-image: none !important;
+}
+
+//-----------------
 // Footer Styling
 //-----------------
 .wrapper-footer {
