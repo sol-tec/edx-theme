@@ -25,13 +25,13 @@ from microsite_configuration import microsite
           % if homepage_overlay_html:
             ${homepage_overlay_html}
           % else:
-			  ## Update the pop-up message that comes on homepage when the site loads to our custom message
+              ## Update the pop-up message that comes on homepage when the site loads to our custom message
               ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
               <h1>${_("Welcome to Microsoft training on Open edX!")}</h1>
               <h2>${_("Learn, engage, achieve.")}</h2>
           % endif
         </hgroup>
-		% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+        % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
           <div class="course-search">
             <form method="get" action="/courses">
               <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>

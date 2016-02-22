@@ -48,7 +48,7 @@ from branding import api as branding_api
 
   % if not allow_iframing:
       <script type="text/javascript">
-	    function setCookie(cname, cvalue, exdays) {
+        function setCookie(cname, cvalue, exdays) {
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
             var expires = "expires="+d.toUTCString();
@@ -64,7 +64,7 @@ from branding import api as branding_api
              }
              return "";
         }
-		function closeCookieBanner() {
+        function closeCookieBanner() {
           var cookieContainer = document.getElementById("cookie-notice");
           if (cookieContainer) {
               cookieContainer.style.display = "none";
@@ -73,7 +73,7 @@ from branding import api as branding_api
           if (navWrapper.length > 0) {
               navWrapper[0].className = "nav-wrapper";
           }
-		  setCookie("cookie-banner","true",365);
+        setCookie("cookie-banner","true",365);
         }
         /* immediately break out of an iframe if coming from the marketing website */
         (function(window) {
@@ -170,12 +170,12 @@ from branding import api as branding_api
       <%block name="bodyextra"/>
     </div>
 
-	## We want the footer to be available in all pages of the site. 
-	## Removed the logic aroud whether footer is available or not.
+    ## We want the footer to be available in all pages of the site. 
+    ## Removed the logic aroud whether footer is available or not.
      <%block name="footer">
-		<%include file="theme-footer.html" />
+        <%include file="theme-footer.html" />
      </%block>
-		
+
 % if not disable_window_wrap:
   </div>
 % endif
