@@ -1,0 +1,27 @@
+## mako
+<%!
+  from django.conf import settings
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+%>
+<%inherit file="/main.html" />
+
+<%namespace name='static' file='/static_content.html'/>
+<%!
+  from datetime import date
+%>
+
+<%block name="title"><title>${_('Frequently Asked Questions')}</title></%block>
+
+<section class="static-container tos">
+    <p>${_('<br>')}</p>
+    <h2 style="text-align: left;">${_('<b>Support</b>')}</h2>
+    <p>${_('<a href="mailto:devicesite_0216@microsoft.com">DevicesITE_0216@microsoft.com</a><br>Time zone:  Pacific Standard Time<br>Period:     Monday to Friday<br>Hours:      8:30am - 5.30pm<br>')}</p>
+
+    <h2 style="text-align: left;">${_('<b>Browser Compatibility</b>')}</h2>
+    <p>${_('The following table shows operating system and browser support for the Open edX learning management system (LMS), which learners and course teams use to interact with course content.<br><br><div><table class="faq-table"><tr><td></td><td>Chrome</td><td>Safari</td><td>Firefox</td><td>IE 11</td><td>IE 10</td></tr><tr><td>Windows 8</td><td>Yes</td><td>N/A</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Mac OSX Mavericks or Yosemite</td><td>Yes</td><td>Yes</td><td>Yes</td><td>N/A</td><td>N/A</td></tr></table></div>')}</p>
+    <p>${_('In addition, the Open edX LMS runs well on Windows 10, Microsoft Edge and IE11.<br>For full requirements and limitations of browsers please view the Open edX documentation<br><a href="http://edx.readthedocs.org/projects/edx-installing-configuring-and-running/en/named-release-cypress/front_matter/browsers.html?highlight=browser%20support">http://edx.readthedocs.org/projects/edx-installing-configuring-and-running/en/named-release-cypress/front_matter/browsers.html?highlight=browser%20support</a>')}</p>
+
+    <h2 style="text-align: left;">${_('<b>Account Setup</b>')}</h2>
+    <p>${_('During initial registration you will sign into your account. However, if you don\'t choose the activation link in the email titled \"Activate Your Account\" you may have difficulty signing in again.')}</p>
+</section>
