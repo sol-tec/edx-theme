@@ -510,6 +510,22 @@ section.tos {
 }
 
 //------------------
+// FAQ Page Table Styling
+//------------------
+
+table.faq-table {
+    border-collapse: collapse;
+    width: 100%;
+ 
+    th, td {
+    text-align: left;
+    padding: 10px;
+    }
+    
+    tr:nth-child(even){background-color: $gray-2}
+}
+
+//------------------
 // COOKIE BANNER
 //------------------
 .cookie-banner-show {
