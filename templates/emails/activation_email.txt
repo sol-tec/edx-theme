@@ -1,6 +1,4 @@
-<%inherit file="../rex_email_footer.html"/>
-<%namespace file="../main.html" import="stanford_theme_enabled" />
-<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../rex_email_footer.html"/><%namespace file="../main.html" import="stanford_theme_enabled" /><%! from django.utils.translation import ugettext as _ %>
 ${_("Thank you for signing up for {platform_name}.").format(platform_name=settings.PLATFORM_NAME)}
 
 ${_("Change your life and start learning today by activating your "
@@ -10,11 +8,10 @@ ${_("Change your life and start learning today by activating your "
     )}
 
 % if is_secure:
-  https://${ site }/activate/${ key }
+https://${ site }/activate/${ key }
 % else:
-  http://${ site }/activate/${ key }
+http://${ site }/activate/${ key }
 % endif
-
 % if settings.FEATURES.get('IS_EDX_DOMAIN'):
 ${_("After you activate your account, you can sign up for "
     "and take any of the hundreds of courses {platform_name} offers."
@@ -45,11 +42,9 @@ ${_("If you didn't request this, you don't need to do anything; you won't "
       "receive any more email from us. Please do not reply to this e-mail; "
       "if you require assistance, check the about section of the "
       "{platform_name} Courses web site.").format(platform_name=settings.PLATFORM_NAME)}
-
 % else:
 ${_("If you didn't request this, you don't need to do anything; you won't "
       "receive any more email from us. Please do not reply to this e-mail; "
       "if you require assistance, check the help section of the "
       "{platform_name} website.").format(platform_name=settings.PLATFORM_NAME)}
-
 % endif
