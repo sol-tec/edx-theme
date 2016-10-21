@@ -348,7 +348,7 @@ div.main-cta > a.register:hover {
 
 // The user dropdown menu on the right hand side
 header.global .user a.user-link{
-    padding:5px 12px 10px 10px !important;
+    padding:5px 12px 10px 10px;
     position:relative;
     text-transform:none;
     font-size:14px;
@@ -371,10 +371,6 @@ header.global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu
     font-weight: 500 !important;
 }
 
-.dashboard .profile-sidebar {
-    border-top: none !important;
-}
-
 header.global .user a.user-link .icon {
     display: inline-block;
     float: left;
@@ -383,17 +379,15 @@ header.global .user a.user-link .icon {
     color: $main-color !important;
 }
 
-/*media all*/
-header.global .user > :last-child.primary > a {
-    padding: 5px 8px 10px 10px !important;
-    border: 1px solid $ms-color;
+header.global .primary > a {
+    color:$main-color !important;
 }
 
 //------------------
 // View on the course view page
 //------------------
 div.course-actions > a.enter-course {
-    background-color: $ms-color;
+    background-color: $ms-color !important;
 }
 
 div.course-actions > a.enter-course:hover {
