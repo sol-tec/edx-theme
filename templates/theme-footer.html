@@ -10,27 +10,21 @@
 
 <div class="wrapper-footer">
   <footer>
-    ## align the links with the openedx reference logo
     <div class="colophon">
       <nav class="nav-colophon">
         <ol>
-        <li>
+	<li>
             ${_('&copy; {year} Microsoft').format(
                 year=date.today().year
             )}
         </li>
         <li><a href="https://www.microsoft.com/en-us/privacystatement/default.aspx">Privacy & Cookies</a></li>
         <li><a href="${reverse('tos')}">Terms of use</a></li>
-        <li><a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/en-us.aspx">Trademarks</a></li>          
-        </ol>
-      </nav>
+        <li><a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/en-us.aspx">Trademarks</a></li> 
+        </ol>      </nav>
     </div>
     <div class="references">
-      <a href="http://openedx.org">
-        <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png"  
-                width="140" alt="Powered by Open edX" /> 
-    </a>
+	<a href="http://openedx.org"><img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png" width="140" alt="Powered by Open edX" /></a>
     </div>
-
   </footer>
 </div>
