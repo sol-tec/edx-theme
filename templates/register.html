@@ -259,7 +259,7 @@ import calendar
           % if settings.REGISTRATION_EXTRA_FIELDS['country'] != 'hidden':
           <li class="field-group">
           <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['country']} select" id="field-country">
-              <label for="country">${_("Country")}</label>
+              <label for="country">${_("Country or Region")}</label>
               <select id="country" name="country" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['country'] == 'required' else ''}>
                 <option value="">--</option>
                 %for code, country_name in countries:
