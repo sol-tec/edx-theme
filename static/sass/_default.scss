@@ -387,7 +387,17 @@ header.global .user a.user-link .icon {
 header.global .user > :last-child.primary > a {
     padding: 5px 8px 10px 10px !important;
     border: 1px solid $ms-color;
+    border-left-color: $main-color !important;
+    background: $ms-color !important;
 }
+
+//Huseyin added
+header.global .user > :last-child.primary > a:hover{
+    background-color:$ms-secondary-button-hover !important;
+    box-shadow:none !important;
+    border:none !important
+}
+
 
 //------------------
 // View on the course view page

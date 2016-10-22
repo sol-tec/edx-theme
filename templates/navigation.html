@@ -84,15 +84,16 @@ site_status_msg = get_site_status_msg(course_id)
     </ol>
     <ol class="user">
       <li class="primary">
-        <a href="${reverse('dashboard')}" class="user-link">
-          <span class="sr">${_("Dashboard for:")}</span>
+        <a href="${reverse('dashboard')}" class="user-link">          
+	  <i class="icon fa fa-home" aria-hidden="true"></i>
+	  <span class="sr">${_("Dashboard for:")}</span>
           <div>
           ${user.username}
           </div>
         </a>
       </li>
       <li class="primary">
-        <button class="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr">${_("More options dropdown")}</span><span class="fa fa-sort-desc" aria-hidden="true"></span></button>
+	<a href="#" class="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr">${_("More options dropdown")}</span><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
         <ul class="dropdown-menu" aria-label="More Options" role="menu">
           <%block name="navigation_dropdown_menu_links" >
             <li><a href="${reverse('dashboard')}">${_("Dashboard")}</a></li>
