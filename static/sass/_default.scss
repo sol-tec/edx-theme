@@ -391,11 +391,8 @@ header.global .user > :last-child.primary > a {
     background: $ms-color !important;
 }
 
-//Huseyin added
 header.global .user > :last-child.primary > a:hover{
-    background-color:$ms-secondary-button-hover !important;
-    box-shadow:none !important;
-    border:none !important
+    background-color:$ms-primary-button-hover !important;
 }
 
 
