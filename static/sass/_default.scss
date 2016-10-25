@@ -241,8 +241,8 @@ html {
 //--------------------------------
 
 header.global .cta-register{
-    background-color:$main-color !important;
-    color:$ms-color !important;
+    background-color: $main-color !important;
+    color: $ms-color !important;
 }
 
 // Sign in link on the header
@@ -269,42 +269,42 @@ header.global .cta-login:hover{
 
 // The secondary button (sign in button) on the registration page
 .nav-btn{
-    border:1px solid $ms-secondary-button-border !important;
-    color:$ms-primary-button-text !important;
+    border: 1px solid $ms-secondary-button-border !important;
+    color: $ms-primary-button-text !important;
 }
 
 .nav-btn:focus{
-    background-color:$ms-secondary-button-hover !important;
-    box-shadow:none !important;
+    background-color: $ms-secondary-button-hover !important;
+    box-shadow: none !important;
     border: 1px dotted $ms-secondary-button-border !important;
 }
 
 .nav-btn:hover{
-    background-color:$ms-secondary-button-hover !important;
-    box-shadow:none !important;
-    border:none !important;
+    background-color: $ms-secondary-button-hover !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 div.cta-login a.cta-login-action{
-    color:$ms-primary-button-text !important;
+    color: $ms-primary-button-text !important;
 }
 
 div.cta-login a.cta-login-action:hover{
-    background-color:$ms-secondary-button-hover !important;
-    color:$ms-primary-button-text !important;
-    border:none !important;
+    background-color: $ms-secondary-button-hover !important;
+    color: $ms-primary-button-text !important;
+    border: none !important;
 }
 
 .cta-register:hover {
-    text-decoration:underline !important;
+    text-decoration: underline !important;
 }
 
 div.main-cta > a.register {
-    border:none !important;
+    border: none !important;
     color: $main-color;
     background-color: $ms-color;
     background-image: none !important;
-    text-shadow:none !important;
+    text-shadow: none !important;
 }
 
 div.main-cta > a.register:hover {
@@ -316,7 +316,7 @@ div.main-cta > a.register:hover {
 //------------------
 .login-button{
     background-color: $ms-color !important;
-    text-shadow:none;
+    text-shadow: none;
 }
 
 .login-button:hover{
@@ -348,18 +348,18 @@ div.main-cta > a.register:hover {
 
 // The user dropdown menu on the right hand side
 header.global .user a.user-link{
-    padding:5px 12px 10px 10px;
-    position:relative;
-    text-transform:none;
-    font-size:14px;
-    font-weight:500 !important;
-    letter-spacing:0;
-    color:$main-color;
+    padding: 5px 12px 10px 10px !important;
+    position: relative;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 500 !important;
+    letter-spacing: 0;
+    color: $main-color;
 }
 
 header.global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu li>a:focus{
-    color:$ms-color !important;
-    text-decoration:underline !important;
+    color: $ms-color !important;
+    text-decoration: underline !important;
 }
 
 .dashboard .my-courses .empty-dashboard-message a {
@@ -371,6 +371,10 @@ header.global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu
     font-weight: 500 !important;
 }
 
+.dashboard .profile-sidebar {
+    border-top: none !important;
+}
+
 header.global .user a.user-link .icon {
     display: inline-block;
     float: left;
@@ -379,15 +383,24 @@ header.global .user a.user-link .icon {
     color: $main-color !important;
 }
 
-header.global .primary > a {
-    color:$main-color !important;
+/*media all*/
+header.global .user > :last-child.primary > a {
+    padding: 5px 8px 10px 10px !important;
+    border: 1px solid $ms-color;
+    border-left-color: $main-color !important;
+    background: $ms-color !important;
 }
+
+header.global .user > :last-child.primary > a:hover{
+    background-color: $ms-primary-button-hover !important;
+}
+
 
 //------------------
 // View on the course view page
 //------------------
 div.course-actions > a.enter-course {
-    background-color: $ms-color !important;
+    background-color: $ms-color;
 }
 
 div.course-actions > a.enter-course:hover {
@@ -401,51 +414,51 @@ header.global.slim h1.logo img {
 
 // Align find courses link when user signs in
 .nav-global-01 {
-    margin-top:0.2em !important;
+    margin-top: 0.2em !important;
 }
 
 // Align the course name on header when user logs in and view a course
 header.global.slim h2.course-header {
-    margin-top:1.2em !important;
+    margin-top: 1.2em !important;
 }
 
 // Hide the birth date on the registration page
 #field-yob {
-    display:none !important;
+    display: none !important;
 }
 
 // Hide the education-level on the registration page
 #field-education-level {
-    display:none !important;
+    display: none !important;
 }
 
 // Hide the gender information on the registration page
 #field-gender {
-    display:none !important;
+    display: none !important;
 }
 
 // Hide the mailing address on the registration page
 #field-address-mailing {
-    display:none !important;
+    display: none !important;
 }
 
 // Hide the Additional Information section from the account settings page
 div.account-settings-sections > div:nth-of-type(2){
-    display:none !important;
+    display: none !important;
 }
 
 // hide the social media links on the course about page
 .social-sharing {
-    display:none !important;
+    display: none !important;
 }
 
 // Update User View Profile/Account Settings to take the maincolor
 body.view-profile {
-    background-color:$main-color;
+    background-color: $main-color;
 }
 
 body.ltr {
-    background-color:$main-color;
+    background-color: $main-color;
 }
 
 //-----------------
@@ -535,26 +548,26 @@ table.faq-table {
 .cookie-notice {
     z-index: 10;
     width: 100%;
-    height:26px;
-    background-color:#EEEEEE !important;
-    vertical-align:central;
+    height: 26px;
+    background-color: #EEEEEE !important;
+    vertical-align: central;
 }
 
 .cookie-notice-title {
-    margin-left:20px;
+    margin-left: 20px;
     font-weight: 600;
 }
 
 
 .cookie-color {
-    color:#000 !important;
+    color: #000 !important;
 }
 
 .cookie-close {
-    float:right;
-    height:10px;
-    width:10px;
-    margin-right:20px;
+    float: right;
+    height: 10px;
+    width: 10px;
+    margin-right: 20px;
     cursor: pointer;
-    font-weight:600;
+    font-weight: 600;
 }
