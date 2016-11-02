@@ -422,6 +422,11 @@ header.global.slim h2.course-header {
     margin-top: 1.2em !important;
 }
 
+// Hide the Limited Profile message in My Profile page since we do not let users to enter their age to promote to Full Profile
+div.wrapper-profile-field-account-privacy {
+    display: none !important;
+}
+
 // Hide the birth date on the registration page
 #field-yob {
     display: none !important;
