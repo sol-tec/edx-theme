@@ -427,13 +427,14 @@ header.global.slim h2.course-header {
     display: none !important;
 }
 
-// Hide the mailing address on the registration page
-#field-address-mailing {
+// Hide birth date from the Additional Information section of Account Settings page
+div.u-field-year_of_birth {
     display: none !important;
 }
 
-// Hide the Additional Information section from the account settings page
-div.account-settings-sections > div:nth-of-type(2){
+
+// Hide the mailing address on the registration page
+#field-address-mailing {
     display: none !important;
 }
 
