@@ -422,28 +422,24 @@ header.global.slim h2.course-header {
     margin-top: 1.2em !important;
 }
 
+// Hide the Limited Profile message in My Profile page since we do not let users to enter their age to promote to Full Profile
+div.wrapper-profile-field-account-privacy {
+    display: none !important;
+}
+
 // Hide the birth date on the registration page
 #field-yob {
     display: none !important;
 }
 
-// Hide the education-level on the registration page
-#field-education-level {
+// Hide birth date from the Additional Information section of Account Settings page
+div.u-field-year_of_birth {
     display: none !important;
 }
 
-// Hide the gender information on the registration page
-#field-gender {
-    display: none !important;
-}
 
 // Hide the mailing address on the registration page
 #field-address-mailing {
-    display: none !important;
-}
-
-// Hide the Additional Information section from the account settings page
-div.account-settings-sections > div:nth-of-type(2){
     display: none !important;
 }
 
