@@ -40,8 +40,8 @@ from branding import api as branding_api
 ## this needs to be here to prevent the title from mysteriously appearing in the body, in one case
 <%def name="pagetitle()" />
   <%block name="title">
-      <title>
-	 <% getattr(settings,"SITE_NAME",None) %>
+      <title>	 
+         ${page_title_breadcrumbs(self.pagetitle())}
       </title>
   </%block>
 
