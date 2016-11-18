@@ -74,7 +74,10 @@ import calendar
         if (json.field === "honor_code"){
 	  json.value = 'You must accept the disclosure notice.';
 	}
-        $('.status.message.submission-error').addClass('is-shown').focus();
+	if (json.field === "username"){
+	   json.value = json.value + ' Also space is not allowed in username.';
+	}
+	$('.status.message.submission-error').addClass('is-shown').focus();
         $('.status.message.submission-error .message-copy').html(json.value).stop().css("display", "block");
         $(".field-error").removeClass('field-error');
         $("[data-field='"+json.field+"']").addClass('field-error')
