@@ -210,7 +210,8 @@ import calendar
 
           <li class="field required password" id="field-password">
             <label for="password">${_('Password')}</label>
-            <input id="password" type="password" name="password" value="" required aria-required="true" />
+            <input id="password" type="password" name="password" value="" required aria-required="true" aria-describedby="password-tip"/>
+	     <span class="tip tip-input" id="password-tip">${_('Password must be at least 8 characters. Must contain at least one lowercase, one uppercase, and one symbol character.')}</span>
           </li>
 
           % endif
