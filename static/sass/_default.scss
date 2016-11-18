@@ -311,6 +311,17 @@ div.main-cta > a.register:hover {
     background-color: $ms-primary-button-hover !important;
 }
 
+// In the registeration and sign in page we want text fields border to be visible with grey color
+form .field * {
+    border-color: grey !important;
+}
+
+// On the side-bar of registration page Already registered Sign in butons border is made visible with grey color
+div.cta-login-action {
+    border-color: grey !important;
+}
+
+
 //------------------
 // Sign in Page
 //------------------
