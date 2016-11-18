@@ -182,17 +182,17 @@ import calendar
         <ol class="list-input">
           <li class="field required text" id="field-email">
             <label for="email">${_('E-mail')}</label>
-            <input class="" id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
+            <input class="" id="email" type="email" name="email" value="${email}" maxlength="254" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
           </li>
 
           <li class="field required text" id="field-name">
             <label for="name">${_('Full Name')}</label>
-            <input id="name" type="text" name="name" value="${name}" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
+            <input id="name" type="text" name="name" value="${name}" maxlength="61" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
             <span class="tip tip-input" id="name-tip">${_("Your legal name, used for any certificates you earn.")}</span>
           </li>
           <li class="field required text" id="field-username">
             <label for="username">${_('Public Username')}</label>
-            <input id="username" type="text" name="username" value="${username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
+            <input id="username" type="text" name="username" value="${username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
             <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
           </li>
 
@@ -226,14 +226,14 @@ import calendar
 
           <li class="field required text" id="field-email">
             <label for="email">${_("E-mail")}</label>
-            <input class="" id="email" type="email" name="email" value="" placeholder="${_('example: username@domain.com')}" />
+            <input class="" id="email" type="email" name="email" maxlength="254" value="" placeholder="${_('example: username@domain.com')}" />
           </li>
 
           % endif
 
           <li class="field required text" id="field-username">
             <label for="username">${_('Public Display Name')}</label>
-            <input id="username" type="text" name="username" value="${extauth_username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip" />
+            <input id="username" type="text" name="username" value="${extauth_username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip" />
             <span class="tip tip-input" id="id="username-tip>${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
           </li>
 
@@ -241,7 +241,7 @@ import calendar
 
           <li class="field required text" id="field-name">
             <label for="name">${_('Full Name')}</label>
-            <input id="name" type="text" name="name" value="" placeholder="$_('example: Jane Doe')}" aria-describedby="name-tip" />
+            <input id="name" type="text" name="name" value="" maxlength="61" placeholder="$_('example: Jane Doe')}" aria-describedby="name-tip" />
             <span class="tip tip-input" id="name-tip">${_("Your legal name, used for any certificates you earn.")}</span>
           </li>
 
