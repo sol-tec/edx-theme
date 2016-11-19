@@ -74,7 +74,10 @@ import calendar
         if (json.field === "honor_code"){
 	  json.value = 'You must accept the disclosure notice.';
 	}
-        $('.status.message.submission-error').addClass('is-shown').focus();
+	if (json.field === "username"){
+	   json.value = json.value + ' Also space is not allowed in username.';
+	}
+	$('.status.message.submission-error').addClass('is-shown').focus();
         $('.status.message.submission-error .message-copy').html(json.value).stop().css("display", "block");
         $(".field-error").removeClass('field-error');
         $("[data-field='"+json.field+"']").addClass('field-error')
@@ -182,17 +185,17 @@ import calendar
         <ol class="list-input">
           <li class="field required text" id="field-email">
             <label for="email">${_('E-mail')}</label>
-            <input class="" id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
+            <input class="" id="email" type="email" name="email" value="${email}" maxlength="254" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
           </li>
 
           <li class="field required text" id="field-name">
             <label for="name">${_('Full Name')}</label>
-            <input id="name" type="text" name="name" value="${name}" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
+            <input id="name" type="text" name="name" value="${name}" maxlength="61" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
             <span class="tip tip-input" id="name-tip">${_("Your legal name, used for any certificates you earn.")}</span>
           </li>
           <li class="field required text" id="field-username">
             <label for="username">${_('Public Username')}</label>
-            <input id="username" type="text" name="username" value="${username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
+            <input id="username" type="text" name="username" value="${username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
             <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
           </li>
 
@@ -200,14 +203,16 @@ import calendar
 
           <li class="is-disabled field optional password" id="field-password" hidden>
             <label for="password">${_('Password')}</label>
-            <input id="password" type="password" name="password" value="" disabled required aria-required="true" />
+            <input id="password" type="password" name="password" value="" disabled required aria-required="true" aria-describedby="password-tip"/>
+	     <span class="tip tip-input" id="password-tip">${_('Password must be at least 8 characters. Must contain at least one lowercase, one uppercase, and one symbol character.')}</span>
           </li>
 
           % else:
 
           <li class="field required password" id="field-password">
             <label for="password">${_('Password')}</label>
-            <input id="password" type="password" name="password" value="" required aria-required="true" />
+            <input id="password" type="password" name="password" value="" required aria-required="true" aria-describedby="password-tip"/>
+	     <span class="tip tip-input" id="password-tip">${_('Password must be at least 8 characters. Must contain at least one lowercase, one uppercase, and one symbol character.')}</span>
           </li>
 
           % endif
@@ -226,14 +231,14 @@ import calendar
 
           <li class="field required text" id="field-email">
             <label for="email">${_("E-mail")}</label>
-            <input class="" id="email" type="email" name="email" value="" placeholder="${_('example: username@domain.com')}" />
+            <input class="" id="email" type="email" name="email" maxlength="254" value="" placeholder="${_('example: username@domain.com')}" />
           </li>
 
           % endif
 
           <li class="field required text" id="field-username">
             <label for="username">${_('Public Display Name')}</label>
-            <input id="username" type="text" name="username" value="${extauth_username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip" />
+            <input id="username" type="text" name="username" value="${extauth_username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip" />
             <span class="tip tip-input" id="id="username-tip>${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
           </li>
 
@@ -241,7 +246,7 @@ import calendar
 
           <li class="field required text" id="field-name">
             <label for="name">${_('Full Name')}</label>
-            <input id="name" type="text" name="name" value="" placeholder="$_('example: Jane Doe')}" aria-describedby="name-tip" />
+            <input id="name" type="text" name="name" value="" maxlength="61" placeholder="$_('example: Jane Doe')}" aria-describedby="name-tip" />
             <span class="tip tip-input" id="name-tip">${_("Your legal name, used for any certificates you earn.")}</span>
           </li>
 
@@ -282,8 +287,10 @@ import calendar
               <select id="education-level" name="level_of_education" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['level_of_education'] == 'required' else ''}>
                 <option value="">--</option>
                 %for code, ed_level in UserProfile.LEVEL_OF_EDUCATION_CHOICES:
+                %if code not in  ['el','hs','jhs']:
                 <option value="${code}">${_(ed_level)}</option>
-                %endfor
+                %endif
+		%endfor
               </select>
             </div>
           </li>
@@ -325,11 +332,11 @@ import calendar
             <textarea id="address-mailing" name="mailing_address" value="" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['mailing_address'] == 'required' else ''}></textarea>
           </li>
           % endif
-
           % if settings.REGISTRATION_EXTRA_FIELDS['goals'] != 'hidden':
-          <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['goals']} text" id="field-goals">
-            <label for="goals">${_("Please share with us your reasons for registering with {platform_name}").format(platform_name=platform_name)}</label>
-            <textarea id="goals" name="goals" value="" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['goals'] == 'required' else ''}></textarea>
+	  <li class="field text" id="field-goals">
+            <label for="goals">${_('Company Name')}</label>
+            <input id="goals" type="text" name="goals" value="" maxlength="300" placeholder="${_('example: YourCompany')}" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['goals'] == 'required' else ''} aria-describedby="goals-tip"/>
+            <span class="tip tip-input" id="goals-tip">${_('Your company name.')}</span>
           </li>
           % endif
         </ol>
