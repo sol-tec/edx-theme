@@ -79,7 +79,7 @@ from microsite_configuration import microsite
           var u=decodeURI(window.location.search);
           if (!isExternal(json.redirect)) { // a paranoid check.  Our server is the one providing json.redirect
               location.href=json.redirect+u;
-          } // else we just remain on this page, which is fine since this particular path implies a login failure
+          } // else we just remain on this page, which is fine since this particular path implies a signin failure
             // that has been generated via packet tampering (json.redirect has been messed with).
         } else {
           toggleSubmitButton(true);
@@ -135,7 +135,7 @@ from microsite_configuration import microsite
 <section class="introduction">
   <header>
     <h1 class="title">
-      <span class="title-super">${_("Please log in")}</span>
+      <span class="title-super">${_("Please sign in")}</span>
       <span class="title-sub">${_("to access your account and courses")}</span>
     </h1>
   </header>
@@ -151,7 +151,7 @@ from microsite_configuration import microsite
       </div>
 
       <div role="alert" class="status message submission-error" tabindex="-1">
-        <h3 class="message-title">${_("We couldn't log you in.")} </h3>
+        <h3 class="message-title">${_("We couldn't sign you in.")} </h3>
         <ul class="message-copy">
           <li>${_("Your email or password is incorrect")}</li>
         </ul>
@@ -171,7 +171,7 @@ from microsite_configuration import microsite
       % endif
 
       <p class="instructions sr">
-        ${_('Please provide the following information to log into your {platform_name} account. Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.').format(platform_name=platform_name)}
+        ${_('Please provide the following information to sign into your {platform_name} account. Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.').format(platform_name=platform_name)}
       </p>
 
       <div class="group group-form group-form-requiredinformation">
@@ -213,7 +213,7 @@ from microsite_configuration import microsite
 
       <span class="deco-divider">
         ## Developers: this is a sentence fragment, which is usually frowned upon.  The design of the pags uses this fragment to provide an "else" clause underneath a number of choices.  It's OK to leave it.
-        ## Translators: this is the last choice of a number of choices of how to log in to the site.
+        ## Translators: this is the last choice of a number of choices of how to sign in to the site.
         <span class="copy">${_('or')}</span>
       </span>
 
