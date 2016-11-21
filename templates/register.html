@@ -196,7 +196,7 @@ import calendar
           <li class="field required text" id="field-username">
             <label for="username">${_('Public Username')}</label>
             <input id="username" type="text" name="username" value="${username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
-            <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
+            <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')}). Don't use spaces.</strong></span>
           </li>
 
           % if third_party_auth.is_enabled() and running_pipeline:
@@ -204,7 +204,7 @@ import calendar
           <li class="is-disabled field optional password" id="field-password" hidden>
             <label for="password">${_('Password')}</label>
             <input id="password" type="password" name="password" value="" disabled required aria-required="true" aria-describedby="password-tip"/>
-	     <span class="tip tip-input" id="password-tip">${_('Password must be at least 8 characters. Must contain at least one lowercase, one uppercase, and one symbol character.')}</span>
+	     <span class="tip tip-input" id="password-tip">${_('Must be at least 8 characters. Must contain at least one lowercase, one uppercase, and one symbol character.')}</span>
           </li>
 
           % else:
@@ -212,7 +212,7 @@ import calendar
           <li class="field required password" id="field-password">
             <label for="password">${_('Password')}</label>
             <input id="password" type="password" name="password" value="" required aria-required="true" aria-describedby="password-tip"/>
-	     <span class="tip tip-input" id="password-tip">${_('Password must be at least 8 characters. Must contain at least one lowercase, one uppercase, and one symbol character.')}</span>
+	    <span class="tip tip-input" style="position:static" id="password-tip">${_('Must be at least 8 characters. Must contain at least one lowercase, one uppercase, and one symbol character.')}</span>
           </li>
 
           % endif
