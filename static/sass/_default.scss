@@ -458,6 +458,14 @@ div.u-field-language_proficiencies {
     display: none !important;
 }
 
+// On the Account Settings page make the textboxes for Full Name and E-Mail visible by showing the borders for UX
+#u-field-input-name {
+    border-color: grey !important;
+}
+#u-field-input-email {
+    border-color: grey !important;
+}
+
 // hide the social media links on the course about page
 .social-sharing {
     display: none !important;
