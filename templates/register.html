@@ -335,7 +335,7 @@ import calendar
           % if settings.REGISTRATION_EXTRA_FIELDS['goals'] != 'hidden':
 	  <li class="field text" id="field-goals">
             <label for="goals">${_('Company Name')}</label>
-            <input id="goals" type="text" name="goals" value="" maxlength="300" placeholder="${_('example: Northwind Traders')}" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['goals'] == 'required' else ''} aria-describedby="goals-tip"/>
+            <input id="goals" type="text" name="goals" value="" maxlength="50" placeholder="${_('example: Northwind Traders')}" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['goals'] == 'required' else ''} aria-describedby="goals-tip"/>
             <span class="tip tip-input" id="goals-tip">${_('Your company name.')}</span>
           </li>
           % endif
