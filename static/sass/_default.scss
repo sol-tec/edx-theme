@@ -228,12 +228,28 @@ html {
 //-----------------
 // Header Styling
 //-----------------
-.home>header {
-    height: 500px;
+.home > header {
+    height: 375;
+    background-position: center;
 
     .outer-wrapper {
         padding: 120px 0 !important;
     }
+}
+
+.home > header .title > hgroup {
+    display: block !important;
+    text-align: center !important;
+}
+
+.home > header .title > hgroup h2 {
+    text-transform: none !important;
+    font-style: normal !important;
+}
+
+
+.home > header .title > hgroup h1 {
+    text-align: center !important;
 }
 
 //--------------------------------
