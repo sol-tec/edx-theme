@@ -422,8 +422,28 @@ header.global .user > :last-child.primary > a:hover{
     background-color: $ms-primary-button-hover !important;
 }
 
+//-------------------------
+// Certificate top shadow and putting into grey area changes
+//-------------------------
 
-//------------------
+.accomplishment-rendering {
+    border-top: 0;
+    top: inherit;
+}
+
+
+.wrapper-accomplishment-rendering {
+    padding: 30px 2.85714%;
+}
+
+.layout-accomplishment .accomplishment-rendering {
+    top: inherit;
+}
+
+.layout-accomplishment .wrapper-introduction {
+    margin-bottom: 0;
+}
+
 // View on the course view page
 //------------------
 div.course-actions > a.enter-course {
