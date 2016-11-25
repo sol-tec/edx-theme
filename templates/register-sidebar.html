@@ -28,7 +28,7 @@ from django.core.urlresolvers import reverse
 % if not stanford_theme_enabled():
   <div class="cta cta-welcome">
     <h3>${_("Welcome to {platform_name}").format(platform_name=platform_name)}</h3>
-    <p>${_("Registering with {platform_name} gives you access to all of our current and future free courses. Not ready to take a course just yet? Registering puts you on our mailing list - we will update you as courses are added.").format(platform_name=platform_name)}</p>
+    <p>${_("Registering with {platform_name} gives you access to all of our current and future free courses.").format(platform_name=platform_name)}</p>
   </div>
 % endif
 
@@ -45,7 +45,7 @@ from django.core.urlresolvers import reverse
   <div class="cta cta-help">
     <h3>${_("Need Help?")}</h3>
     <p>${_("Need help in registering with {platform_name}?").format(platform_name=platform_name)}
-      <a href="${marketing_link('FAQ')}">
+      <a href="${marketing_link('FAQ')}" target="_blank">
           ${_("View our FAQs for answers to commonly asked questions.")}
       </a>
       ${_("Once registered, most questions can be answered in the course specific discussion forums or through the FAQs.")}</p>
