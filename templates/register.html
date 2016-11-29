@@ -196,7 +196,7 @@ import calendar
           <li class="field required text" id="field-username">
             <label for="username">${_('Public Username')}</label>
             <input id="username" type="text" name="username" value="${username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
-            <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')}). Don't use spaces.</strong></span>
+            <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')}). Spaces are not allowed.</strong></span>
           </li>
 
           % if third_party_auth.is_enabled() and running_pipeline:
