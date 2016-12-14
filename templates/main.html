@@ -179,6 +179,13 @@ from branding import api as branding_api
   <%include file="widgets/segment-io-footer.html" />
   <script type="text/javascript" src="${static.url('js/vendor/noreferrer.js')}" charset="utf-8"></script>
   <script type="text/javascript" src="${static.url('js/utils/navigation.js')}" charset="utf-8"></script>
+  <script type="text/javascript">
+      (function(a,b,c,d){
+           a='//tags.tiqcdn.com/utag/msft/lex-openedx/prod/utag.js';
+           b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+           a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+       })();
+  </script>
   <%static:optional_include_mako file="body-extra.html" with_microsite="True" />
 </body>
 </html>
