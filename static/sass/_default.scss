@@ -389,6 +389,11 @@ header.global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu
     text-decoration: underline !important;
 }
 
+.fa-sort-desc:before{
+    content:"\f0dd";
+    color:$main-color;
+}
+
 .dashboard .my-courses .empty-dashboard-message a {
     background: $main-color;
     background-color: $ms-color;
