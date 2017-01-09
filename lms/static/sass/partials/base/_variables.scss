@@ -3,3 +3,31 @@
 $header-bg: rgb(250,0,0);
 $footer-bg: rgb(250,0,0);
 $container-bg: rgb(250,0,0);
+
+//-----------------
+// Header Styling
+//-----------------
+.home > header {
+    height: 375;
+    background-position: center top;
+
+    .outer-wrapper {
+        padding: 120px 0 !important;
+    }
+}
+
+.home > header .title > hgroup {
+    display: block !important;
+    text-align: center !important;
+}
+
+.home > header .title > hgroup h2 {
+    text-transform: none !important;
+    font-style: normal !important;
+}
+
+
+.home > header .title > hgroup h1 {
+    text-align: center !important;
+}
+
