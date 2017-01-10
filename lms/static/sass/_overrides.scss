@@ -51,3 +51,61 @@ html {
 .btn-primary:hover{
     background-color: $ms-primary-button-hover !important;
 }
+
+//------------------
+// View when the user logged in
+//------------------
+
+// The user dropdown menu on the right hand side
+header.header-global .user a.user-link{
+    padding: 5px 12px 10px 10px !important;
+    position: relative;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 500 !important;
+    letter-spacing: 0;
+    color: $main-color;
+}
+
+header.header-global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu li>a:focus{
+    color: $ms-color !important;
+    text-decoration: underline !important;
+}
+
+.fa-sort-desc:before{
+    content:"\f0dd";
+    color:$main-color;
+}
+
+.dashboard .my-courses .empty-dashboard-message a {
+    background: $main-color;
+    background-color: $ms-color;
+    color: $main-color !important;
+    font-family: "Segoe UI","Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+    text-shadow: none;
+    font-weight: 500 !important;
+}
+
+.dashboard .profile-sidebar {
+    border-top: none !important;
+}
+
+header.header-global .user a.user-link .icon {
+    display: inline-block;
+    float: left;
+    margin: 2px 6px -3px 3px;
+    font-size: 1.2em;
+    color: $main-color !important;
+}
+
+/*media all*/
+header.header-global .user > :last-child.primary > a {
+    padding: 5px 8px 10px 10px !important;
+    border: 1px solid $ms-color;
+    border-left-color: $main-color !important;
+    background: $ms-color !important;
+}
+
+header.header-global .user > :last-child.primary > a:hover{
+    background-color: $ms-primary-button-hover !important;
+}
