@@ -18,23 +18,23 @@ html {
     background-position: center top;
 
     .outer-wrapper {
-	     padding: 120px 0;
+	     padding: 120px 0 !important;
     }
 }
 
 .home > header .title > .heading-group {
-    display: block;
-    text-align: center;
+    display: block !important;
+    text-align: center !important;
 }
 
 .home > header .title > .heading-group h2 {
-    text-transform: none;
-    font-style: normal;
+    text-transform: none !important;
+    font-style: normal !important;
 }
 
 
 .home > header .title > .heading-group h1 {
-    text-align: center;
+    text-align: center !important;
 }
 
 //--------------------------------
@@ -43,10 +43,10 @@ html {
 
 // Register link in header
 .btn-register:hover{
-    color: $link-hover;
+    color: $link-hover !important;
 }
 
 // Sign in link on the header
 .btn-primary:hover{
-    background-color: $ms-primary-button-hover;
+    background-color: $ms-primary-button-hover !important;
 }
