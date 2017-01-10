@@ -10,18 +10,18 @@
     }
 }
 
-.home > header .title > hgroup {
+.home > header .title > .heading-group {
     display: block !important;
     text-align: center !important;
 }
 
-.home > header .title > hgroup h2 {
+.home > header .title > .heading-group h2 {
     text-transform: none !important;
     font-style: normal !important;
 }
 
 
-.home > header .title > hgroup h1 {
+.home > header .title > .heading-group h1 {
     text-align: center !important;
 }
 
