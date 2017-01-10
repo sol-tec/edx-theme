@@ -1,4 +1,16 @@
 //-----------------
+// Override CSS
+//-----------------
+html {
+    // The background color of the site
+    background-color: $main-color !important;
+}
+
+a, a:active, a:hover, a:visited {
+	text-decoration: none;
+}
+
+//-----------------
 // Header Styling
 //-----------------
 .home > header {
@@ -25,3 +37,16 @@
     text-align: center !important;
 }
 
+//--------------------------------
+// Registration/Signin link on the header
+//--------------------------------
+
+// Register link in header
+.btn-register:hover{
+    background-color: $ms-primary-button-hover !important;
+}
+
+// Sign in link on the header
+.btn-primary:hover{
+    background-color: $ms-primary-button-hover !important;
+}
