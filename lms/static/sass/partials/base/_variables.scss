@@ -189,33 +189,6 @@ $a-tags: 'a, a:active, a:hover, a:visited';
 }
 
 //-----------------
-// Header Styling
-//-----------------
-.home > header {
-    height: 375;
-    background-position: center top;
-
-    .outer-wrapper {
-        padding: 120px 0 !important;
-    }
-}
-
-.home > header .title > hgroup {
-    display: block !important;
-    text-align: center !important;
-}
-
-.home > header .title > hgroup h2 {
-    text-transform: none !important;
-    font-style: normal !important;
-}
-
-
-.home > header .title > hgroup h1 {
-    text-align: center !important;
-}
-
-//-----------------
 //  CSS BG Images
 //-----------------
 // Home Page Background Image
