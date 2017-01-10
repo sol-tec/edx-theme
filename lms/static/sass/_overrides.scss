@@ -6,7 +6,7 @@ html {
     background-color: $main-color !important;
 }
 
-a, a:active, a:hover, a:visited {
+#{$a-tags}{
 	text-decoration: none;
 }
 
@@ -18,23 +18,23 @@ a, a:active, a:hover, a:visited {
     background-position: center top;
 
     .outer-wrapper {
-	     padding: 120px 0 !important;
+	     padding: 120px 0;
     }
 }
 
 .home > header .title > .heading-group {
-    display: block !important;
-    text-align: center !important;
+    display: block;
+    text-align: center;
 }
 
 .home > header .title > .heading-group h2 {
-    text-transform: none !important;
-    font-style: normal !important;
+    text-transform: none;
+    font-style: normal;
 }
 
 
 .home > header .title > .heading-group h1 {
-    text-align: center !important;
+    text-align: center;
 }
 
 //--------------------------------
@@ -43,10 +43,10 @@ a, a:active, a:hover, a:visited {
 
 // Register link in header
 .btn-register:hover{
-    background-color: $ms-primary-button-hover !important;
+    color: $link-hover;
 }
 
 // Sign in link on the header
 .btn-primary:hover{
-    background-color: $ms-primary-button-hover !important;
+    background-color: $ms-primary-button-hover;
 }
