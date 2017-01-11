@@ -1,18 +1,18 @@
-## mako
+<%page expression_filter="h"/>
 <%!
   from django.conf import settings
   from django.core.urlresolvers import reverse
   from django.utils.translation import ugettext as _
 %>
-    <%inherit file="/main.html" />
+<%inherit file="../main.html" />
 
-<%namespace name='static' file='/static_content.html'/>
 <%!
   from datetime import date
 %>
-        <%block name="title"><title>${_('Frequently Asked Questions')}</title></%block>
+<%block name="pagetitle">${_('Frequently Asked Questions')}</%block>
 
-<section class="static-container tos">
+<main id="main" aria-label="Content" tabindex="-1">
+<section class="container about">
     <br>
     <h1 style="text-align: left;">Frequently Asked Questions</h1>
     <h2><b>SUPPORT HOURS</b></h2>
@@ -88,4 +88,4 @@
         <img src="/static/images/download_video.png" alt="download_video_img" height="400" weight="400">
         <br>
 </section>
-
+</main>

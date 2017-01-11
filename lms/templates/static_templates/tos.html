@@ -1,19 +1,19 @@
-## mako
+<%page expression_filter="h"/>
 <%!
   from django.conf import settings
   from django.core.urlresolvers import reverse
   from django.utils.translation import ugettext as _
 %>
-<%inherit file="/main.html" />
+<%inherit file="../main.html" />
 
-<%namespace name='static' file='/static_content.html'/>
 <%!
   from datetime import date
 %>
 
-<%block name="title"><title>${_('Terms of Service')}</title></%block>
+<%block name="pagetitle">${_('Terms of Service')}</%block>
 
-<section class="static-container tos">
+<main id="main" aria-label="Content" tabindex="-1">
+<section class="container about">
     <p><br></p>
     <h2 style="text-align: center;"><b>TERMS OF SERVICE FOR</b></h2>
     <h2 style="text-align: center;"><b>MICROSOFT LEARNING WEBSITE</b></h2>
@@ -84,3 +84,4 @@
     <p><b>COPYRIGHT AND TRADEMARK NOTICES</b></p>
     <p>&copy; <script>document.write(new Date().getFullYear())</script> Microsoft Corporation. All rights reserved. Microsoft or our suppliers own the title, copyright, and other intellectual property rights in all elements of the Services. Microsoft and the names, logos, and icons of all Microsoft products, software, and services may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries. The names of actual companies and products may be the trademarks of their respective owners.</p>
 </section>
+</main>
