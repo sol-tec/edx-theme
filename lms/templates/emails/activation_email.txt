@@ -1,3 +1,4 @@
+<%inherit file="../rex_email_footer.html"/>
 <%! from django.utils.translation import ugettext as _ %>
 <%! from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers %>
 ${_("Thank you for creating an account with {platform_name}!").format(
