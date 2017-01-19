@@ -110,6 +110,107 @@ header.header-global .user > :last-child.primary > a:hover{
     background-color: $ms-primary-button-hover !important;
 }
 
+//-------------------------
+// Certificate top shadow and putting into grey area changes
+//-------------------------
+
+.accomplishment-rendering {
+    border-top: 0;
+    top: inherit;
+}
+
+
+.wrapper-accomplishment-rendering {
+    padding: 30px 2.85714%;
+}
+
+.layout-accomplishment .accomplishment-rendering {
+    top: inherit;
+}
+
+.layout-accomplishment .wrapper-introduction {
+    margin-bottom: 0;
+}
+
+// View on the course view page
+//------------------
+div.course-actions > a.enter-course {
+    background-color: $ms-color;
+}
+
+div.course-actions > a.enter-course:hover {
+    background-color: $ms-primary-button-hover !important;
+}
+
+// The logo height on the course view page when the user signs in
+header.global.slim h1.logo img {
+    height: inherit !important;
+}
+
+// Align find courses link when user signs in
+.nav-global-01 {
+    margin-top: 0.2em !important;
+}
+
+// Align the course name on header when user logs in and view a course
+header.global.slim h2.course-header {
+    margin-top: 1.2em !important;
+}
+
+// Hide the Limited Profile message in My Profile page since we do not let users to enter their age to promote to Full Profile
+div.wrapper-profile-field-account-privacy {
+    display: none !important;
+}
+
+// Hide the birth date on the registration page
+#field-yob {
+    display: none !important;
+}
+
+// Hide birth date from the Additional Information section of Account Settings page
+div.u-field-year_of_birth {
+    display: none !important;
+}
+
+// Hide the Preferred Language on the Account Settings page
+div.u-field-language_proficiencies {
+    display: none !important;
+}
+
+// Hide the mailing address on the registration page
+#field-address-mailing {
+    display: none !important;
+}
+
+// On the Account Settings page make the textboxes for Full Name and E-Mail visible by showing the borders for UX
+#u-field-input-name {
+    border-color: grey !important;
+}
+#u-field-input-email {
+    border-color: grey !important;
+}
+
+// hide the social media links on the course about page
+.social-sharing {
+    display: none !important;
+}
+
+// Update User View Profile/Account Settings to take the maincolor
+body.view-profile {
+    background-color: $main-color;
+}
+
+body.ltr {
+    background-color: $main-color;
+}
+
+//-----------------
+// Hide the image on the password reset page
+//-----------------
+.view-passwordreset .introduction header {
+    background-image: none !important;
+}
+
 //-----------------
 // Footer Styling
 //-----------------
