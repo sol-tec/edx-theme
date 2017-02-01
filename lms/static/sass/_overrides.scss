@@ -53,6 +53,109 @@ html {
 }
 
 //------------------
+// Registration Page
+//------------------
+// The register button on the registration page
+.register-button{
+    background-color: $ms-color !important;
+    text-shadow: none;
+}
+
+.register-button:hover{
+    background-color: $ms-primary-button-hover !important;
+}
+
+.register-button:focus{
+    border: 1px dotted $ms-color !important;
+}
+
+// The secondary button (sign in button) on the registration page
+.nav-btn{
+    border: 1px solid $ms-secondary-button-border !important;
+    color: $ms-primary-button-text !important;
+}
+
+.nav-btn:focus{
+    background-color: $ms-secondary-button-hover !important;
+    box-shadow: none !important;
+    border: 1px dotted $ms-secondary-button-border !important;
+}
+
+.nav-btn:hover{
+    background-color: $ms-secondary-button-hover !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+div.cta-login a.cta-login-action{
+    color: $ms-primary-button-text !important;
+}
+
+div.cta-login a.cta-login-action:hover{
+    background-color: $ms-secondary-button-hover !important;
+    color: $ms-primary-button-text !important;
+    border: none !important;
+}
+
+.cta-register:hover {
+    text-decoration: underline !important;
+}
+
+div.main-cta > a.register {
+    border: none !important;
+    color: $main-color;
+    background-color: $ms-color;
+    background-image: none !important;
+    text-shadow: none !important;
+}
+
+div.main-cta > a.register:hover {
+    background-color: $ms-primary-button-hover !important;
+}
+
+// In the registeration and sign in page we want text fields border to be visible with grey color
+form .field * {
+    border-color: grey !important;
+}
+
+// On the side-bar of registration page Already registered Sign in butons border is made visible with grey color
+div.cta-login-action {
+    border-color: grey !important;
+}
+
+
+//------------------
+// Sign in Page
+//------------------
+.login-button{
+    background-color: $ms-color !important;
+    text-shadow: none;
+}
+
+.login-button:hover{
+    background-color: $ms-primary-button-hover !important;
+}
+
+.login-button:focus{
+    border: 1px dotted $ms-color !important;
+}
+
+.forgot-password {
+    a:hover{
+        text-decoration: underline !important;
+    }
+    color: $ms-color !important;
+}
+
+.forgot-password:hover {
+    text-decoration: underline !important;
+}
+
+.field-link:hover{
+ text-decoration: underline !important;
+}
+
+//------------------
 // View when the user logged in
 //------------------
 
