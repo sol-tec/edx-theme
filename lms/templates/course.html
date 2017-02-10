@@ -19,13 +19,21 @@ from django.core.urlresolvers import reverse
         <span class="course-code">${course.display_number_with_default}</span>
         <span class="course-title">${course.display_name_with_default}</span>
       </h2>
+	  % if course.self_paced:
+	  <div class="course-date" aria-hidden="true">Self-Paced</div>
+	  % else
       <div class="course-date" aria-hidden="true">${_("Starts")}: ${course.start_datetime_text()}</div>
+	  % endif
     </div>
     <div class="sr">
       <ul>
       <li>${course.display_org_with_default}</li>
       <li>${course.display_number_with_default}</li>
+	  % if course.self_paced:
+	  <li>Self-Paced</li>
+	  % else
       <li>${_("Starts")}: <time itemprop="startDate" datetime="${course.start_datetime_text()}">${course.start_datetime_text()}</time></li>
+	  % endif	  
     </ul>
     </div>
   </a>
