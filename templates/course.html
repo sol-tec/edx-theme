@@ -18,13 +18,13 @@ from django.core.urlresolvers import reverse
         <span class="course-code">${course.display_number_with_default | h}</span>
         <span class="course-title">${course.display_name_with_default}</span>
       </h2>
-      <div class="course-date" aria-hidden="true">Mode: Self-Paced</div>
+      <div class="course-date" aria-hidden="true">Self-Paced</div>
     </div>
     <div class="sr">
       <ul>
       <li>${course.display_org_with_default | h}</li>
       <li>${course.display_number_with_default | h}</li>
-      <li>Mode: Self-Paced</li>
+      <li>Self-Paced</li>
     </ul>
     </div>
   </a>
