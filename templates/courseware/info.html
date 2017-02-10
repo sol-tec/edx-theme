@@ -63,7 +63,7 @@ $(document).ready(function(){
     <section aria-label="${_('Handout Navigation')}" class="handouts">   
     <h1>${_("Important Course Dates")}</h1>
     <h2>${_("Course run end date")}</h2>      
-    ${course.end_datetime_text()} <br>
+    <b>${course.end_datetime_text()}</b><br>
 	<br>After this date, the course will be archieved. If you enrolled in the course before the run end date, you can still access the course content.<br>
     <h1>${_(course.info_sidebar_name)}</h1>
     ${get_course_info_section(request, course, 'handouts')}
