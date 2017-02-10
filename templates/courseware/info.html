@@ -48,6 +48,18 @@ $(document).ready(function(){
 <section class="container">
   <div class="info-wrapper">
     % if user.is_authenticated():
+	<section class="updates">
+	 <h1>${_("Important Course Dates")}</h1>
+	 <h2>${_("Course run end date")}</h2>
+	<span class="important-dates-item-text final-date">
+	    % if get_course_about_section(request, course, "end_date"):
+			${get_course_about_section(request, course, "end_date")}
+		% else:
+			${course.end_datetime_text()}
+		% endif
+		<br>After this date, the course will be archieved. If you enrolled in the course before the run end date, you can still access the course content.
+    </span>
+	</section>
     <section class="updates">
       % if studio_url is not None and masquerade and masquerade.role == 'staff':
         <div class="wrap-instructor-info studio-view">
