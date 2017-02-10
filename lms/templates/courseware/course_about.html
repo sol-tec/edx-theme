@@ -240,7 +240,9 @@ from openedx.core.lib.courses import course_image_url
                 </span>
             </li>
             % endif
-
+			% if course.self_paced:
+            <li class="important-dates-item"><i class="icon fa fa-info-circle"></i><p class="important-dates-item-title">${_("Course Mode")}</p><span class="important-dates-item-text start-date">Self-Paced</span></li>
+			% endif
           % if get_course_about_section(request, course, "effort"):
             <li class="important-dates-item"><span class="icon fa fa-pencil" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort")}</p><span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span></li>
           % endif
