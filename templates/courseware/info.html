@@ -47,19 +47,7 @@ $(document).ready(function(){
 <%block name="bodyclass">view-in-course view-course-info ${course.css_class or ''}</%block>
 <section class="container">
   <div class="info-wrapper">
-    % if user.is_authenticated():
-	<section class="updates">
-	 <h1>${_("Important Course Dates")}</h1>
-	 <h2>${_("Course run end date")}</h2>
-	<span class="important-dates-item-text final-date">
-	    % if get_course_about_section(request, course, "end_date"):
-			${get_course_about_section(request, course, "end_date")}
-		% else:
-			${course.end_datetime_text()}
-		% endif
-		<br>After this date, the course will be archieved. If you enrolled in the course before the run end date, you can still access the course content.
-    </span>
-	</section>
+    % if user.is_authenticated():	
     <section class="updates">
       % if studio_url is not None and masquerade and masquerade.role == 'staff':
         <div class="wrap-instructor-info studio-view">
@@ -72,14 +60,13 @@ $(document).ready(function(){
       <h1>${_("Course Updates &amp; News")}</h1>
       ${get_course_info_section(request, course, 'updates')}
     </section>
-    <section aria-label="${_('Handout Navigation')}" class="handouts">
-      % if False:
-        <h1>${_("Important Course Dates")}</h1>
-        ${get_course_date_summary(course, user)}
-      % endif
-
-      <h1>${_(course.info_sidebar_name)}</h1>
-      ${get_course_info_section(request, course, 'handouts')}
+    <section aria-label="${_('Handout Navigation')}" class="handouts">   
+    <h1>${_("Important Course Dates")}</h1>
+    <h2>${_("Course run end date")}</h2>      
+    ${course.end_datetime_text()}
+	<br>After this date, the course will be archieved. If you enrolled in the course before the run end date, you can still access the course content.<br>
+    <h1>${_(course.info_sidebar_name)}</h1>
+    ${get_course_info_section(request, course, 'handouts')}
     </section>
     % else:
     <section class="updates">
