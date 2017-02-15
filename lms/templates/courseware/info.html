@@ -98,7 +98,7 @@ from openedx.core.djangolib.markup import HTML, Text
           <h2>${_("Course run end date")}</h2>      
           <b>${course.end_datetime_text()}</b><br>
 	      <br>After this date, the course will be archived. If you enrolled in the course before the run end date, you can still access the course content.<br>
-		  % else
+		  % else:
 		  ${get_course_date_summary(course, user)}
 	      % endif  
           <h1 class="handouts-header">${_(course.info_sidebar_name)}</h1>

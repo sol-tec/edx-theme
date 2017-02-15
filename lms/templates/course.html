@@ -21,7 +21,7 @@ from django.core.urlresolvers import reverse
       </h2>
 	  % if course.self_paced:
 	  <div class="course-date" aria-hidden="true">Self-Paced</div>
-	  % else
+	  % else:
       <div class="course-date" aria-hidden="true">${_("Starts")}: ${course.start_datetime_text()}</div>
 	  % endif
     </div>
@@ -31,7 +31,7 @@ from django.core.urlresolvers import reverse
       <li>${course.display_number_with_default}</li>
 	  % if course.self_paced:
 	  <li>Self-Paced</li>
-	  % else
+	  % else:
       <li>${_("Starts")}: <time itemprop="startDate" datetime="${course.start_datetime_text()}">${course.start_datetime_text()}</time></li>
 	  % endif	  
     </ul>
