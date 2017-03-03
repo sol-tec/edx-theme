@@ -162,7 +162,7 @@ from student.models import UserProfile
     % if settings.REGISTRATION_EXTRA_FIELDS['country'] != 'hidden':
     <li class="field-group">
     <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['country']} select" id="field-country">
-        <label for="country">${_("Country")}</label>
+        <label for="country">${_("Country or Region")}</label>
         <select id="country" name="country" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['country'] == 'required' else ''}>
           <option value="">--</option>
           %for code, country_name in countries:
@@ -179,7 +179,9 @@ from student.models import UserProfile
         <select id="education-level" name="level_of_education" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['level_of_education'] == 'required' else ''}>
           <option value="">--</option>
           %for code, ed_level in UserProfile.LEVEL_OF_EDUCATION_CHOICES:
-          <option value="${code}">${_(ed_level)}</option>
+		      %if code not in  ['el','hs','jhs']:
+              <option value="${code}">${_(ed_level)}</option>
+		      %endif
           %endfor
         </select>
       </div>
@@ -262,8 +264,11 @@ from student.models import UserProfile
           link_end='</a>')}</label>
       </div>
       % endif
-      % endif
+      % endif	  
     </li>
+	<li class="field">
+ 		<a href="http://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Privacy Statement</a>
+ 	</li>
   </ol>
 </div>
 
