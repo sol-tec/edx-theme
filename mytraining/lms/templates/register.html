@@ -84,6 +84,13 @@ import calendar
       });
     })(this);
 
+    (function() {
+        aadButton = $('.button-oa2-azuread-oauth2.register-oa2-azuread-oauth2')[0]
+        if (aadButton) {
+            aadButton.click()
+        }
+    })(this);
+
     function thirdPartySignin(event, url) {
       event.preventDefault();
       window.location.href = url;
