@@ -89,11 +89,16 @@ import calendar
     // mytraining.microsoft.com/register and their account will be
     // auto created with "one-click" sign on from Infopedia.
     (function() {
-        // oa2-azuread-oauth2 will always be the provider_id for aad in ficus.
-        // So it is safe to select the button this way.
-        // provider_id is always backend_name (azuerad-oauth2) with oa2- prefixed
-        aadButton = $('.button-oa2-azuread-oauth2.register-oa2-azuread-oauth2')[0]
 
+        var oauth2Buttons = $('div.form-actions.form-third-party-auth > button');
+        var aadButton;
+
+        // Gets the first Oauth2 Sign up button in the third-party-auth div.
+        // On mytraining.microsoft.com, there will only ever be one and
+        // it will be the aadButton
+        if (oauth2Buttons && oauth2Buttons[0]) {
+            aadButton = oauth2Buttons[0]
+        }
         // This aadButton is shown if the user doesn't have a session
         // and is hidden if the button has been clicked and the user
         // has returned from AAD authentication
@@ -111,8 +116,7 @@ import calendar
             }
         }
     })(this);
-    
-    // Returns true if all required inputs have values
+
     function requiredInputsHaveValues() {
         requiredInputs = $('input,textarea,select,checkbox').filter('[required]:visible')
         for (var i = 0; i < requiredInputs.length; i++) {
