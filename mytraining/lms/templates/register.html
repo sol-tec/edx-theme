@@ -84,6 +84,49 @@ import calendar
       });
     })(this);
 
+    // Handles third party auth with AAD and user account creation
+    // All programmatically so the user can be directed to
+    // mytraining.microsoft.com/register and their account will be
+    // auto created with "one-click" sign on from Infopedia.
+    (function() {
+
+        var oauth2Buttons = $('div.form-actions.form-third-party-auth > button');
+        var aadButton;
+
+        // Gets the first Oauth2 Sign up button in the third-party-auth div.
+        // On mytraining.microsoft.com, there will only ever be one and
+        // it will be the aadButton
+        if (oauth2Buttons && oauth2Buttons[0]) {
+            aadButton = oauth2Buttons[0]
+        }
+        // This aadButton is shown if the user doesn't have a session
+        // and is hidden if the button has been clicked and the user
+        // has returned from AAD authentication
+        if (aadButton) {
+            // First page load (no session) so click the aadButton
+            aadButton.click();
+        } else {
+            // aadButton is hidden because we're back from
+            // AAD Authentication so we check if our form
+            // has all the required values filled out
+            // (meaning we had a successful response from AAD)
+            // If this is the case we submit the form.
+            if (requiredInputsHaveValues()) {
+                $('#register-form').submit();
+            }
+        }
+    })(this);
+
+    function requiredInputsHaveValues() {
+        requiredInputs = $('input,textarea,select,checkbox').filter('[required]:visible')
+        for (var i = 0; i < requiredInputs.length; i++) {
+            if (!requiredInputs[i].value) {
+                return;
+            }
+        }
+        return true;
+    }
+
     function thirdPartySignin(event, url) {
       event.preventDefault();
       window.location.href = url;
