@@ -243,7 +243,7 @@ from student.models import UserProfile
 
       % if has_extauth_info is UNDEFINED or ask_for_tos :
       <div class="field required checkbox" id="field-tos">
-        <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" />
+        <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" checked />
         <label for="tos-yes">${_('I agree to the {link_start}Terms of Service{link_end}').format(
           link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('TOS')),
           link_end='</a>')}</label>
@@ -254,7 +254,7 @@ from student.models import UserProfile
       ## check if we have an Honor Code link in our marketing map
       % if marketing_link('HONOR') and marketing_link('HONOR') != '#':
       <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['honor_code']} checkbox" id="field-honorcode">
-        <input id="honorcode-yes" type="checkbox" name="honor_code" value="true" />
+        <input id="honorcode-yes" type="checkbox" name="honor_code" value="true" checked/>
         <%
   		  # The honor_code link is updated as to go our Disclosure Notice anchor on the Terms Of Service page.
           honor_code_path = marketing_link('DN')
