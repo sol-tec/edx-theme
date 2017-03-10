@@ -122,12 +122,7 @@ from openedx.core.djangolib.markup import HTML, Text
                         </div>
                     </div>
                 % endfor
-            % endif			
-			% if course.self_paced:
-				<h3>${_("Course run end date")}</h3>      
-				<b>${course.end_datetime_text()}</b><br>
-				<br>After this date, the course will be archived. If you enrolled in the course before the run end date, you can still access the course content.<br>			
-			% endif  			
+            % endif
             <h4 class="handouts-header">${_(course.info_sidebar_name)}</h4>
             ${HTML(get_course_info_section(request, masquerade_user, course, 'handouts'))}
         </section>
