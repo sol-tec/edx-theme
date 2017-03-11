@@ -25,29 +25,29 @@ from django.core.urlresolvers import reverse
       else:
           course_date_string = ''
       %>
-	  % if course.self_paced:
-		<div class="course-date" aria-hidden="true">Self-Paced</div>
- 	  % else:
+	  % if course.self_paced == False:
 		  % if course.advertised_start is not None:
 			  <div class="course-date" aria-hidden="true">${_("Starts")}: ${course.advertised_start}</div>
 		  % else:
 			  <div class="course-date localized_datetime" aria-hidden="true" data-format="shortDate" data-datetime="${course_date_string}" data-string="${_("Starts: {date}")}"></div>
 		  % endif
-	  % endif
+	  % else:
+	      <li>Self-Paced</li>
+      % endif	  
     </div>
     <div class="sr">
       <ul>
         <li>${course.display_org_with_default}</li>
         <li>${course.display_number_with_default}</li>
-		% if course.self_paced:
-			<li>Self-Paced</li>
-		% else:
+        % if course.self_paced == False:
 			% if course.advertised_start is not None:
 				<li>${_("Starts")}: <time itemprop="startDate">${course.advertised_start}</time></li>
 			% else:
 				<li>${_("Starts")}: <time class="localized_datetime" itemprop="startDate" data-format="shortDate" data-datetime="${course_date_string}"></time></li>
 			% endif
-		% endif
+		% else:
+	      <li>Self-Paced</li>
+        % endif	  
       </ul>
     </div>
   </a>
