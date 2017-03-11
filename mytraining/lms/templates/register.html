@@ -105,16 +105,19 @@ import calendar
         if (aadButton) {
             // First page load (no session) so click the aadButton
             aadButton.click();
-        } else {
+        } 
+        //else {
             // aadButton is hidden because we're back from
             // AAD Authentication so we check if our form
             // has all the required values filled out
             // (meaning we had a successful response from AAD)
             // If this is the case we submit the form.
-            if (requiredInputsHaveValues()) {
-                $('#register-form').submit();
-            }
-        }
+            
+            // DISABLING for now to make user select Country
+            // if (requiredInputsHaveValues()) {
+            //     $('#register-form').submit();
+            // }
+        //}
     })(this);
 
     function requiredInputsHaveValues() {
