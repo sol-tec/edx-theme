@@ -175,12 +175,13 @@ header.header-global > nav > ol.user > li.primary > a:hover {
     background-color: transparent !important;
     text-decoration: underline !important;
     cursor: pointer !important;
+    color: $ms-color !important;
 }
 
 // Help link to faq page
-header.header-global > nav > a.doc-link:hover {
+header.header-global > nav > a.doc-link:hover, header.header-global > nav > a.doc-link:hover {
     color: $ms-color !important;
-    text-decoration: underline !important;
+    text-decoration: none !important;
     cursor: pointer !important;
 }
 
