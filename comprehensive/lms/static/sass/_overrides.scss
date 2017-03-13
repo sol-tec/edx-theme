@@ -168,17 +168,34 @@ header.header-global .user a.user-link{
 }
 
 header.header-global .primary > a {
-    background-color: transparent
+    background-color: transparent;
+}
+
+header.header-global > nav > ol.user > li.primary > a:hover {
+    background-color: transparent !important;
+    text-decoration: underline !important;
+    cursor: pointer !important;
+    color: $ms-color !important;
+}
+
+// Help link to faq page
+header.header-global > nav > a.doc-link:hover, header.header-global > nav > a.doc-link:focus {
+    color: $ms-color !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
 }
 
 header.header-global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu li>a:focus{
     color: $ms-color !important;
-    text-decoration: underline !important;
 }
 
+// dropdown icon
 .fa-sort-desc:before{
     content:"\f0dd";
-    color:$main-color;
+}
+
+.fa-sort-desc:hover {
+    color: $ms-color !important;
 }
 
 .dashboard .my-courses .empty-dashboard-message a {
@@ -218,12 +235,9 @@ header.header-global .user .dropdown-menu li>a:hover,header.global .user .dropdo
 
 // View on the course view page
 //------------------
-div.course-actions > a.enter-course {
-    background-color: $ms-color;
-}
 
 div.course-actions > a.enter-course:hover {
-    background-color: $ms-primary-button-hover !important;
+    background-color: $ms-color !important;
 }
 
 // The logo height on the course view page when the user signs in
