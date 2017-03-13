@@ -36,13 +36,13 @@ from openedx.core.djangoapps.user_api.accounts.image_helpers import get_profile_
 % else:
     <ol class="user">
         <li class="primary">            
-			<span class="sr">${_("Dashboard for:")}</span>
-			<%
-			username = self.real_user.username
-			profile_image_url = get_profile_image_urls_for_user(self.real_user)['small']
-			%>
-			<img class="user-image-frame" src="${profile_image_url}" alt="">
-			<div class="label-username">${username}</div>            
+            <a class="user-link">
+                <span class="sr">${_("Dashboard for:")}</span>
+                <%
+                username = self.real_user.username
+                %>
+                <div class="label-username">${username}</div>
+            </a>
         </li>
         <li class="primary">
             <div role="group" aria-label="User menu" class="user-menu">

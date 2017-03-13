@@ -79,9 +79,11 @@ site_status_msg = get_site_status_msg(course_id)
         <ol class="left nav-global list-inline authenticated">
         <%block name="navigation_global_links_authenticated">
           % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing:
+          <!--
             <li class="item nav-global-01">
               <a href="${marketing_link('COURSES')}">${_('Explore courses')}</a>
             </li>
+          -->
           % endif
           % if show_program_listing:
             <li class="tab-nav-item">
@@ -104,11 +106,11 @@ site_status_msg = get_site_status_msg(course_id)
         </%block>
       </ol>
 
-      <%include file="user_dropdown.html"/>
-
       <a href="${marketing_link('FAQ')}" 
          target="_blank"
          class="doc-link">${_("Help")}</a>
+
+      <%include file="user_dropdown.html"/>
 
       % if should_display_shopping_cart_func() and not (course and static.is_request_in_themed_site()): # see shoppingcart.context_processor.user_has_cart_context_processor
         <ol class="user">
@@ -137,7 +139,7 @@ site_status_msg = get_site_status_msg(course_id)
           % endif
         </%block>
 
-        <%block name="navigation_other_global_links">
+        <!--<%block name="navigation_other_global_links">
           % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
             % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
               <li class="item nav-global-05">
@@ -145,10 +147,11 @@ site_status_msg = get_site_status_msg(course_id)
               </li>           
             % endif
           % endif
-        </%block>
+        </%block>-->
       </ol>
 
       <ol class="right nav-courseware list-inline">
+        <!--
         <%block name="navigation_sign_in">
 		% if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
 			% if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
@@ -171,6 +174,7 @@ site_status_msg = get_site_status_msg(course_id)
             % endif
           </li>
         </%block>
+        -->
       </ol>
     % endif
     % if static.show_language_selector():

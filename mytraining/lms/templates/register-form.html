@@ -166,7 +166,7 @@ from student.models import UserProfile
         <select id="country" name="country" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['country'] == 'required' else ''}>
           <option value="">--</option>
           %for code, country_name in countries:
-          <option value="${code}" ${'selected' if code == 'US' else ''}>${ unicode(country_name) }</option>
+          <option value="${code}">${ unicode(country_name) }</option>
           %endfor
         </select>
       </div>
