@@ -179,7 +179,7 @@ header.header-global > nav > ol.user > li.primary > a:hover {
 }
 
 // Help link to faq page
-header.header-global > nav > a.doc-link:hover, header.header-global > nav > a.doc-link:hover {
+header.header-global > nav > a.doc-link:hover, header.header-global > nav > a.doc-link:focus {
     color: $ms-color !important;
     text-decoration: none !important;
     cursor: pointer !important;
