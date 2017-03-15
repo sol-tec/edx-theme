@@ -87,7 +87,7 @@ from student.models import UserProfile
     </li>
     <li class="field required text" id="field-username">
       <label for="username">${_('Public Username')}</label>
-      <input readonly id="username" type="text" name="username" value="${username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
+      <input id="username" type="text" name="username" value="${username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
       <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
     </li>
 
