@@ -173,7 +173,7 @@ header.header-global .primary > a {
 
 header.header-global > nav > ol.user > li.primary > a:hover {
     background-color: transparent !important;
-    text-decoration: underline !important;
+    text-decoration: none !important;
     cursor: pointer !important;
     color: $ms-color !important;
 }
@@ -187,6 +187,10 @@ header.header-global > nav > a.doc-link:hover, header.header-global > nav > a.do
 
 header.header-global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu li>a:focus{
     color: $ms-color !important;
+}
+
+header.header-global .user .dropdown {
+    padding: 10px;
 }
 
 // dropdown icon
@@ -255,7 +259,7 @@ header.global.slim h2.course-header {
     margin-top: 1.2em !important;
 }
 
-// Hide the Limited Profile message in My Profile page since we do not let users to enter their age to promote to Full Profile
+// Hide the Limited Profile message in My Profile page since .header-global.slim .nav-main, .header-global.slim .nav-globalwe do not let users to enter their age to promote to Full Profile
 div.wrapper-profile-field-account-privacy {
     display: none !important;
 }
