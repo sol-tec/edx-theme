@@ -187,6 +187,10 @@ header.header-global .user .dropdown-menu li>a:hover,header.global .user .dropdo
     color: $ms-color !important;
 }
 
+header.header-global .user .dropdown {
+    padding: 10px;
+}
+
 // dropdown icon
 .fa-sort-desc:before{
     content:"\f0dd";
