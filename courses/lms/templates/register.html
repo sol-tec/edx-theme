@@ -86,7 +86,7 @@ import calendar
 
     // Handles third party auth with AAD and user account creation
     // All programmatically so the user can be directed to
-    // mytraining.microsoft.com/register and their account will be
+    // courses.microsoft.com/register and their account will be
     // auto created with "one-click" sign on from Infopedia.
     (function() {
 
@@ -94,7 +94,7 @@ import calendar
         var aadButton;
 
         // Gets the first Oauth2 Sign up button in the third-party-auth div.
-        // On mytraining.microsoft.com, there will only ever be one and
+        // On courses.microsoft.com, there will only ever be one and
         // it will be the aadButton
         if (oauth2Buttons && oauth2Buttons[0]) {
             aadButton = oauth2Buttons[0]
