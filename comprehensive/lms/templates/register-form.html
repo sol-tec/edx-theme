@@ -259,7 +259,7 @@ from student.models import UserProfile
   		  # The honor_code link is updated as to go our Disclosure Notice anchor on the Terms Of Service page.
           honor_code_path = marketing_link('DN')
         %>
-        <label for="honorcode-yes">${_('I agree to the {link_start}Honor Code{link_end}').format(
+        <label for="honorcode-yes">${_('I agree to the {link_start}Disclosure Notice{link_end}').format(
           link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=honor_code_path),
           link_end='</a>')}</label>
       </div>
