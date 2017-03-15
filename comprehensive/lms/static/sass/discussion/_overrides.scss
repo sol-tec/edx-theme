@@ -1,0 +1,11 @@
+// Discussion Footer styles to look like the rest of site
+.wrapper-footer {
+        footer#footer-openedx {
+                div.colophon {
+                        float: left;
+                }
+                div.references {
+                        float: right;
+                }
+        }
+}
