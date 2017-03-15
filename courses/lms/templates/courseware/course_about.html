@@ -66,7 +66,7 @@ from openedx.core.lib.courses import course_image_url
       %>
     $('#class_enroll_form').on('ajax:complete', function(event, xhr) {
       if(xhr.status == 200) {
-        location.href = "${reverse('dashboard')}";
+        location.replace('/courses/${course.id}')
       } else if (xhr.status == 403) {
         location.href = "${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}?course_id=${course.id | u}&enrollment_action=enroll";
       } else if (xhr.status == 400) { //This means the user did not have permission
@@ -78,12 +78,12 @@ from openedx.core.lib.courses import course_image_url
       }
     });
 
-    %else:
+    % else:
 
     $('#class_enroll_form').on('ajax:complete', function(event, xhr) {
       if(xhr.status == 200) {
         if (xhr.responseText == "") {
-          location.href = "${reverse('dashboard')}";
+          location.replace('/courses/${course.id}')
         }
         else {
           location.href = xhr.responseText;
@@ -115,7 +115,6 @@ from openedx.core.lib.courses import course_image_url
         <div class="heading-group">
           <h1>
             ${course.display_name_with_default_escaped}
-            <button type="button">${course.display_org_with_default | h}</button>
           </h1>
         </div>
 
