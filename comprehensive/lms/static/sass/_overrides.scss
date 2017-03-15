@@ -171,18 +171,13 @@ header.header-global .primary > a {
     background-color: transparent;
 }
 
-header.header-global > nav > ol.user > li.primary > a:hover {
-    background-color: transparent !important;
-    text-decoration: none !important;
-    cursor: pointer !important;
-    color: $ms-color !important;
-}
-
-// Help link to faq page
-header.header-global > nav > a.doc-link:hover, header.header-global > nav > a.doc-link:focus {
-    color: $ms-color !important;
-    text-decoration: none !important;
-    cursor: pointer !important;
+header.header-global > nav > ol.user > li.primary > a {
+    &:hover, &:focus {
+        background-color: transparent !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        color: $ms-color !important;
+    }
 }
 
 header.header-global .user .dropdown-menu li>a:hover,header.global .user .dropdown-menu li>a:focus{
