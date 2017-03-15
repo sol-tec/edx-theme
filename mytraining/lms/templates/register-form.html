@@ -77,17 +77,17 @@ from student.models import UserProfile
   <ol class="list-input">
     <li class="field required text" id="field-email">
       <label for="email">${_('E-mail')}</label>
-      <input class="" id="email" type="email" name="email" value="${email}" maxlength="254" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
+      <input readonly class="" id="email" type="email" name="email" value="${email}" maxlength="254" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
     </li>
 
     <li class="field required text" id="field-name">
       <label for="name">${_('Full Name')}</label>
-      <input id="name" type="text" name="name" value="${name}" maxlength="61" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
+      <input readonly id="name" type="text" name="name" value="${name}" maxlength="61" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
       <span class="tip tip-input" id="name-tip">${_("Your legal name, used for any certificates you earn.")}</span>
     </li>
     <li class="field required text" id="field-username">
       <label for="username">${_('Public Username')}</label>
-      <input id="username" type="text" name="username" value="${username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
+      <input readonly id="username" type="text" name="username" value="${username}" maxlength="30" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
       <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
     </li>
 
