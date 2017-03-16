@@ -53,7 +53,7 @@ html {
 }
 
 //------------------
-// Registration Page
+// Registration Prage
 //------------------
 // The register button on the registration page
 .register-button{
@@ -301,6 +301,11 @@ body.ltr {
     background-color: $main-color;
 }
 
+// Account Settings hiding Order History
+button#orders-tab {
+    display: none;
+}
+
 //-----------------
 // Hide the image on the password reset page
 //-----------------
@@ -411,3 +416,4 @@ table.faq-table {
     cursor: pointer;
     font-weight: 600;
 }
+
