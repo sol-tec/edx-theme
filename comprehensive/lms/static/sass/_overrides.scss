@@ -217,20 +217,7 @@ header.header-global .user .dropdown {
 .accomplishment-rendering {
     border-top: 0;
     top: inherit;
-
-    // Fixing Certificate styling
-    div.ar-header { 
-        width: 100%;
-        border-bottom: 7px solid $ms-cert-border;
-    }
-    div.ar-body, div.ar-footer {
-        width: 100%;
-    }
-    div.ar-ribbon {
-        display: none;
-    }
 }
-
 
 .wrapper-accomplishment-rendering {
     padding: 30px 2.85714%;
