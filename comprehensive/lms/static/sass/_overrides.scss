@@ -217,6 +217,18 @@ header.header-global .user .dropdown {
 .accomplishment-rendering {
     border-top: 0;
     top: inherit;
+
+    // Fixing Certificate styling
+    div.ar-header { 
+        width: 100%;
+        border-bottom: 7px solid $ms-cert-border;
+    }
+    div.ar-body, div.ar-footer {
+        width: 100%;
+    }
+    div.ar-ribbon {
+        display: none;
+    }
 }
 
 
@@ -301,8 +313,8 @@ body.ltr {
     background-color: $main-color;
 }
 
-// Account Settings hiding Order History
-button#orders-tab {
+// Account Settings hiding Order History and Linked Accounts tabs
+button#orders-tab, button#accounts-tab {
     display: none;
 }
 
