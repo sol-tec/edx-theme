@@ -119,13 +119,11 @@ from third_party_auth import provider, pipeline
       var $submitButton = $('form .form-actions #submit');
 
       if(enable) {
-        console.log('ENABLING SUBMIT BUTTON AGAIN.')
         $submitButton.
           removeClass('is-disabled').
           attr('aria-disabled', false).
           prop('disabled', false).
           html("${_('Sign into My {platform_name} Account').format(platform_name=platform_name)} <span class='orn-plus'>+</span> ${_('Access My Courses')}");
-        console.log('DISABLED:', $submitButton.attr('disabled'))
       }
       else {
         $submitButton.
