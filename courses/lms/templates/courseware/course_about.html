@@ -6,9 +6,13 @@ from courseware.courses import get_course_about_section
 from django.conf import settings
 from edxmako.shortcuts import marketing_link
 from openedx.core.lib.courses import course_image_url
+from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 %>
-
 <%inherit file="../main.html" />
+<%
+   my_course_org_filter = configuration_helpers.get_value('course_org_filter')
+%>
+% if my_course_org_filter == course.display_org_with_default and user.is_authenticated():
 <%block name="headextra">
   ## OG (Open Graph) title and description added below to give social media info to display
   ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
@@ -66,7 +70,7 @@ from openedx.core.lib.courses import course_image_url
       %>
     $('#class_enroll_form').on('ajax:complete', function(event, xhr) {
       if(xhr.status == 200) {
-        location.replace('/courses/${course.id}')
+        location.replace('/courses/${course.id}') 
       } else if (xhr.status == 403) {
         location.href = "${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}?course_id=${course.id | u}&enrollment_action=enroll";
       } else if (xhr.status == 400) { //This means the user did not have permission
@@ -78,12 +82,12 @@ from openedx.core.lib.courses import course_image_url
       }
     });
 
-    % else:
+    %else:
 
     $('#class_enroll_form').on('ajax:complete', function(event, xhr) {
       if(xhr.status == 200) {
         if (xhr.responseText == "") {
-          location.replace('/courses/${course.id}')
+          location.replace('/courses/${course.id}') 
         }
         else {
           location.href = xhr.responseText;
@@ -350,3 +354,4 @@ from openedx.core.lib.courses import course_image_url
 <%static:require_module_async module_name="js/dateutil_factory" class_name="DateUtilFactory">
     DateUtilFactory.transform(iterationKey=".localized_datetime");
 </%static:require_module_async>
+% endif
