@@ -151,4 +151,6 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 <%static:require_module_async module_name="js/dateutil_factory" class_name="DateUtilFactory">
     DateUtilFactory.transform(iterationKey=".localized-datetime");
 </%static:require_module_async>
+% else:
+<div>Unauthorized access. Error Code: 1003</div>
 % endif
