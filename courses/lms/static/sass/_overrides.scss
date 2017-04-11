@@ -324,6 +324,9 @@ body.ltr {
                 float: left;
                 margin: 0 20px 20px 0;
             }
+            .nav-colophon a {
+                color:$ms-color !important;
+            }
             .nav-colophon a:hover{
                 text-decoration:underline;
                 color:$ms-color !important;
@@ -335,10 +338,6 @@ body.ltr {
             float: right;
         }
 
-        // test if below hover is needed? 
-        a:hover {
-            text-decoration: underline !important;
-        }
     }
 
     .copyright {
