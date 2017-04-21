@@ -155,6 +155,12 @@ div.cta-login-action {
  text-decoration: underline !important;
 }
 
+//link style
+p a{&:hover, &:focus {
+ color: $ms-color !important;
+ }
+}
+
 //------------------
 // View when the user logged in
 //------------------
@@ -236,6 +242,15 @@ header.header-global .user .dropdown {
 
 div.course-actions > a.enter-course:hover {
     background-color: $ms-color !important;
+}
+
+//text - selfpaced written on course container
+.courses-container .courses .courses-listing li{
+    margin: auto;
+    line-height: 20.72px;
+    padding: 2px 15px;
+    font-size: 14px;
+    color: #474747;
 }
 
 // The logo height on the course view page when the user signs in
