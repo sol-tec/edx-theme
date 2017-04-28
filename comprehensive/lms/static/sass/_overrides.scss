@@ -53,8 +53,8 @@ html {
 }
 
 // Sign in button hover
-.header-global .nav-courseware li .btn:hover {
-	color: $main-color !important;
+.header-global .nav-courseware li .btn:hover{
+    color: $main-color !important;
 }
 
 //------------------
@@ -168,7 +168,7 @@ p a{&:hover, &:focus {
 
 a{&:hover, &:focus {
  color:$ms-color !important;	
-}
+ }
 }
 
 
@@ -227,7 +227,7 @@ header.header-global .user .dropdown {
     border-top: none !important;
 }
 
-.dashboard .my-courses .course .details .enter-course {&:hover, &:focus {
+.dashboard .my-courses .course .details .enter-course {&:hover, &:focus{
     color :$main-color !important;
 } 
 }
