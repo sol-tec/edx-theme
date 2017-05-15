@@ -69,7 +69,7 @@ import calendar
 	
 	if (json.field === 'email') {
 		var emailVal = $('#register-form input#email').val()
-		if (emailVal.indexOf('@microsoft.com') > -1) {
+		if (emailVal.toLowerCase().indexOf('@microsoft.com') > -1) {
 			json.value = 'It looks like ' + _.escape(emailVal) + ' belongs to a reserved domain. Please enter a different email address.'
 		}
 	}	
