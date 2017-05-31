@@ -12,6 +12,7 @@ branches:
   # - oxa/devfic
   # Testing CI Branch
   - oxa/ci
+  - btelnes
 
 # command to run tests
 script: ./scripts/travis-tests.sh
