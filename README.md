@@ -1,5 +1,6 @@
 Overview
 ========
+![CI Tags](https://travis-ci.org/Microsoft/edx-theme.svg?branch=master)
 These are comprehensive theming folders
 
 License
