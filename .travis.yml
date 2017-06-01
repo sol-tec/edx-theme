@@ -43,7 +43,7 @@ install:
   - sudo apt-get update
   - sudo apt-get install libxmlsec1-dev
   - sudo apt-get install swig
-- if [ -e requirements/edx/post.txt ]; then pip install --exists-action w -r requirements/edx/post.txt ; fi
+  - if [ -e requirements/edx/post.txt ]; then pip install --exists-action w -r requirements/edx/post.txt ; fi
 
 # command to run tests
 script: ./scripts/travis-tests.sh
