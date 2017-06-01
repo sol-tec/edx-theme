@@ -6,7 +6,7 @@ if ! id -u edxapp > /dev/null 2>&1; then
   #sudo usermod --password P@$$sw0rd edxapp
 fi
 
-sudo -H -u edxapp bash
+#sudo -H -u edxapp bash
 #source /edx/app/edxapp/edxapp_env
 #cd /edx/app/edxapp/edx-platform
 
