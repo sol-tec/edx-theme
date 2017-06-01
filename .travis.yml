@@ -20,8 +20,8 @@ branches:
 
 # command to install dependencies
 install:   
-  - git clone https://github.com/Microsoft/edx-platform.git /edx/app/edxapp/edx-platform
-  - cd /edx/app/edxapp/edx-platform
+  - git clone https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
+  - cd edx/app/edxapp/edx-platform
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install 6.9.4
   - npm install
 
