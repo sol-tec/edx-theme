@@ -23,7 +23,9 @@ install:
   - git clone https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
   - cd edx/app/edxapp/edx-platform
 
+  - pip install --exists-action w -r requirements/edx-sandbox/base.txt
   - pip install --exists-action w -r requirements/edx-sandbox/local.txt
+  - pip install --exists-action w -r requirements/edx-sandbox/post.txt
   - sudo apt-get install ansible
   - git clone https://github.com/Microsoft/edx-configuration.git
   - cd edx-configuration/playbooks
