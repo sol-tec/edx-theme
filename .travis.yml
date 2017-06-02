@@ -26,16 +26,17 @@ before_install:
 install:
   - git clone https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
   - git clone https://github.com/Microsoft/edx-configuration.git
-
+  - pushd .
   - cd edx/app/edxapp/edx-platform
 
   - pip install --exists-action w -r requirements/edx-sandbox/base.txt
   - pip install --exists-action w -r requirements/edx-sandbox/local.txt
   - pip install --exists-action w -r requirements/edx-sandbox/post.txt
-  
-  - cd ../../../edx-configuration/playbooks
+  - cd popd
+  - pushd .
+  - cd edx-configuration/playbooks
   - sudo ansible-playbook -i localhost, -c local edx_sandbox.yml --tags "edxapp"
-
+  - cd popd
   - cd ../../edx/app/edxapp/edx-platform
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install 6.9.4
   - npm install
