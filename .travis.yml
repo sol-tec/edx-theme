@@ -33,10 +33,10 @@ install:
   - pip install --exists-action w -r requirements/edx-sandbox/local.txt
   - pip install --exists-action w -r requirements/edx-sandbox/post.txt
   
-  - cd edx-configuration/playbooks
+  - cd ../../../edx-configuration/playbooks
   - sudo ansible-playbook -i localhost, -c local edx_sandbox.yml --tags "edxapp"
 
-  - cd edx/app/edxapp/edx-platform
+  - cd ../../edx/app/edxapp/edx-platform
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install 6.9.4
   - npm install
 
