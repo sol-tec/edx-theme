@@ -22,7 +22,8 @@ branches:
 install:
   - sudo apt-get install ansible
   - git clone https://github.com/Microsoft/edx-configuration.git
-  - sudo ansible-playbook -i localhost, -c local ./edx_configuration/playbooks/edx_sandbox.yml --tags "edxapp"
+  - cd edx-configuration/playbooks
+  - sudo ansible-playbook -i localhost, -c local edx_sandbox.yml --tags "edxapp"
   - git clone https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
   - cd edx/app/edxapp/edx-platform
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install 6.9.4
