@@ -1,28 +1,13 @@
 /* Microsoft customization: Adding cookie related JS functions */
-
 oxa = window.oxa || {};
 
 (function (namespace) {
     namespace.cookieBanner = cookieBanner;
     var proto = cookieBanner.prototype;
-    var consentCookieName = "MSCC";
 
     // constructor
     function cookieBanner() {
         var self = this;
-
-        // track the user clicks, anchor/button and exclude the LearnMore link on the banner itself
-        $(document).ready(function () {
-            if (self.getCookie(consentCookieName) !== "true") {
-                $("a, button").on("click", function () {
-                    if (this.id !== "btnPrivacy") {
-                        self.closeCookieBanner();
-                    }
-                });
-            } else {
-                self.closeCookieBanner();
-            }
-        });
     };
 
     // sets the cookie given name, value and expiration days
@@ -50,7 +35,7 @@ oxa = window.oxa || {};
         return "false";
     };
 
-    // closes down the cookie banner by setting the cookie-banner cookie and unregisters the click events
+    // closes down the cookie banner by setting the cookie-banner cookie
     proto.closeCookieBanner = function () {
         var cookieContainer = document.getElementById("cookie-notice");
         if (cookieContainer) {
@@ -60,10 +45,7 @@ oxa = window.oxa || {};
         if (navWrapper.length > 0) {
             navWrapper[0].className = "nav-wrapper";
         }
-        this.setCookie(consentCookieName, "true", 365);
-
-        //unregister the anchor/button clicks so we don't keep tracking if the consent is already given
-        $("a, button").off("click");
+        this.setCookie("cookie-banner", "true", 365);
     };
 }
 
