@@ -21,6 +21,7 @@ branches:
 before_install:
   - sudo apt-get -y update -qq
   - pip install ansible
+  - pip install datadog
 
 # command to install dependencies
 install:
@@ -41,6 +42,7 @@ install:
   #- cd edx-configuration/playbooks
   #- sudo ansible-playbook -i localhost, -c local edx_sandbox.yml --tags "edxapp"
 
+  - sudo rm -R ./edx/app/edx_ansible/edx_ansible/playbooks/callback_plugins
   - ansible-playbook -i localhost, -c local ./edx/app/edx_ansible/edx_ansible/playbooks/edx_sandbox.yml --tags "edxapp" -vvv
 
   #- popd
