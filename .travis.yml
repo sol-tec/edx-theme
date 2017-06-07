@@ -2,9 +2,6 @@ language: python
 python:
   - "2.7"
 
-env: NGOK_TOKEN=2hhoRR1JrGeoN8mmDAA6h_7499k89VfEAFTc55YmaLV
-
-
 services:
   - docker
 
@@ -22,7 +19,6 @@ branches:
   - btelnes
 
 before_install:
-  - eval "$(curl -sL https://raw.github.com/fniephaus/travis-remote-shell/master/run.sh)"
   - sudo apt-get -y update
   - sudo apt-get -y install ansible
 
