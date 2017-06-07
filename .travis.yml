@@ -28,10 +28,10 @@ install:
   - "printf '[defaults]\nroles_path = /edx/app/edxapp/edx-platform/playbooks/roles' > ansible.cfg"
 
   - git clone https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
-  - git clone https://github.com/Microsoft/edx-configuration.git
+  - git clone https://github.com/Microsoft/edx-configuration.git edx/app/edx_ansible/edx_ansible
 
   # Check the role/playbook syntax
-  - ansible-playbook -i ./scripts/inventory /edx/app/edxapp/edx-platform/playbooks/edx_sandbox.yml --syntax-check 
+  - ansible-playbook -i ./scripts/inventory /edx/app/edx_ansible/edx_ansible/playbooks/edx_sandbox.yml --syntax-check 
 
   #- pushd .
   #- cd ./edx/app/edxapp/edx-platform
