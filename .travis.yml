@@ -25,7 +25,7 @@ before_install:
 # command to install dependencies
 install:
   # Add ansible.cfg
-  - "printf '[defaults]\nroles_path = /edx/app/edxapp/edx-platform/playbooks/roles' > ansible.cfg"
+  #- "printf '[defaults]\nroles_path = /edx/app/edxapp/edx-platform/playbooks/roles' > ansible.cfg"
 
   - git clone https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
   - git clone https://github.com/Microsoft/edx-configuration.git edx/app/edx_ansible/edx_ansible
