@@ -1,7 +1,7 @@
 # Explicitly select the default infrastructure
-sudo: true
+#sudo: true
 language: python
-dist: precise
+#dist: precise
 
 python:
   - "2.7"
@@ -38,7 +38,7 @@ install:
   #- sudo -H apt-get install python-pymongo
   - sudo pip install setuptools --upgrade
   #- cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost," -vvv --extra-vars "OPENEDX_RELEASE=open-release/ficus.1,ansible_distribution='Ubuntu',ansible_distribution_release='xenial'"
-  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost," -vvv
+  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-devstack.yml -i "localhost," -vvv
 
   #- git clone -b oxa/master.fic  https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
   #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git edx/app/edx_ansible/edx_ansible
