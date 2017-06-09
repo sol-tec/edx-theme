@@ -22,7 +22,7 @@ before_install:
   - sudo apt-get -y update -qq
   #- pip install ansible
   - pip install datadog
-  - sudo apt-get install python-pymongo
+  - pip uninstall pymongo bson
 
 # command to install dependencies
 install:
