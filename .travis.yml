@@ -1,3 +1,4 @@
+dist: xenial
 language: python
 python:
   - "2.7"
@@ -31,7 +32,7 @@ install:
   - sudo -H pip install -r pre-requirements.txt
   - sudo -H pip install -r requirements.txt
   - sudo pip install setuptools --upgrade
-  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant_fullstack.yml -i "localhost," -vvv
+  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost," -vvv
 
   #- git clone -b oxa/master.fic  https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
   #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git edx/app/edx_ansible/edx_ansible
