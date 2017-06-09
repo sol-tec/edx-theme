@@ -25,25 +25,31 @@ before_install:
 
 # command to install dependencies
 install:
-  - git clone https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
-  - git clone https://github.com/Microsoft/edx-configuration.git edx/app/edx_ansible/edx_ansible
+  - git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
+  - cd /var/tmp/configuration
+  - sudo pip install -r requiremetns.txt
+  - sudo pip install setuptools --upgrade
+  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost,"
+
+  #- git clone -b oxa/master.fic  https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
+  #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git edx/app/edx_ansible/edx_ansible
 
   # Check the role/playbook syntax
   #- ansible-playbook -i ./scripts/inventory ./edx/app/edx_ansible/edx_ansible/playbooks/edx_sandbox.yml --syntax-check 
 
-  - pushd .
-  - cd ./edx/app/edxapp/edx-platform
+  #- pushd .
+  #- cd ./edx/app/edxapp/edx-platform
 
-  - pip install --exists-action w -r requirements/edx-sandbox/base.txt
-  - pip install --exists-action w -r requirements/edx-sandbox/local.txt
-  - pip install --exists-action w -r requirements/edx-sandbox/post.txt
-  - popd
-  - pushd .
+  #- pip install --exists-action w -r requirements/edx-sandbox/base.txt
+  #- pip install --exists-action w -r requirements/edx-sandbox/local.txt
+  #- pip install --exists-action w -r requirements/edx-sandbox/post.txt
+  #- popd
+  #- pushd .
   #- cd edx-configuration/playbooks
   #- sudo ansible-playbook -i localhost, -c local edx_sandbox.yml --tags "edxapp"
 
-  - sudo rm -R ./edx/app/edx_ansible/edx_ansible/playbooks/callback_plugins
-  - ansible-playbook -i localhost, -c local ./edx/app/edx_ansible/edx_ansible/playbooks/edx_sandbox.yml --tags "install" -vvv
+  #- sudo rm -R ./edx/app/edx_ansible/edx_ansible/playbooks/callback_plugins
+  #- ansible-playbook -i localhost, -c local ./edx/app/edx_ansible/edx_ansible/playbooks/edx_sandbox.yml --tags "install" -vvv
 
   #- popd
   #- cd ../../edx/app/edxapp/edx-platform
@@ -71,6 +77,10 @@ install:
   #- sudo apt-get install libxmlsec1-dev
   #- sudo apt-get install swig
   #- if [ -e requirements/edx/post.txt ]; then pip install --exists-action w -r requirements/edx/post.txt ; fi
+
+
+  
+
 
 # command to run tests
 script: ./scripts/travis-tests.sh
