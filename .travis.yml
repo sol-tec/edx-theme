@@ -1,5 +1,5 @@
 # Explicitly select the default infrastructure
-sudo: false
+sudo: required
 dist: xenial
 
 language: python
