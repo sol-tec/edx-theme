@@ -31,7 +31,7 @@ install:
   - cd /var/tmp/configuration
   - sudo -H pip install -r pre-requirements.txt
   - sudo -H pip install -r requirements.txt
-  - sudo -H pip uninstall pymongo
+  - sudo -H pip uninstall -y pymongo
   - sudo -H apt-get install python-pymongo
   - sudo pip install setuptools --upgrade
   - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost," -vvv --extra-vars "OPENEDX_RELEASE=open-release/ficus.1,ansible_distribution='Ubuntu',ansible_distribution_release='xenial'"
