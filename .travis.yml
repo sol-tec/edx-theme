@@ -1,6 +1,6 @@
 # Explicitly select the default infrastructure
 sudo: required
-dist: xenial
+dist: precise
 
 language: python
 python:
