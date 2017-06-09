@@ -22,8 +22,8 @@ branches:
 before_install:
   - sudo apt-get -y update -qq
   #- pip install ansible
-  - pip install datadog
-  - sudo -H apt-get install python-pymongo
+  #- pip install datadog
+  #- sudo -H apt-get install python-pymongo
 
 # command to install dependencies
 install:
@@ -32,7 +32,7 @@ install:
   - sudo -H pip install -r pre-requirements.txt
   - sudo -H pip install -r requirements.txt
   - sudo pip install setuptools --upgrade
-  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-fullstack.yml -i "localhost," -vvv
+  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost," -vvv
 
   #- git clone -b oxa/master.fic  https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
   #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git edx/app/edx_ansible/edx_ansible
