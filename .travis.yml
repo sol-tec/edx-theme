@@ -45,7 +45,7 @@ install:
   - sudo bash util/install/ansible-bootstrap.sh -O
   - OPENEDX_RELEASE=open-release/ficus.1
   - export OPENEDX_RELEASE
-  - bash util/install/install_stack.sh -v devstack $OPENEDX_RELEASE
+  - bash util/install/install_stack.sh -v devstack OPENEDX_RELEASE
 
 
   #- sudo -H pip install -r pre-requirements.txt
