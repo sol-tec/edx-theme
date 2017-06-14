@@ -35,7 +35,6 @@ before_install:
   #- sudo -H apt-get install python-pymongo
   #- sudo apt-get install git
 
-  - sudo apt-get install pathlib2
   - sudo apt-get install vagrant  
 
 # command to install dependencies
