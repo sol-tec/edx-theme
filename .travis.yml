@@ -43,7 +43,7 @@ install:
   - git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
   - cd /var/tmp/configuration
   - sudo bash util/install/ansible-bootstrap.sh -O
-  - bash util/install/install_stack.sh -v devstack
+  - bash util/install/install_stack.sh -v devstack open-release/ficus.1
 
 
   #- sudo -H pip install -r pre-requirements.txt
