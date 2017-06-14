@@ -31,6 +31,11 @@ before_install:
 
 # command to install dependencies
 install:
+  - sudo mkdir /oxa
+  - cd /oxa
+  - git clone -b oxa/devfic https://github.com/Microsoft/oxa-tools.git
+  - sudo bash /oxa/oxa-tools/scripts/bootstrap.sh -r devstack -e dev -a 2552d19d60c686494833d4e8fb7248a36635559d
+
   #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
   #- cd /var/tmp/configuration
   #- sudo -H pip install -r pre-requirements.txt
@@ -92,6 +97,6 @@ install:
 
 
 # command to run tests
-#script: ./scripts/travis-tests.sh
+script: ./scripts/travis-tests.sh
 
 dist: trusty
