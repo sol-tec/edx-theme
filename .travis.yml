@@ -25,24 +25,31 @@ branches:
 before_install:
   - docker run --rm --privileged -v /:/host solita/ubuntu-systemd setup
   - docker run -d --name systemd --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t solita/ubuntu-systemd
+  - docker logs systemd
+  - docker exec systemd journalctl
+
   #- docker-compose up --build -d
-  #- sudo apt-get -y update -qq
+  - sudo apt-get -y update -qq
   #- pip install ansible
   #- pip install datadog
   #- sudo -H apt-get install python-pymongo
   #- sudo apt-get install git
 
+  
+
 # command to install dependencies
 install:
-  - docker logs systemd
-  - docker exec systemd journalctl
 
   - git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
   - cd /var/tmp/configuration
-  - sudo -H pip install -r pre-requirements.txt
-  - sudo -H pip install -r requirements.txt
-  - sudo pip install setuptools --upgrade
-  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-devstack.yml -i "localhost," -vvv
+  - sudo bash util/install/ansible-bootstrap.sh -O
+  - bash util/install/install_stack.sh -v devstack
+
+
+  #- sudo -H pip install -r pre-requirements.txt
+  #- sudo -H pip install -r requirements.txt
+  #- sudo pip install setuptools --upgrade
+  #- cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-devstack.yml -i "localhost," -vvv
 
   #- cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost," -vvv --extra-vars "OPENEDX_RELEASE=open-release/ficus.1,ansible_distribution='Ubuntu',ansible_distribution_release='xenial'"
 
