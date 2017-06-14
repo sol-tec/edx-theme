@@ -23,20 +23,19 @@ branches:
   - btelnes
 
 before_install:
-  - docker-compose up --build -d
+  - docker run --rm --privileged -v /:/host solita/ubuntu-systemd setup
+  - docker run -d --name systemd --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t solita/ubuntu-systemd
+  #- docker-compose up --build -d
   #- sudo apt-get -y update -qq
   #- pip install ansible
   #- pip install datadog
   #- sudo -H apt-get install python-pymongo
-  - sudo apt-get install git
+  #- sudo apt-get install git
 
 # command to install dependencies
 install:
-  - sudo mkdir /oxa
-  - cd /oxa
-  - git clone -b oxa/devfic https://github.com/Microsoft/oxa-tools.git
-  - sudo bash /oxa/oxa-tools/scripts/bootstrap.sh -r devstack -e dev -a 2552d19d60c686494833d4e8fb7248a36635559d
-
+  - docker logs systemd
+  - docker exec systemd journalctl
   #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
   #- cd /var/tmp/configuration
   #- sudo -H pip install -r pre-requirements.txt
