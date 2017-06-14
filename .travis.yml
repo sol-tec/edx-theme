@@ -36,12 +36,13 @@ before_install:
 install:
   - docker logs systemd
   - docker exec systemd journalctl
-  #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
-  #- cd /var/tmp/configuration
-  #- sudo -H pip install -r pre-requirements.txt
-  #- sudo -H pip install -r requirements.txt
-  #- sudo pip install setuptools --upgrade
-  #- cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-devstack.yml -i "localhost," -vvv
+
+  - git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
+  - cd /var/tmp/configuration
+  - sudo -H pip install -r pre-requirements.txt
+  - sudo -H pip install -r requirements.txt
+  - sudo pip install setuptools --upgrade
+  - cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-devstack.yml -i "localhost," -vvv
 
   #- cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost," -vvv --extra-vars "OPENEDX_RELEASE=open-release/ficus.1,ansible_distribution='Ubuntu',ansible_distribution_release='xenial'"
 
