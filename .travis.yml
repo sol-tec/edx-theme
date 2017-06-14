@@ -28,6 +28,7 @@ before_install:
   #- pip install ansible
   #- pip install datadog
   #- sudo -H apt-get install python-pymongo
+  - sudo apt-get install git
 
 # command to install dependencies
 install:
