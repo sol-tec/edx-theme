@@ -44,7 +44,7 @@ install:
   - cd /var/tmp/configuration
   - sudo bash util/install/ansible-bootstrap.sh -O
   - export OPENEDX_DEBUG=1
-  - export OPENEDX_RELEASE=open-release/ficus.1
+  - export OPENEDX_RELEASE="open-release/ficus.1"
   - bash util/install/install_stack.sh -v devstack $OPENEDX_RELEASE
 
 
