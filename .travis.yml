@@ -43,8 +43,8 @@ install:
   - git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
   - cd /var/tmp/configuration
   - sudo bash util/install/ansible-bootstrap.sh -O
-  - OPENEDX_RELEASE=open-release/ficus.3
-  - export OPENEDX_RELEASE
+  - export OPENEDX_DEBUG=1
+  - export OPENEDX_RELEASE=open-release/ficus.1
   - bash util/install/install_stack.sh -v devstack $OPENEDX_RELEASE
 
 
