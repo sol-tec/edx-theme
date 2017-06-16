@@ -1,1 +1,1 @@
-FROM solita/docker-systemd:latest
+FROM solita/docker-systemd
