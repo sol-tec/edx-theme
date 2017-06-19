@@ -13,12 +13,16 @@ html {
 //-----------------
 // Header Styling
 //-----------------
+.home {
+    background-color: #C8C8C8;      
+}
 .home > header {
     height: 375;
     background-position: center top;
 
     .outer-wrapper {
-	     padding: 120px 0 !important;
+         opacity: 0.7;
+	  padding: 120px 0 !important;
     }
 }
 
