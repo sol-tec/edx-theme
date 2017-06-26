@@ -23,6 +23,8 @@ before_install:
   - docker run -d --name devstack --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t btelnes/devstack
   - docker ps
   - docker run btelnes/devstack /bin/bash -c "sudo -u mongodb mongod --repair --dbpath /var/lib/mongodb/; sudo service mongod start"
+  - docker run btelnes/devstack /bin/bash -c "sudo service mongod start"
+
   # Fix an issue caused by /var/lib/mongodb/mongod.lock (Exception in initAndListen: 12596 old lock file)
   #- sudo -u mongodb mongod --repair --dbpath /var/lib/mongodb/
   #- sudo service mongod start  
