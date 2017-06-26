@@ -96,6 +96,6 @@ install:
 
 
 # command to run tests
-script: ./scripts/travis-tests.sh
+script: ./scripts/travis-test.sh
 
 dist: trusty
