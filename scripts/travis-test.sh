@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-docker  exec -i -t devstack /bin/bash
-
-sudo su edxapp
+docker exec -d devstack sudo su edxapp
 
 # Updates requirements and compiles javascript, Sass and CoffeeScript
-paver update_assets
+docker exec -d paver update_assets
 
