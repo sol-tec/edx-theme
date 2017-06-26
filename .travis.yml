@@ -15,28 +15,17 @@ cache:
 
 branches:
   only:
-  # - master
-  # - oxa/master.fic
-  # - oxa/devfic
-  # Testing CI Branch
-  # - oxa/ci
   - btelnes
 
 before_install:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - docker pull btelnes/devstack
   - docker run -d --name devstack --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t btelnes/devstack
-  - docker logs systemd
-  - docker exec systemd journalctl
-
-  #- docker-compose up --build -d
-  - sudo apt-get -y update -qq
-  #- pip install ansible
-  #- pip install datadog
-  #- sudo -H apt-get install python-pymongo
-  #- sudo apt-get install git
-
-  #- sudo apt-get install vagrant  
+  - docker logs devstack
+  - docker exec devstack journalctl
+  # Fix an issue caused by /var/lib/mongodb/mongod.lock (Exception in initAndListen: 12596 old lock file)
+  - sudo -u mongodb mongod --repair --dbpath /var/lib/mongodb/
+  - sudo service mongod start  
 
 # command to install dependencies
 install:
