@@ -1,1 +1,0 @@
-FROM solita/docker-systemd

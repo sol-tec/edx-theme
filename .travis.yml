@@ -23,8 +23,9 @@ branches:
   - btelnes
 
 before_install:
-  - docker run --rm --privileged -v /:/host solita/ubuntu-systemd setup
-  - docker run -d --name systemd --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t solita/ubuntu-systemd
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker pull btelnes/devstack
+  - docker run -d --name devstack --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t btelnes/devstack
   - docker logs systemd
   - docker exec systemd journalctl
 
