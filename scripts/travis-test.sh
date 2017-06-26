@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-sudo -H -u edxapp bash
-source /edx/app/edxapp/edxapp_env
-cd /edx/app/edxapp/edx-platform
+docker  exec -i -t devstack /bin/bash
+
+sudo su edxapp
 
 # Updates requirements and compiles javascript, Sass and CoffeeScript
 paver update_assets
