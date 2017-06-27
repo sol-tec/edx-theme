@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 docker run -i btelnes/devstack /bin/bash -s <<EOF
-sudo su edxapp
+sudo su edxapp -s /bin/bash
+source /edx/app/edxapp/edxapp_env
+cd /edx/app/edxapp/edx-platform
 paver update_assets
 EOF
 

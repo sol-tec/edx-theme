@@ -15,7 +15,7 @@ cache:
 
 branches:
   only:
-  - btelnes
+  - kabir/ci
 
 before_install:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
