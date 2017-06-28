@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker run -i btelnes/devstack /bin/bash -s <<EOF
+docker exec -it devstack /bin/bash -s <<EOF
 sudo su edxapp
 source /edx/app/edxapp/edxapp_env
 cd /edx/app/edxapp/edx-platform
