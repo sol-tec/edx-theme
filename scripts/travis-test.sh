@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker exec -it devstack /bin/bash -s <<EOF
+docker exec -i devstack /bin/bash -s <<EOF
 sudo su edxapp
 source /edx/app/edxapp/edxapp_env
 cd /edx/app/edxapp/edx-platform
