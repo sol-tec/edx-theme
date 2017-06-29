@@ -8,7 +8,7 @@ docker exec -i devstack /bin/bash -s <<EOF
 sudo su edxapp
 cd /edx/app/edxapp
 rm -r -d -f themes
-sudo git clone -b oxa/devfic https://github.com/Microsoft/edx-theme.git themes
+git clone -b oxa/devfic https://github.com/Microsoft/edx-theme.git themes
 source /edx/app/edxapp/edxapp_env
 cd /edx/app/edxapp/edx-platform
 # Updates requirements and compiles javascript, Sass and CoffeeScript
