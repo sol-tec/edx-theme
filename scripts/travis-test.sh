@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 docker exec -i devstack /bin/bash -s <<EOF
+ps -Af | grep mysqld
+sudo systemctl start mysql.service
 sudo su edxapp
 cd /edx/app/edxapp
 rm -r -d -f themes
