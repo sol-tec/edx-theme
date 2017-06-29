@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 docker exec -i devstack /bin/bash -s <<EOF
-mkdir /tmp/edx-theme
+sudo mkdir /tmp/edx-theme
 cd /tmp/edx-theme
 sudo git clone -b oxa/devfic https://github.com/Microsoft/edx-theme.git
 cp -r -u /tmp/edx-theme /edx/app/edxapp/themes
