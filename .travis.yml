@@ -15,6 +15,7 @@ branches:
 # command to install dependencies
 # Note: Keep this to avoid "Could not locate requirements.txt.  Override the install: key in your .travis.yml to install dependencies"
 install:
+  - bash ./scripts/travis-install.sh
 
 before_install:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
