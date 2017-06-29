@@ -18,12 +18,6 @@ before_install:
   - docker run -d --name devstack --add-host "localhost preview.localhost":127.0.0.1 --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t btelnes/devstack
   - docker ps -a
 
-# command to install dependencies
-install:
-  # Fix an issue caused by /var/lib/mongodb/mongod.lock (Exception in initAndListen: 12596 old lock file)
-  - sudo -u mongodb mongod --repair --dbpath /var/lib/mongodb/
-  - sudo service mongod start
-
 # command to run tests
 script: ./scripts/travis-test.sh
 
