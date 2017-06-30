@@ -3,7 +3,7 @@
 docker exec -i devstack /bin/bash -s <<EOF
 # Ensure that MySql is running.  Fixes error "Can't connect to MYSQL server on '127.0.0.1' (111)"
 UP=$(/etc/init.d/mysql status | grep running | grep -v not | wc -l);
-if [ "$UP" -ne 1 ]; then "Starting MySQL..."; service mysql start; fi
+if [ $UP -ne 1 ]; then "Starting MySQL..."; service mysql start; fi
 sudo su edxapp
 cd /edx/app/edxapp
 rm -r -d -f themes
