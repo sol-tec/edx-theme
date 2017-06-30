@@ -22,6 +22,7 @@ before_install:
   - docker pull btelnes/devstack
   - docker run -d --name devstack --add-host "localhost preview.localhost":127.0.0.1 --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t btelnes/devstack
   - docker ps -a
+  - mkdir -p /tmp/cgroup/systemd && mount -t cgroup systemd /tmp/cgroup/systemd -o ro,noexec,nosuid,nodev,none,name=systemd
 
 # command to run tests
 script: ./scripts/travis-test.sh
