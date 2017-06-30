@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 docker exec -i devstack /bin/bash -s <<EOF
-export XDG_RUNTIME_DIR=/run/user/1000
+#export XDG_RUNTIME_DIR=/run/user/1000
+
 # Ensure that MySql is running.  Fixes error "Can't connect to MYSQL server on '127.0.0.1' (111)"
 UP=$(/etc/init.d/mysql status | grep running | grep -v not | wc -l);
 if [[ "$UP" -ne "1" ]]; then echo "Starting MySQL..."; systemctl start mysql.service; sleep 10; fi
