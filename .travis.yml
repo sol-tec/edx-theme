@@ -1,5 +1,5 @@
-# Explicitly select the default infrastructure
 sudo: required
+
 language: python
 
 python:
@@ -10,6 +10,11 @@ services:
 
 branches:
   only:
+  # - master
+  # - oxa/master.fic
+  # - oxa/devfic
+  # Testing CI Branch
+  - oxa/ci
   - btelnes
 
 # command to install dependencies
@@ -26,6 +31,6 @@ before_install:
   - sudo mkdir -p /tmp/cgroup/systemd && sudo mount -t cgroup systemd /tmp/cgroup/systemd -o ro,noexec,nosuid,nodev,none,name=systemd
 
 # command to run tests
-script: ./scripts/travis-test.sh
+script: ./scripts/travis-tests.sh
 
 dist: trusty
