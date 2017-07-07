@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+
+  lms:
+    command: bash -c 'source /edx/app/edxapp/edxapp_env && python /edx/app/edxapp/edx-platform/manage.py lms runserver 0.0.0.0:18000 --settings devstack_docker'
+    container_name: edx.devstack.lms
+    environment:
+      NO_PYTHON_UINISTALL: 1
+    build: .
+    ports:
+      - "18000:18000"
