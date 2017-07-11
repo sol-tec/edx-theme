@@ -14,15 +14,17 @@ oxa = window.oxa || {};
         // track the user clicks, anchor/button and exclude the LearnMore link on the banner itself
         $(document).ready(function () {
             if (self.getCookie(consentCookieName) !== "true") {
-                $("a, button").on("click", function () {
-                    if (this.id !== "btnPrivacy") {
-                        self.closeCookieBanner();
-                    }
-                });
+                $("a, button").on("click", cookieClick);
             } else {
                 self.closeCookieBanner();
             }
         });
+    };
+
+    proto.cookieClick = function () {
+        if (this.id !== "btnPrivacy") {
+            self.closeCookieBanner();
+        }
     };
 
     // sets the cookie given name, value and expiration days
@@ -76,7 +78,7 @@ oxa = window.oxa || {};
         })();
 
         //unregister the anchor/button clicks so we don't keep tracking if the consent is already given
-        $("a, button").off("click");
+        $("a, button").off("click", proto.cookieClick);
     };
 }
 
