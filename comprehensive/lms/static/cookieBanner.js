@@ -21,6 +21,7 @@ oxa = window.oxa || {};
         });
     };
 
+    // Click handler for the cookie consent
     proto.cookieClickHandler = function () {
         if (this.id !== "btnPrivacy") {
             proto.closeCookieBanner();
