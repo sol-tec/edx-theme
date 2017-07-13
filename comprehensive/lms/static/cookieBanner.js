@@ -14,7 +14,7 @@ oxa = window.oxa || {};
         // track the user clicks, anchor/button and exclude the LearnMore link on the banner itself
         $(document).ready(function () {
             if (self.getCookie(consentCookieName) !== "true") {
-                $("a, button, input").on("click", proto.cookieClickHandler);
+                $("a, button").on("click", proto.cookieClickHandler);
             } else {
                 self.closeCookieBanner();
             }
@@ -79,7 +79,7 @@ oxa = window.oxa || {};
         })();
 
         //unregister the anchor/button clicks so we don't keep tracking if the consent is already given
-        $("a, button, input").off("click", proto.cookieClickHandler);
+        $("a, button").off("click", proto.cookieClickHandler);
     };
 }
 
