@@ -5,7 +5,7 @@ oxa = window.oxa || {};
 (function (namespace) {
     namespace.cookieBanner = cookieBanner;
     var proto = cookieBanner.prototype;
-    var consentCookieName = "MSCC";
+    var consentCookieName = "cookie-banner";
 
     // constructor
     function cookieBanner() {
@@ -32,7 +32,7 @@ oxa = window.oxa || {};
     // it sets the cookie for all the sub pages of the site
     proto.setCookie = function (cname, cvalue, exdays) {
         var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        d.setTime(d.getTime() + (exdays * 13 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
         // Need to set the path of the cookie so that it is accessible from the successor pages.
         // Otherwise the set cookie is not accessible by child pages causing the cookie-banner to show again uselessly
