@@ -46,14 +46,11 @@ site_status_msg = get_site_status_msg(course_id)
   </div>
 </div>
 % endif
-    <script type="text/javascript" src=${static.url('cookieBanner.js')}></script>
 </%block>
   <header id="global-navigation" class="header-global ${"slim" if course else ""}" >
     <div id="cookie-notice" class="cookie-notice">
-	<span class="cookie-notice-title cookie-color">COOKIE USE</span>
-	<span class="cookie-color">By using this site you agree to the use of cookies for analytics, personalized content, and ads.</span>
-	<a id="btnPrivacy" href="http://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Learn more</a>
-	<span id="btnPrivacyClose" onclick="cookieNotice.closeCookieBanner()" class="cookie-close cookie-color">X</span>
+        <span class="cookie-text">This site uses cookies for analytics, personalized content and ads. By continuing to browse this site you agree to this use.</span>
+        <a id="btnPrivacy" href="https://go.microsoft.com/fwlink/?linkid=845480" target="_blank">Learn more</a>
     </div>
     <nav class="nav-wrapper cookie-banner-show wrapper-header" aria-label="${_('Global')}">
     <h1 class="logo">
@@ -220,9 +217,7 @@ site_status_msg = get_site_status_msg(course_id)
 % endif
 
 <%include file="help_modal.html"/>
-## Don't show cookie-banner if already accepted.
-<script type="text/javascript">
-    if (cookieNotice.getCookie("cookie-banner") == "true") {
-        cookieNotice.closeCookieBanner();
-    }
-</script>
+
+## Track the user consent based on the cookie-banner cookie availability
+<script type="text/javascript" src=${static.url('cookieBanner.js')}></script>
+
