@@ -32,7 +32,7 @@ oxa = window.oxa || {};
     // it sets the cookie for all the sub pages of the site
     proto.setCookie = function (cname, cvalue, exdays) {
         var d = new Date();
-        d.setTime(d.getTime() + (exdays * 13 * 60 * 60 * 1000));
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
         // Need to set the path of the cookie so that it is accessible from the successor pages.
         // Otherwise the set cookie is not accessible by child pages causing the cookie-banner to show again uselessly
@@ -63,7 +63,7 @@ oxa = window.oxa || {};
         if (navWrapper.length > 0) {
             navWrapper[0].className = "nav-wrapper";
         }
-        this.setCookie(consentCookieName, "true", 365);
+        this.setCookie(consentCookieName, "true", 13 * 30);
 
         // Allow BI cookies
         (function (a, b, c, d) {
