@@ -47,11 +47,12 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
-  <header id="global-navigation" class="header-global ${"slim" if course else ""}" >
     <div id="cookie-notice" class="cookie-notice">
-        <span class="cookie-text">This site uses cookies for analytics, personalized content and ads. By continuing to browse this site you agree to this use.</span>
+        <svg class="cc-icon cc-v-center" x="0px" y="0px" viewBox="0 0 44 44" height="25px" fill="none" stroke="currentColor"><circle cx="22" cy="22" r="20" stroke-width="2"></circle><line x1="22" x2="22" y1="18" y2="33" stroke-width="3"></line><line x1="22" x2="22" y1="12" y2="15" stroke-width="3"></line></svg>
+        <span class="cookie-text">This site uses cookies for analytics, personalized content and ads. By continuing to browse this site, you agree to this use.</span>
         <a id="btnPrivacy" href="https://go.microsoft.com/fwlink/?linkid=845480" target="_blank">Learn more</a>
     </div>
+    <header id="global-navigation" class="header-global ${"slim" if course else ""}" >
     <nav class="nav-wrapper cookie-banner-show wrapper-header" aria-label="${_('Global')}">
     <h1 class="logo">
       <a href="${marketing_link('ROOT')}">
