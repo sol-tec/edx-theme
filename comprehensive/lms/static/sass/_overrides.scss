@@ -401,39 +401,34 @@ table.faq-table {
     tr:nth-child(even){background-color: $gray-2}
 }
 
-//------------------
+ //------------------
 // COOKIE BANNER
 //------------------
 .cookie-banner-show {
-    padding-top: .15em !important;
+    padding-top: 0px !important;
 }
 
 .cookie-notice {
     z-index: 10;
     width: 100%;
-    height: 26px;
-    background-color: #f2f2f2;
-    padding: .15em;
-    font-size: 13px;
+    height: 56px;
+    background-color: #EEEEEE !important;
+    padding: .75em 0;
     text-align: center;
-    margin: 0;
-    position: relative;
-    font-family: "Segoe UI","Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+    font-size: 13px;
 }
 
-.cookie-text { 
-    vertical-align: sub !important; 
-    padding-top:10px !important; 
-    margin: 20px; 
-    color: #000 !important; 
-} 
- 
- 
-#btnPrivacy { 
-     text-align: right !important; 
-    vertical-align: sub !important; 
-} 
+.cookie-text {
+    vertical-align: middle !important;
+    padding-top:10px !important;
+    margin: 10px;
+    color: #000 !important;
+}
 
+#btnPrivacy {
+    text-align: right !important;
+    vertical-align: middle !important;
+}
 
 
 #field-language {
