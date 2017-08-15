@@ -1,13 +1,31 @@
 /* Microsoft customization: Adding cookie related JS functions */
+
 oxa = window.oxa || {};
 
 (function (namespace) {
     namespace.cookieBanner = cookieBanner;
     var proto = cookieBanner.prototype;
+    var consentCookieName = "cookie-banner";
 
     // constructor
     function cookieBanner() {
         var self = this;
+
+        // track the user clicks, anchor/button and exclude the LearnMore link on the banner itself
+        $(document).ready(function () {
+            if (self.getCookie(consentCookieName) !== "true") {
+                $("a, button").on("click", proto.cookieClickHandler);
+            } else {
+                self.closeCookieBanner();
+            }
+        });
+    };
+
+    // Click handler for the cookie consent
+    proto.cookieClickHandler = function () {
+        if (this.id !== "btnPrivacy") {
+            proto.closeCookieBanner();
+        }
     };
 
     // sets the cookie given name, value and expiration days
@@ -35,7 +53,7 @@ oxa = window.oxa || {};
         return "false";
     };
 
-    // closes down the cookie banner by setting the cookie-banner cookie
+    // closes down the cookie banner by setting the cookie-banner cookie and unregisters the click events
     proto.closeCookieBanner = function () {
         var cookieContainer = document.getElementById("cookie-notice");
         if (cookieContainer) {
@@ -45,7 +63,23 @@ oxa = window.oxa || {};
         if (navWrapper.length > 0) {
             navWrapper[0].className = "nav-wrapper";
         }
-        this.setCookie("cookie-banner", "true", 365);
+        this.setCookie(consentCookieName, "true", 13 * 30);
+
+        // Allow BI cookies
+        (function (a, b, c, d) {
+            a = '//tags.tiqcdn.com/utag/msft/lex-openedx/prod/utag.js';
+            b = document;
+            c = 'script';
+            d = b.createElement(c);
+            d.src = a;
+            d.type = 'text/java' + c;
+            d.async = true;
+            a = b.getElementsByTagName(c)[0];
+            a.parentNode.insertBefore(d, a);
+        })();
+
+        //unregister the anchor/button clicks so we don't keep tracking if the consent is already given
+        $("a, button").off("click", proto.cookieClickHandler);
     };
 }
 
