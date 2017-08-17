@@ -59,10 +59,7 @@ oxa = window.oxa || {};
         if (cookieContainer) {
             cookieContainer.style.display = "none";
         }
-        var navWrapper = document.getElementsByClassName("nav-wrapper");
-        if (navWrapper.length > 0) {
-            navWrapper[0].className = "nav-wrapper";
-        }
+        
         this.setCookie(consentCookieName, "true", 13 * 30);
 
         // Allow BI cookies
