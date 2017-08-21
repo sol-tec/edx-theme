@@ -47,8 +47,6 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
-## Track the user consent based on the consent cookie availability
-<script type="text/javascript" src=${static.url('cookieBanner.js')}></script>
     <div id="cookie-markup" class="cookie-markup"> </div>
     <header id="global-navigation" class="header-global ${"slim" if course else ""}" >
     <nav class="nav-wrapper  wrapper-header" aria-label="${_('Global')}">
@@ -216,37 +214,38 @@ site_status_msg = get_site_status_msg(course_id)
 % endif
 
 <%include file="help_modal.html"/>
-<script type="text/javascript">        
-   window.onload = (function () {
-           if (cookieNotice.useCustomConsent === true) {
-                $("#cookie-markup").html(cookieNotice.consentCookieMarkup);
-           }
-           else {
-                $("#cookie-markup").html(cookieNotice.Markup);
 
-                cookieNotice.LoadJSCookieAPI( cookieNotice.Js ).done(function( script, textStatus ) {
-                    console.log( textStatus );
-                });
-                
-                var css_link = document.createElement("link");
-                css_link.href = cookieNotice.Css;
-                css_link.rel = "stylesheet";
-                css_link.type = "text/css";
-                $("head").append(css_link);
-                
-                // Polling to capture mscc from window
-                var msccInterval = setInterval(function(){
-                    var mscc = window.mscc;
-                    if (mscc && mscc.hasConsent() === true) {
-                    // Add non-essiential cookie code here
-                    cookieNotice.addBICookies();
-                    clearInterval(msccInterval);
-                    } else if (mscc) {              
-                        mscc.on('consent', cookieNotice.addBICookies);
-                        clearInterval(msccInterval);
-                    }
-                }, 500)
+## Track the user consent based on the consent cookie availability
+<script type="text/javascript" src=${static.url('cookieBanner.js')}></script>
+<script type="text/javascript">        
+$(document).ready(function() {
+    if (cookieNotice.useCustomConsent === true) {
+        $("#cookie-markup").html(cookieNotice.consentCookieMarkup);
+    } else {
+        $("#cookie-markup").html(cookieNotice.Markup);
+
+	// by default hide the banner ux
+        document.getElementById("cookie-markup").style.display = "none";
+        
+        // add css links
+        var css_link = document.createElement("link");
+        css_link.href = cookieNotice.Css;
+        css_link.rel = "stylesheet";
+        css_link.type = "text/css";
+        $("head").append(css_link);
+
+        // add js
+        cookieNotice.LoadJSCookieAPI( cookieNotice.Js ).done(function( script, textStatus ) {
+            if (mscc && mscc.hasConsent() === true) {
+            // Add non-essiential cookies
+            cookieNotice.addBICookies();
+            } else if (mscc) {
+                document.getElementById("cookie-markup").style.display = "block";
+                mscc.on('consent', cookieNotice.addBICookies);
             }
-   });
+        });
+    }
+});
 </script>
+
 
