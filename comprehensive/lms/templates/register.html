@@ -45,6 +45,7 @@ import calendar
 
       $('#register-form').on('submit', function() {
         toggleSubmitButton(false);
+        mscc.setConsent();
       });
 
       $('#register-form').on('ajax:error', function() {
