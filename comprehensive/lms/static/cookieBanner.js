@@ -5,15 +5,12 @@ oxa = window.oxa || {};
 (function (namespace) {
     namespace.cookieBanner = cookieBanner;
     var proto = cookieBanner.prototype;
-    var consentCookieName = "cookie-banner";
-    var consentCookieMarkup = "<div id=\"cookie-notice\" class=\"cookie-notice\"><svg class=\"cc-icon cc-v-center\" x=\"0px\" y=\"0px\" viewBox=\"0 0 44 44\" height=\"25px\" fill=\"none\"" +  "stroke=\"currentColor\"><circle cx=\"22\" cy=\"22\" r=\"20\" stroke-width=\"2\"></circle><line x1=\"22\" x2=\"22\" y1=\"18\" y2=\"33\" stroke-width=\"3\"></line><line x1=\"22\" x2=\"22\" y1=\"12\" y2=\"15\" stroke-width=\"3\">" + "</line></svg> <span class=\"cookie-text\">This site uses cookies for analytics, personalized content and ads. By continuing to browse this site, you agree to this use.</span>" +
-        "<a id=\"btnPrivacy\" href=\"https://go.microsoft.com/fwlink/?linkid=845480\" target=\"_blank\">Learn more</a></div>";
+    proto.consentCookieName = "cookie-banner";
 
     // locale drives the language of the cookie banner text and country drives whether a consent is required for a particular country
     // setting it to a euro region to have IsConsentRequired = true as all times until we get an ip detection service to use.
     var locale = "en-us";
     var country = "fr";
-    var useCustomConsent = false;
 
     // constructor
     function cookieBanner() {
@@ -31,26 +28,11 @@ oxa = window.oxa || {};
                 proto.Locale = cookieValues.Locale;
                 proto.Markup = cookieValues.Markup;
                 proto.Error = cookieValues.Error;
-            } else {
-                proto.initializeCustomConsent();
+                proto.MinimumConsentDate = new Date(cookieValues.MinimumConsentDate).getTime();
             }
         }
         catch(error) {
-            proto.initializeCustomConsent();
         }
-    };
-    
-    // setup the consent callbacks for the custom cookie banner
-    proto.initializeCustomConsent = function () {
-        proto.useCustomConsent = true;
-        // track the user clicks, anchor/button and exclude the LearnMore link on the banner itself
-        $(document).ready(function () {
-            if (self.getCookie(consentCookieName) !== "true") {
-                $("a, button").on("click", proto.cookieClickHandler);
-            } else {
-                self.closeCookieBanner();
-            }
-        });  
     };
     
     // makes a get call to the given url (e.g. cookie api url)
@@ -88,14 +70,12 @@ oxa = window.oxa || {};
             a.parentNode.insertBefore(d, a);
         })();
     };
-
-    // Click handler for the cookie consent
-    proto.cookieClickHandler = function () {
-        if (this.id !== "btnPrivacy") {
-            this.setCookie(consentCookieName, "true", 13 * 30);
-            proto.closeCookieBanner();
-        }
-    };
+   
+    // set the time that consent is given
+    proto.setConsentTime = function (){
+        var d = new Date();
+        proto.setCookie(proto.consentCookieName, d.getTime(), 13 * 30); 
+    }
 
     // sets the cookie given name, value and expiration days
     // it sets the cookie for all the sub pages of the site
@@ -122,19 +102,6 @@ oxa = window.oxa || {};
         return "false";
     };
 
-    // closes down the custom cookie banner by setting the cookie-banner cookie and unregisters the click events
-    proto.closeCookieBanner = function () {
-        var cookieContainer = document.getElementById("cookie-notice");
-        if (cookieContainer) {
-            cookieContainer.style.display = "none";
-        }
-
-        // Allow BI cookies
-        proto.addBICookies();
-
-        //unregister the anchor/button clicks so we don't keep tracking if the consent is already given
-        $("a, button").off("click", proto.cookieClickHandler);
-    };
 }
 
 (oxa));
