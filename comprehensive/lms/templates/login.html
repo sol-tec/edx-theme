@@ -46,7 +46,6 @@ from third_party_auth import provider, pipeline
 
       $('#login-form').on('submit', function() {
         toggleSubmitButton(false);
-        mscc.setConsent();
       });
 
       $('#login-form').on('ajax:error', function(event, request, status_string) {
@@ -74,6 +73,10 @@ from third_party_auth import provider, pipeline
           } else {
             location.href="${reverse('dashboard')}";
           }
+	  // take user consent for writing non-essential cookies form submission upon new page
+	  if (mscc) {
+	     mscc.setConsent();
+	  }
         } else if(json.hasOwnProperty('redirect')) {
           // Shibboleth authentication redirect requested by the server:
           var u=decodeURI(window.location.search);

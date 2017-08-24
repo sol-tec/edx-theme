@@ -45,7 +45,6 @@ import calendar
 
       $('#register-form').on('submit', function() {
         toggleSubmitButton(false);
-        mscc.setConsent();
       });
 
       $('#register-form').on('ajax:error', function() {
@@ -61,6 +60,11 @@ import calendar
           location.href=nextUrl;
         } else {
           location.href="${reverse('dashboard')}";
+        }
+        
+        // take user consent for writing non-essential cookies form submission upon new page
+        if (mscc) {
+           mscc.setConsent();
         }
       });
 
