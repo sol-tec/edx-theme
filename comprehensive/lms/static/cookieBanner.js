@@ -8,11 +8,11 @@ oxa = window.oxa || {};
     proto.consentCookieName = "cookie-banner";
 
     // constructor
-    function cookieBanner() {
-        var self = this;
-        
+    function cookieBanner() {};
+
+    // initialize the cookie consent api values
+    proto.init = function (cookieValues){
         try {
-            var cookieValues = JSON.parse(proto.Get(addr));        
             if (proto.Error == null && cookieValues != null) {
                 // TODO:Check for each and every value availability, if missing value, just use our banner
                 proto.IsConsentRequired = cookieValues.IsConsentRequired;
@@ -29,15 +29,7 @@ oxa = window.oxa || {};
         catch(error) {
         }
     };
-    
-    // makes a get call to the given url (e.g. cookie api url)
-    proto.Get = function (apiUrl) {
-        var httpRequest = new XMLHttpRequest();
-        httpRequest.open("GET", apiUrl, false);
-        httpRequest.send(null);
-        return httpRequest.responseText;
-    };
-
+   
     // Loads the Cookie API JS
     // cache:false, causes the timestamp parameters to be added on the js, where the service is not accepting currently
     proto.LoadJSCookieAPI = function (url, options) {
@@ -104,6 +96,19 @@ oxa = window.oxa || {};
 var cookieNotice = new oxa.cookieBanner();
 
 $(document).ready(function() {
+        $.ajax({
+        	url: "/cookies/get_cookies",
+                cache: true,
+                async: false,
+                success: function(data) {
+                       	 cookieNotice.init(data);
+                        },
+                error:
+                        function (xhr, status, error) {
+                        console.log(error);
+                        }
+         });
+
         $("#cookie-markup").html(cookieNotice.Markup);
 
         // by default hide the banner ux
@@ -116,7 +121,7 @@ $(document).ready(function() {
         css_link.type = "text/css";
         $("head").append(css_link);
 
-        // check if consent is still valid
+        // check if consent is still valid or we need to reconsent
         var isConsentValid = false;
         try {
             if(cookieNotice.getCookie(cookieNotice.consentCookieName) > cookieNotice.MinimumConsentDate){
@@ -127,7 +132,7 @@ $(document).ready(function() {
 
         // add js
         cookieNotice.LoadJSCookieAPI( cookieNotice.Js ).done(function() {
-            if (mscc && mscc.hasConsent() === true && isConsentValid) {
+            if (mscc && mscc.hasConsent() && isConsentValid) {
             // Add non-essiential cookies
             cookieNotice.addBICookies();
             } else if (mscc) {
