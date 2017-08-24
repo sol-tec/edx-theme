@@ -7,11 +7,6 @@ oxa = window.oxa || {};
     var proto = cookieBanner.prototype;
     proto.consentCookieName = "cookie-banner";
 
-    // locale drives the language of the cookie banner text and country drives whether a consent is required for a particular country
-    // setting it to a euro region to have IsConsentRequired = true as all times until we get an ip detection service to use.
-    var locale = "en-us";
-    var country = "fr";
-
     // constructor
     function cookieBanner() {
         var self = this;
@@ -107,3 +102,40 @@ oxa = window.oxa || {};
 (oxa));
 
 var cookieNotice = new oxa.cookieBanner();
+
+$(document).ready(function() {
+        $("#cookie-markup").html(cookieNotice.Markup);
+
+        // by default hide the banner ux
+        document.getElementById("cookie-markup").style.display = "none";
+
+        // add css links
+        var css_link = document.createElement("link");
+        css_link.href = cookieNotice.Css;
+        css_link.rel = "stylesheet";
+        css_link.type = "text/css";
+        $("head").append(css_link);
+
+        // check if consent is still valid
+        var isConsentValid = false;
+        try {
+            if(cookieNotice.getCookie(cookieNotice.consentCookieName) > cookieNotice.MinimumConsentDate){
+                isConsentValid = true;
+            }
+        } catch(Error){
+        }
+
+        // add js
+        cookieNotice.LoadJSCookieAPI( cookieNotice.Js ).done(function() {
+            if (mscc && mscc.hasConsent() === true && isConsentValid) {
+            // Add non-essiential cookies
+            cookieNotice.addBICookies();
+            } else if (mscc) {
+                document.getElementById("cookie-markup").style.display = "block";
+                document.getElementById("msccBanner").style.display = "block";
+                mscc.on('consent', cookieNotice.addBICookies);
+                mscc.on('consent', cookieNotice.setConsentTime);
+            }
+        });
+});
+
