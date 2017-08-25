@@ -100,6 +100,7 @@ $(document).ready(function() {
         	url: "/cookies/get_cookies",
                 cache: true,
                 async: false,
+                timeout: 30000,
                 success: function(data) {
                        	 cookieNotice.init(data);
                         },
