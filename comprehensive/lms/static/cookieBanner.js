@@ -96,52 +96,49 @@ oxa = window.oxa || {};
 var cookieNotice = new oxa.cookieBanner();
 
 $(document).ready(function() {
-        $.ajax({
-        	url: "/cookies/get_cookies",
-                cache: true,
-                async: false,
-                timeout: 30000,
-                success: function(data) {
-                       	 cookieNotice.init(data);
-                        },
-                error:
-                        function (xhr, status, error) {
-                        console.log(error);
-                        }
-         });
+    $.ajax({
+        url: "/cookies/get_cookies",
+        cache: true,
+        timeout: 30000,
+        success: function(data) {
+            cookieNotice.init(data);
+            $("#cookie-markup").html(cookieNotice.Markup);
 
-        $("#cookie-markup").html(cookieNotice.Markup);
+	    // by default hide the banner ux
+            document.getElementById("cookie-markup").style.display = "none";
 
-        // by default hide the banner ux
-        document.getElementById("cookie-markup").style.display = "none";
+            // add css links
+            var css_link = document.createElement("link");
+            css_link.href = cookieNotice.Css;
+            css_link.rel = "stylesheet";
+            css_link.type = "text/css";
+            $("head").append(css_link);
 
-        // add css links
-        var css_link = document.createElement("link");
-        css_link.href = cookieNotice.Css;
-        css_link.rel = "stylesheet";
-        css_link.type = "text/css";
-        $("head").append(css_link);
-
-        // check if consent is still valid or we need to reconsent
-        var isConsentValid = false;
-        try {
-            if(cookieNotice.getCookie(cookieNotice.consentCookieName) > cookieNotice.MinimumConsentDate){
-                isConsentValid = true;
+            // check if consent is still valid or we need to reconsent
+            var isConsentValid = false;
+            try {
+                if(cookieNotice.getCookie(cookieNotice.consentCookieName) > cookieNotice.MinimumConsentDate){
+                   isConsentValid = true;
+                }
+            } catch(Error){
             }
-        } catch(Error){
-        }
 
-        // add js
-        cookieNotice.LoadJSCookieAPI( cookieNotice.Js ).done(function() {
-            if (mscc && mscc.hasConsent() && isConsentValid) {
-            // Add non-essiential cookies
-            cookieNotice.addBICookies();
-            } else if (mscc) {
-                document.getElementById("cookie-markup").style.display = "block";
-                document.getElementById("msccBanner").style.display = "block";
-                mscc.on('consent', cookieNotice.addBICookies);
-                mscc.on('consent', cookieNotice.setConsentTime);
-            }
+            // add js
+            cookieNotice.LoadJSCookieAPI( cookieNotice.Js ).done(function() {
+                if (mscc && mscc.hasConsent() && isConsentValid) {
+                // Add non-essiential cookies
+                cookieNotice.addBICookies();
+                } else if (mscc) {
+                    document.getElementById("cookie-markup").style.display = "block";
+                    document.getElementById("msccBanner").style.display = "block";
+                    mscc.on('consent', cookieNotice.addBICookies);
+                    mscc.on('consent', cookieNotice.setConsentTime);
+                }
+             });
+        },
+        error: function (xhr, status, error) {
+                   console.log(error);
+               }
         });
 });
 
