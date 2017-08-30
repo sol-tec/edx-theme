@@ -8,10 +8,10 @@ oxa = window.oxa || {};
     proto.consentCookieName = "cookie-banner";
 
     // constructor
-    function cookieBanner() {};
+    function cookieBanner() { };
 
     // initialize the cookie consent api values
-    proto.init = function (cookieValues){
+    proto.init = function (cookieValues) {
         try {
             if (proto.Error == null && cookieValues != null) {
                 // TODO:Check for each and every value availability, if missing value, just use our banner
@@ -26,10 +26,10 @@ oxa = window.oxa || {};
                 proto.MinimumConsentDate = new Date(cookieValues.MinimumConsentDate).getTime();
             }
         }
-        catch(error) {
+        catch (error) {
         }
     };
-   
+
     // Loads the Cookie API JS
     // cache:false, causes the timestamp parameters to be added on the js, where the service is not accepting currently
     proto.LoadJSCookieAPI = function (url, options) {
@@ -42,7 +42,7 @@ oxa = window.oxa || {};
         return jQuery.ajax(options);
     };
 
-   // Adds function BI cookies
+    // Adds function BI cookies
     proto.addBICookies = function () {
         // Allow BI cookies
         (function (a, b, c, d) {
@@ -57,11 +57,11 @@ oxa = window.oxa || {};
             a.parentNode.insertBefore(d, a);
         })();
     };
-   
+
     // set the time that consent is given
-    proto.setConsentTime = function (){
+    proto.setConsentTime = function () {
         var d = new Date();
-        proto.setCookie(proto.consentCookieName, d.getTime(), 13 * 30); 
+        proto.setCookie(proto.consentCookieName, d.getTime(), 13 * 30);
     }
 
     // sets the cookie given name, value and expiration days
@@ -91,20 +91,20 @@ oxa = window.oxa || {};
 
 }
 
-(oxa));
+    (oxa));
 
 var cookieNotice = new oxa.cookieBanner();
 
-$(document).ready(function() {
+$(document).ready(function () {
     $.ajax({
         url: "/cookies/get_cookies",
         cache: true,
         timeout: 30000,
-        success: function(data) {
+        success: function (data) {
             cookieNotice.init(data);
             $("#cookie-markup").html(cookieNotice.Markup);
 
-	    // by default hide the banner ux
+            // by default hide the banner ux
             document.getElementById("cookie-markup").style.display = "none";
 
             // add css links
@@ -117,28 +117,28 @@ $(document).ready(function() {
             // check if consent is still valid or we need to reconsent
             var isConsentValid = false;
             try {
-                if(cookieNotice.getCookie(cookieNotice.consentCookieName) > cookieNotice.MinimumConsentDate){
-                   isConsentValid = true;
+                if (cookieNotice.getCookie(cookieNotice.consentCookieName) > cookieNotice.MinimumConsentDate) {
+                    isConsentValid = true;
                 }
-            } catch(Error){
+            } catch (Error) {
             }
 
             // add js
-            cookieNotice.LoadJSCookieAPI( cookieNotice.Js ).done(function() {
+            cookieNotice.LoadJSCookieAPI(cookieNotice.Js).done(function () {
                 if (mscc && mscc.hasConsent() && isConsentValid) {
-                // Add non-essiential cookies
-                cookieNotice.addBICookies();
+                    // Add non-essiential cookies
+                    cookieNotice.addBICookies();
                 } else if (mscc) {
                     document.getElementById("cookie-markup").style.display = "block";
                     document.getElementById("msccBanner").style.display = "block";
                     mscc.on('consent', cookieNotice.addBICookies);
                     mscc.on('consent', cookieNotice.setConsentTime);
                 }
-             });
+            });
         },
         error: function (xhr, status, error) {
-                   console.log(error);
-               }
-        });
+            console.log(error);
+        }
+    });
 });
 
