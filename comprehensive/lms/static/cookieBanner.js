@@ -97,7 +97,7 @@ var cookieNotice = new oxa.cookieBanner();
 
 $(document).ready(function () {
     $.ajax({
-        url: "/cookies/get_cookies",
+        url: "/account/get_cookies",
         cache: true,
         timeout: 30000,
         success: function (data) {
