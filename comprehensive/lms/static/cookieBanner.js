@@ -90,7 +90,7 @@ oxa = window.oxa || {};
         return "false";
     };
 
-    // captures marteking information
+    // captures marketing information
     proto.captureMarketingInfo = function () {
         var queryString = window.location.search;
         if (queryString) {
