@@ -1,7 +1,6 @@
-# Explicitly select the default infrastructure
-#sudo: true
+sudo: required
+
 language: python
-#dist: precise
 
 python:
   - "2.7"
@@ -9,93 +8,26 @@ python:
 services:
   - docker
 
-cache:
-  - npm
-  - pip
-
 branches:
   only:
-  - kabir/ci
-
-before_install:
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker pull btelnes/devstack
-  - docker run -d --name devstack --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t btelnes/devstack
-  #- docker ps
+   - oxa/master.fic
+   - oxa/dev.fic
 
 # command to install dependencies
+# Note: Keep this to avoid "Could not locate requirements.txt.  Override the install: key in your .travis.yml to install dependencies"
 install:
-  # Fix an issue caused by /var/lib/mongodb/mongod.lock (Exception in initAndListen: 12596 old lock file)
-  - sudo -u mongodb mongod --repair --dbpath /var/lib/mongodb/
-  - sudo service mongod start
+  - bash ./scripts/travis-install.sh
 
-  #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git /var/tmp/configuration
-  #- cd /var/tmp/configuration
-  #- sudo bash util/install/ansible-bootstrap.sh -O
-  #- export OPENEDX_DEBUG=1
-  #- export OPENEDX_RELEASE="open-release/ficus.1"
-  #- bash util/install/install_stack.sh -v devstack $OPENEDX_RELEASE
-
-
-  #- sudo -H pip install -r pre-requirements.txt
-  #- sudo -H pip install -r requirements.txt
-  #- sudo pip install setuptools --upgrade
-  #- cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-devstack.yml -i "localhost," -vvv
-
-  #- cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost," -vvv --extra-vars "OPENEDX_RELEASE=open-release/ficus.1,ansible_distribution='Ubuntu',ansible_distribution_release='xenial'"
-
-  #- git clone -b oxa/master.fic  https://github.com/Microsoft/edx-platform.git edx/app/edxapp/edx-platform
-  #- git clone -b oxa/master.fic https://github.com/Microsoft/edx-configuration.git edx/app/edx_ansible/edx_ansible
-
-  # Check the role/playbook syntax
-  #- ansible-playbook -i ./scripts/inventory ./edx/app/edx_ansible/edx_ansible/playbooks/edx_sandbox.yml --syntax-check 
-
-  #- pushd .
-  #- cd ./edx/app/edxapp/edx-platform
-
-  #- pip install --exists-action w -r requirements/edx-sandbox/base.txt
-  #- pip install --exists-action w -r requirements/edx-sandbox/local.txt
-  #- pip install --exists-action w -r requirements/edx-sandbox/post.txt
-  #- popd
-  #- pushd .
-  #- cd edx-configuration/playbooks
-  #- sudo ansible-playbook -i localhost, -c local edx_sandbox.yml --tags "edxapp"
-
-  #- sudo rm -R ./edx/app/edx_ansible/edx_ansible/playbooks/callback_plugins
-  #- ansible-playbook -i localhost, -c local ./edx/app/edx_ansible/edx_ansible/playbooks/edx_sandbox.yml --tags "install" -vvv
-
-  #- popd
-  #- cd ../../edx/app/edxapp/edx-platform
-  #- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install 6.9.4
-  #- npm install
-
-  #- pip install setuptools
-  #- pip install --exists-action w -r requirements/edx/paver.txt
-
-  # Mirror what paver install_prereqs does.
-  # After a successful build, Travis will
-  # cache the virtualenv at that state, so that
-  # the next build will not need to install them
-  # from scratch again.
-  #- pip install --exists-action w -r requirements/edx/pre.txt
-  #- pip install --exists-action w -r requirements/edx/github.txt
-  #- pip install --exists-action w -r requirements/edx/local.txt
-
-  # HACK: within base.txt stevedore had a
-  # dependency on a version range of pbr.
-  # Install a version which falls within that range.
-  #- pip install --exists-action w pbr==0.9.0
-  #- pip install --exists-action w -r requirements/edx/base.txt
-  # - sudo apt-get update
-  #- sudo apt-get install libxmlsec1-dev
-  #- sudo apt-get install swig
-  #- if [ -e requirements/edx/post.txt ]; then pip install --exists-action w -r requirements/edx/post.txt ; fi
-
-
-  
-
+before_install:
+  # Login and fetch container from Azure container registry
+  - docker login oxacontainerregistry.azurecr.io -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker pull oxacontainerregistry.azurecr.io/ci/devstack
+  - docker run -d --name devstack --add-host "localhost preview.localhost":127.0.0.1 --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t oxacontainerregistry.azurecr.io/ci/devstack
+  - docker ps -a
+  # Prepare cgroup on the host at /tmp/cgroup to avoid error: "failed to connect to bus: no such file or directory"
+  - sudo mkdir -p /tmp/cgroup/systemd && sudo mount -t cgroup systemd /tmp/cgroup/systemd -o ro,noexec,nosuid,nodev,none,name=systemd
 
 # command to run tests
-script: ./scripts/travis-test.sh
+script: ./scripts/travis-tests.sh
 
 dist: trusty

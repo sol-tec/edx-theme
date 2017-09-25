@@ -46,16 +46,10 @@ site_status_msg = get_site_status_msg(course_id)
   </div>
 </div>
 % endif
-    <script type="text/javascript" src=${static.url('cookieBanner.js')}></script>
 </%block>
-  <header id="global-navigation" class="header-global ${"slim" if course else ""}" >
-    <div id="cookie-notice" class="cookie-notice">
-	<span class="cookie-notice-title cookie-color">COOKIE USE</span>
-	<span class="cookie-color">By using this site you agree to the use of cookies for analytics, personalized content, and ads.</span>
-	<a id="btnPrivacy" href="http://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Learn more</a>
-	<span id="btnPrivacyClose" onclick="cookieNotice.closeCookieBanner()" class="cookie-close cookie-color">X</span>
-    </div>
-    <nav class="nav-wrapper cookie-banner-show wrapper-header" aria-label="${_('Global')}">
+    <div id="cookie-markup" class="cookie-markup"> </div> 
+    <header id="global-navigation" class="header-global ${"slim" if course else ""}" >
+    <nav class="nav-wrapper wrapper-header" aria-label="${_('Global')}">
     <h1 class="logo">
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
@@ -144,10 +138,10 @@ site_status_msg = get_site_status_msg(course_id)
 
         <%block name="navigation_other_global_links">
           % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
-            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY') or course:
               <li class="item nav-global-05">
                 <a class="btn" href="/courses">${_("Explore Courses")}</a>
-              </li>
+	      </li>
             % endif
           % endif
         </%block>
@@ -220,9 +214,7 @@ site_status_msg = get_site_status_msg(course_id)
 % endif
 
 <%include file="help_modal.html"/>
-## Don't show cookie-banner if already accepted.
-<script type="text/javascript">
-    if (cookieNotice.getCookie("cookie-banner") == "true") {
-        cookieNotice.closeCookieBanner();
-    }
-</script>
+
+## Track the user consent based on the consent cookie availability
+<script type="text/javascript" src=${static.url('cookieBanner.js')}></script>
+
