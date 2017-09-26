@@ -6,7 +6,10 @@ oxa = window.oxa || {};
     namespace.cookieBanner = cookieBanner;
     var proto = cookieBanner.prototype;
     proto.consentCookieName = "cookie-banner";
+<<<<<<< HEAD
     proto.localStoreMarketingKey = 'MarketingCampaign';
+=======
+>>>>>>> origin/oxa/release.fic
 
     // constructor
     function cookieBanner() { };
