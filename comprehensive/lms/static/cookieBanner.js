@@ -6,6 +6,7 @@ oxa = window.oxa || {};
     namespace.cookieBanner = cookieBanner;
     var proto = cookieBanner.prototype;
     proto.consentCookieName = "cookie-banner";
+    proto.localStoreMarketingKey = 'MarketingCampaign';
 
     // constructor
     function cookieBanner() { };
@@ -89,9 +90,35 @@ oxa = window.oxa || {};
         return "false";
     };
 
-}
+    // captures marketing information
+    proto.captureMarketingInfo = function () {
+        var queryString = window.location.search;
+        if (queryString) {
+            proto.upsertInfoToLocalStore(window.location.href);
+        }
+    }
 
-    (oxa));
+    // addds marketing information to localStorage
+    proto.upsertInfoToLocalStore = function (info) {
+        if (typeof (Storage) !== 'undefined') {
+            // Add an entry to localstore, else if an entry is present,
+            // then append the new data to the existing key.
+            try {
+                var storeInfo = localStorage.getItem(proto.localStoreMarketingKey);
+                localStorage.setItem(proto.localStoreMarketingKey, storeInfo ? storeInfo + ';' + info : info);
+            } catch (e) {
+                // Fall back to memory storage.
+                // Known case where this might be needed is safari private mode, where writing to localstore is not allowed.
+                if (window.marketingInfo) {
+                    window.marketingInfo += ';' + info;
+                }
+                else {
+                    window.marketingInfo = info;
+                }
+            }
+        }
+    }
+}(oxa));
 
 var cookieNotice = new oxa.cookieBanner();
 
@@ -133,6 +160,8 @@ $(document).ready(function () {
                     document.getElementById("msccBanner").style.display = "block";
                     mscc.on('consent', cookieNotice.addBICookies);
                     mscc.on('consent', cookieNotice.setConsentTime);
+                    // capture marketing information
+                    cookieNotice.captureMarketingInfo();
                 }
             });
         },
