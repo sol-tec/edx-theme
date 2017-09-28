@@ -52,7 +52,7 @@ import calendar
       });
 
       $('#register-form').on('ajax:success', function(event, json, xhr) {
-        var nextUrl = "${login_redirect_url}";
+        var nextUrl = "${login_redirect_url | u}";
         if (json.redirect_url) {
           nextUrl = json.redirect_url; // Most likely third party auth completion. This trumps 'nextUrl' above.
         }
