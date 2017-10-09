@@ -98,16 +98,6 @@ oxa = window.oxa || {};
         }
     }
 
-    // captures marketing information
-    proto.requestConsent = function () {
-        document.getElementById("cookie-markup").style.display = "block";
-        document.getElementById("msccBanner").style.display = "block";
-        mscc.on('consent', cookieNotice.addBICookies);
-        mscc.on('consent', cookieNotice.setConsentTime);
-        // capture marketing information
-        cookieNotice.captureMarketingInfo();
-    }
-
     // addds marketing information to localStorage
     proto.upsertInfoToLocalStore = function (info) {
         if (typeof (Storage) !== 'undefined') {
@@ -151,18 +141,27 @@ $(document).ready(function () {
             css_link.type = "text/css";
             $("head").append(css_link);
 
+            // check if consent is still valid or we need to reconsent
+            var isConsentValid = false;
+            try {
+                if (cookieNotice.getCookie(cookieNotice.consentCookieName) > cookieNotice.MinimumConsentDate) {
+                    isConsentValid = true;
+                }
+            } catch (Error) {
+            }
+
             // add js
             cookieNotice.LoadJSCookieAPI(cookieNotice.Js).done(function () {
-                if (mscc && mscc.hasConsent()) {
-                    if(cookieNotice.getCookie(cookieNotice.consentCookieName) == false){
-                        cookieNotice.setConsentTime();
-                        // Add non-essiential cookies
-                        cookieNotice.addBICookies();
-                    } else if (cookieNotice.getCookie(cookieNotice.consentCookieName) < cookieNotice.MinimumConsentDate) {
-                        cookieNotice.requestConsent();
-                    }
+                if (mscc && mscc.hasConsent() && isConsentValid) {
+                    // Add non-essiential cookies
+                    cookieNotice.addBICookies();
                 } else if (mscc) {
-                    cookieNotice.requestConsent();
+                    document.getElementById("cookie-markup").style.display = "block";
+                    document.getElementById("msccBanner").style.display = "block";
+                    mscc.on('consent', cookieNotice.addBICookies);
+                    mscc.on('consent', cookieNotice.setConsentTime);
+                    // capture marketing information
+                    cookieNotice.captureMarketingInfo();
                 }
             });
         },
