@@ -141,18 +141,9 @@ $(document).ready(function () {
             css_link.type = "text/css";
             $("head").append(css_link);
 
-            // check if consent is still valid or we need to reconsent
-            var isConsentValid = false;
-            try {
-                if (cookieNotice.getCookie(cookieNotice.consentCookieName) > cookieNotice.MinimumConsentDate) {
-                    isConsentValid = true;
-                }
-            } catch (Error) {
-            }
-
             // add js
             cookieNotice.LoadJSCookieAPI(cookieNotice.Js).done(function () {
-                if (mscc && mscc.hasConsent() && isConsentValid) {
+                if (mscc && mscc.hasConsent()) {
                     // Add non-essiential cookies
                     cookieNotice.addBICookies();
                 } else if (mscc) {
