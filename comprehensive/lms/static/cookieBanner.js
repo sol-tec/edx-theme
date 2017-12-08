@@ -134,19 +134,23 @@ $(document).ready(function () {
             // by default hide the banner ux
             document.getElementById("cookie-markup").style.display = "none";
 
+
             // add css links
-            var css_link = document.createElement("link");
-            css_link.href = cookieNotice.Css;
-            css_link.rel = "stylesheet";
-            css_link.type = "text/css";
-            $("head").append(css_link);
+            var cssLink = document.createElement("link");
+            cssLink.href = cookieNotice.Css;
+            cssLink.rel = "stylesheet";
+            cssLink.type = "text/css";
+            $("head").append(cssLink);
 
             // add js
             cookieNotice.LoadJSCookieAPI(cookieNotice.Js).done(function () {
-                if (mscc && mscc.hasConsent()) {
-                    // Add non-essiential cookies
-                    cookieNotice.addBICookies();
-                } else if (mscc) {
+                if (mscc) {
+                    consentData = mscc.getConsentData();
+                    // check if consent is given & valid or we need to consent
+                    if(consentData != null && consentData.hasConsent && consentData.consentDate != null && consentData.consentDate.getTime() >= cookieNotice.MinimumConsentDate){
+                        cookieNotice.addBICookies();
+                        return;
+                    }
                     document.getElementById("cookie-markup").style.display = "block";
                     document.getElementById("msccBanner").style.display = "block";
                     mscc.on('consent', cookieNotice.addBICookies);
