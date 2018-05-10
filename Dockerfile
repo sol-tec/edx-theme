@@ -1,3 +1,0 @@
--WORKDIR /edx/app/edxapp/edx-platform
--ADD scripts/travis-install.sh /edx/app/edxapp/edx-platform/scripts
--ADD scripts/travis-test.sh /edx/app/edxapp/edx-platform/scripts
