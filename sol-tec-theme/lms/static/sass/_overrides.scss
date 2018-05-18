@@ -14,11 +14,11 @@ html {
 // Header Styling
 //-----------------
 .home > header {
-    height: 375;
     background-position: center top;
+    background-color: #575757;
 
     .outer-wrapper {
-	     padding: 120px 0 !important;
+        padding: 120px 0 !important;
     }
 }
 
@@ -139,7 +139,18 @@ div.cta-login-action {
 .login-button:focus{
     border: 1px dotted $ms-color !important;
 }
-
+.input-block{
+    color:white;
+}
+.input-block :-ms-input-placeholder {
+    color: white;
+}
+.input-block ::-moz-placeholder{
+    color: white;
+}
+ input:focus {
+    outline-color: #4fb252;
+}
 .forgot-password {
     a:hover{
         text-decoration: underline !important;
@@ -179,6 +190,9 @@ header.header-global .user a.user-link{
 header.header-global .primary > a {
     background-color: transparent;
 }
+header.header-global{
+    height: 117px;
+}
 
 header.header-global > nav > ol.user > li.primary a {
     &:hover, &:focus {
@@ -206,6 +220,7 @@ header.header-global .user .dropdown-menu li>a:hover,header.global .user .dropdo
     font-family: "Segoe UI","Open Sans",Verdana,Geneva,sans-serif,sans-serif;
     text-shadow: none;
     font-weight: 500 !important;
+    border-color: #c0c0c0;
 }
 
 .dashboard .profile-sidebar {
@@ -254,6 +269,15 @@ header.global.slim h1.logo img {
     height: inherit !important;
 }
 
+.header-courses {
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: bold;
+    font-stretch: normal;
+}
 // Align find courses link when user signs in
 .nav-global-01 {
     margin-top: 0.2em !important;
@@ -323,7 +347,7 @@ body.ltr {
 //-----------------
 .wrapper-footer {
     box-shadow: none !important;
-    
+
     footer {
         max-width: 1180px;
         margin: 0 auto;
@@ -331,19 +355,23 @@ body.ltr {
         .colophon {
             width: 80%;
             float: left;
-            margin-top: 1.1em !important; 
+            margin-top: 1.1em !important;
+
             .nav-colophon li {
                 display: inline-block;
                 height: 35px;
                 float: left;
                 margin: 0 20px 20px 0;
+                color: #575757;
             }
+
             .nav-colophon a {
-                color:$ms-color !important;
+                color: $ms-color !important;
             }
-            .nav-colophon a:hover{
-                text-decoration:underline;
-                color:$ms-color !important;
+
+            .nav-colophon a:hover {
+                text-decoration: underline;
+                color: $ms-color !important;
             }
         }
 
@@ -351,7 +379,6 @@ body.ltr {
             width: 15%;
             float: right;
         }
-
     }
 
     .copyright {
@@ -419,4 +446,7 @@ table.faq-table {
     margin-right: 20px;
     cursor: pointer;
     font-weight: 600;
+}
+.section-bkg-wrapper {
+    background: #202535;
 }

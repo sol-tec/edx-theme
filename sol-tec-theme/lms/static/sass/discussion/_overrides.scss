@@ -4,6 +4,7 @@
         div.colophon {
             float: left;
         }
+
         div.references {
             float: right;
         }
@@ -12,7 +13,6 @@
 
 header.header-global.slim {
     border-bottom: none;
-
     .nav-main, .nav-global {
         display: none;
     }

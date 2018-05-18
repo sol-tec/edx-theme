@@ -47,7 +47,7 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
-  <header id="global-navigation" class="header-global ${"slim" if course else ""}" >
+  <header id="global-navigation" class="header-global ${'slim' if course else ''}" >
     <nav class="wrapper-header" aria-label="${_('Global')}">
     <h1 class="logo">      
 		<%block name="navigation_logo">
@@ -58,8 +58,10 @@ site_status_msg = get_site_status_msg(course_id)
 			logo_url = branding_api.get_logo_url(is_secure)
 			logo_size = ''
 		%>
-			<img class="${logo_size}" src="${logo_url}" width="108" height="23" vspace="15" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
-		</%block>      
+        <a href="https://lms-laasoxatest-tm.trafficmanager.net/">
+            <img class="${logo_size}" src="${logo_url}" width="185" height="100" alt="${_('{platform_name} Home Page').format(platform_name=static.get_platform_name())}" />
+        </a>
+        </%block>      
     </h1>
 
     % if course:
@@ -79,11 +81,11 @@ site_status_msg = get_site_status_msg(course_id)
         <ol class="left nav-global list-inline authenticated">
         <%block name="navigation_global_links_authenticated">
           % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing:
-          <!--
+          <!
             <li class="item nav-global-01">
               <a href="${marketing_link('COURSES')}">${_('Explore courses')}</a>
             </li>
-          -->
+          >
           % endif
           % if show_program_listing:
             <li class="tab-nav-item">
@@ -135,7 +137,7 @@ site_status_msg = get_site_status_msg(course_id)
           % endif
         </%block>
 
-        <!--<%block name="navigation_other_global_links">
+        <%block name="navigation_other_global_links">
           % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
             % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
               <li class="item nav-global-05">
@@ -143,11 +145,11 @@ site_status_msg = get_site_status_msg(course_id)
               </li>           
             % endif
           % endif
-        </%block>-->
+        </%block>
       </ol>
 
       <ol class="right nav-courseware list-inline">
-        <!--
+        
         <%block name="navigation_sign_in">
 		% if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
 			% if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
@@ -170,7 +172,7 @@ site_status_msg = get_site_status_msg(course_id)
             % endif
           </li>
         </%block>
-        -->
+       
       </ol>
     % endif
     % if static.show_language_selector():
@@ -204,14 +206,14 @@ site_status_msg = get_site_status_msg(course_id)
     </nav>
 </header>
 % if course:
-<!--[if lte IE 9]>
+<![if lte IE 9]>
 <div class="ie-banner" aria-hidden="true">${Text(_('{begin_strong}Warning:{end_strong} Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.')).format(
     begin_strong=HTML('<strong>'),
     end_strong=HTML('</strong>'),
     chrome_link=HTML('<a href="https://www.google.com/chrome" target="_blank">Chrome</a>'),
     ff_link=HTML('<a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>'),
 )}</div>
-<![endif]-->
+<![endif]>
 % endif
 
 <%include file="help_modal.html"/>
