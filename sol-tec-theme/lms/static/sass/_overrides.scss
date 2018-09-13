@@ -6,6 +6,38 @@ html {
    color: #0075b4;
 }
 
+.btn-brand {
+    border-color: #4dc31c;
+    background: #4cae50;
+    color: #fcfcfc;
+}
+
+.help-buttons button, .login aside .btn-login .btn-login-action, .register aside .btn-login .btn-login-action, .passwordreset aside .btn-login .btn-login-action, #forgot-password-modal #password-reset aside .btn-login .btn-login-action, .login-register .login-provider, .financial-assistance-wrapper .financial-assistance-form .login-provider, .login .form-actions.form-third-party-auth button[type="submit"], .register .form-actions.form-third-party-auth button[type="submit"], .passwordreset .form-actions.form-third-party-auth button[type="submit"], #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"], .login-register .nav-btn, .financial-assistance-wrapper .financial-assistance-form .nav-btn, .login-register .button-secondary-login, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login, .wrapper-authorize .btn-authorization-cancel {
+    box-shadow: none;
+    border: 1px solid #126f9a;
+    padding: 10px 20px;
+    background: transparent;
+    color: #ffffff;
+}
+
+.login aside .btn-login .btn-login-action:hover, .register aside .btn-login .btn-login-action:hover, .passwordreset aside .btn-login .btn-login-action:hover, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:hover, .login-register .login-provider:hover, .financial-assistance-wrapper .financial-assistance-form .login-provider:hover, .login aside .btn-login .btn-login-action:active, .register aside .btn-login .btn-login-action:active, .passwordreset aside .btn-login .btn-login-action:active, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:active, .login-register .login-provider:active, .financial-assistance-wrapper .financial-assistance-form .login-provider:active, .login aside .btn-login .btn-login-action:focus, .register aside .btn-login .btn-login-action:focus, .passwordreset aside .btn-login .btn-login-action:focus, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:focus, .login-register .login-provider:focus, .financial-assistance-wrapper .financial-assistance-form .login-provider:focus {
+    box-shadow: none;
+    border: white;
+}
+
+.help-buttons button:hover, .login aside .btn-login .btn-login-action:hover, .register aside .btn-login .btn-login-action:hover, .passwordreset aside .btn-login .btn-login-action:hover, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:hover, .login-register .login-provider:hover, .financial-assistance-wrapper .financial-assistance-form .login-provider:hover, .login .form-actions.form-third-party-auth button[type="submit"]:hover, .register .form-actions.form-third-party-auth button[type="submit"]:hover, .passwordreset .form-actions.form-third-party-auth button[type="submit"]:hover, #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"]:hover, .login-register .nav-btn:hover, .financial-assistance-wrapper .financial-assistance-form .nav-btn:hover, .login-register .button-secondary-login:hover, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login:hover, .wrapper-authorize .btn-authorization-cancel:hover, .help-buttons button:active, .login aside .btn-login .btn-login-action:active, .register aside .btn-login .btn-login-action:active, .passwordreset aside .btn-login .btn-login-action:active, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:active, .login-register .login-provider:active, .financial-assistance-wrapper .financial-assistance-form .login-provider:active, .login .form-actions.form-third-party-auth button[type="submit"]:active, .register .form-actions.form-third-party-auth button[type="submit"]:active, .passwordreset .form-actions.form-third-party-auth button[type="submit"]:active, #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"]:active, .login-register .nav-btn:active, .financial-assistance-wrapper .financial-assistance-form .nav-btn:active, .login-register .button-secondary-login:active, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login:active, .wrapper-authorize .btn-authorization-cancel:active, .help-buttons button:focus, .login aside .btn-login .btn-login-action:focus, .register aside .btn-login .btn-login-action:focus, .passwordreset aside .btn-login .btn-login-action:focus, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:focus, .login-register .login-provider:focus, .financial-assistance-wrapper .financial-assistance-form .login-provider:focus, .login .form-actions.form-third-party-auth button[type="submit"]:focus, .register .form-actions.form-third-party-auth button[type="submit"]:focus, .passwordreset .form-actions.form-third-party-auth button[type="submit"]:focus, #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"]:focus, .login-register .nav-btn:focus, .financial-assistance-wrapper .financial-assistance-form .nav-btn:focus, .login-register .button-secondary-login:focus, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login:focus, .wrapper-authorize .btn-authorization-cancel:focus {
+    box-shadow: 0 2px 1px 0 #0a4a67;
+    background: #3a843d;
+    color: #fff;
+}
+.btn-brand:hover, .btn-brand.is-hovered, .btn-brand:focus, .btn-brand.is-focused {
+    border-color: none;
+    background-color: none;
+    color: #fcfcfc;
+}
+
+
+
 .doc-link {
     float: right;
     margin: 15px 15px 15px 15px;
