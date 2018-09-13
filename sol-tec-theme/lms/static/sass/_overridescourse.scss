@@ -1,0 +1,35 @@
+.header-global.slim {
+    height: none;
+    padding: none;
+    background: none;
+    border-bottom: 1px solid #919191;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+    position: relative;
+    background-color: #222222;
+}
+
+.header-global.slim h2 {
+    display: block;
+    width: 65%;
+    float: left;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0;
+    margin-top: 9px;
+    margin-bottom: 0;
+    text-transform: none;
+    text-shadow: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.home .page-header-secondary {
+    float: right;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    border-radius: 2px;
+}

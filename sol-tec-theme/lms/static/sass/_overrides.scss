@@ -2,12 +2,34 @@ html {
     background: #222222;
 }
 
+.doc-link:visited {
+   color: #0075b4;
+}
+
+.doc-link {
+    float: right;
+    margin: 15px 15px 15px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0075b4;
+}
+
 .header-global {
     border-bottom: 1px solid #919191;
     box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
     position: relative;
     width: 100%;
     height: 76px;
+    background-color: #222222;
+}
+
+.header-global.slim {
+    height: none;
+    padding: none;
+    background: none;
+    border-bottom: 1px solid #919191;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+    position: relative;
     background-color: #222222;
 }
 
@@ -50,7 +72,7 @@ html {
     transition: all 0.125s linear 0s;
     position: relative;
     border-bottom: 3px solid rgb(170, 77, 151);
-    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.125), inset 0 0 0 1px rgba(255,255,255,0.75);
+        box-shadow: 0 1px 10px 0 rgba(0,0,0,0.125), inset 0 0 0 1px rgba(255,255,255,0.75);
     background: #f5f5f5;
     width: 100%;
 }
@@ -89,6 +111,34 @@ html {
 
 }
 
+.header-global .primary>a:hover, .header-global .primary>a:focus, .header-global .primary>a:active {
+    background: none;
+}
+
+.dashboard .my-courses .course .details .enter-course {
+    background-color: #4cae50;
+    color: #fff;
+}
+
+.verification-process .report-receipt-provider .provider-buttons-logos .complete-order button:hover, .dashboard .my-courses .course .details .enter-course:hover, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .verification-cta .btn:hover, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .credit-action .credit-btn:hover, .btn-secondary:hover, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link:hover, .account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-link .u-field-link:hover, .courseware-bookmarks-button .bookmarks-list-button:hover, .verification-process .report-receipt-provider .provider-buttons-logos .complete-order button:focus, .dashboard .my-courses .course .details .enter-course:focus, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .verification-cta .btn:focus, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .credit-action .credit-btn:focus, .btn-secondary:focus, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link:focus, .account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-link .u-field-link:focus, .courseware-bookmarks-button .bookmarks-list-button:focus {
+    border: 1px solid transparent;
+    background-color: #3a843d;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.verification-process .report-receipt-provider .provider-buttons-logos .complete-order button, .dashboard .my-courses .course .details .enter-course, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .verification-cta .btn, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .credit-action .credit-btn, .btn-secondary, .dashboard .my-courses .course .details .enter-course.archived, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link, .account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-link .u-field-link, .courseware-bookmarks-button .bookmarks-list-button {
+    box-sizing: border-box;
+    letter-spacing: 0;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 20px;
+    background-color: none;
+    color: none;
+    text-align: center;
+}
+
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta > a.find-courses, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart {
     border: 1px solid #000663;
     border-bottom: 1px solid #00003a;
@@ -109,6 +159,7 @@ html {
     font: normal 1.2rem/1.6rem "Open Sans",Verdana,Geneva,sans-serif,sans-serif;
     letter-spacing: 1px;
     padding: 10px 0;
+    background-image: none;
     text-transform: uppercase;
     text-align: center;
     width: 48.82117%
@@ -117,6 +168,7 @@ html {
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta > a.find-courses:hover:not(:disabled), .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled), .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart:hover:not(:disabled) {
     cursor: pointer;
     background-color: #1790c7;
+    background-image: none;
 
 }
 
@@ -140,10 +192,57 @@ input[type="submit"], input[type="button"], button, .button {
     padding: 4px 20px;
     text-transform: uppercase;
     vertical-align: top;
+    background-image: none;
     -webkit-font-smoothing: antialiased;
 }
 
 input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disabled), button:hover:not(:disabled), .button:hover:not(:disabled) {
         cursor: pointer;
         background-color: #1790c7;
+        background-image: none;
 }
+
+h1 {
+    color: #222222;
+    font: normal 2em/1.4em "Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2, .home>header .title>.heading-group p, section.outside-app h1 {
+    color: #ffffff;
+    font: normal 1em/1em Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+}
+
+.header-global .nav-courseware li .btn, .header-global .nav-courseware div .btn, .login .form-actions button[type="submit"], .register .form-actions button[type="submit"], .passwordreset .form-actions button[type="submit"], #forgot-password-modal #password-reset .form-actions button[type="submit"], .view-survey .action-primary {
+    box-shadow: 0 2px 1px 0 #3a843d;
+    background: #4cae50;
+    color: #fff;
+}
+
+.header-global .nav-courseware li .btn:hover, .header-global .nav-courseware div .btn:hover, .login .form-actions button[type="submit"]:hover, .register .form-actions button[type="submit"]:hover, .passwordreset .form-actions button[type="submit"]:hover, #forgot-password-modal #password-reset .form-actions button[type="submit"]:hover, .view-survey .action-primary:hover, .header-global .nav-courseware li .btn:active, .header-global .nav-courseware div .btn:active, .login .form-actions button[type="submit"]:active, .register .form-actions button[type="submit"]:active, .passwordreset .form-actions button[type="submit"]:active, #forgot-password-modal #password-reset .form-actions button[type="submit"]:active, .view-survey .action-primary:active, .header-global .nav-courseware li .btn:focus, .header-global .nav-courseware div .btn:focus, .login .form-actions button[type="submit"]:focus, .register .form-actions button[type="submit"]:focus, .passwordreset .form-actions button[type="submit"]:focus, #forgot-password-modal #password-reset .form-actions button[type="submit"]:focus, .view-survey .action-primary:focus {
+        background: #3a843d
+}
+
+.courses-container .courses .course .course-image .cover-image .learn-more {
+    left: calc(50% - 100px);
+    box-sizing: border-box;
+    position: absolute;
+    top: 55px;
+    padding: 0 20px;
+    width: 200px;
+    height: 50px;
+    border-color: #3a843d;
+    border-radius: 3px;
+    background: #4cae50;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    text-transform: none;
+}
+
