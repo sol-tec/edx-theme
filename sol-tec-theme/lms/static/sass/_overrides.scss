@@ -22,7 +22,7 @@ html {
 
 .help-buttons button, .login aside .btn-login .btn-login-action, .register aside .btn-login .btn-login-action, .passwordreset aside .btn-login .btn-login-action, #forgot-password-modal #password-reset aside .btn-login .btn-login-action, .login-register .login-provider, .financial-assistance-wrapper .financial-assistance-form .login-provider, .login .form-actions.form-third-party-auth button[type="submit"], .register .form-actions.form-third-party-auth button[type="submit"], .passwordreset .form-actions.form-third-party-auth button[type="submit"], #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"], .login-register .nav-btn, .financial-assistance-wrapper .financial-assistance-form .nav-btn, .login-register .button-secondary-login, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login, .wrapper-authorize .btn-authorization-cancel {
     box-shadow: none;
-    border: 1px solid #126f9a;
+    border: 1px solid #fff;
     padding: 10px 20px;
     background: transparent;
     color: #ffffff;
@@ -39,8 +39,8 @@ html {
     color: #fff;
 }
 .btn-brand:hover, .btn-brand.is-hovered, .btn-brand:focus, .btn-brand.is-focused {
-    border-color: #3a843d;
-    background-color: #3a843d;
+    border-color: #4dc31c;
+    background-color: #4cae50;
     color: #fcfcfc;
 }
 
