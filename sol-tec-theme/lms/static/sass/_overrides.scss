@@ -13,18 +13,16 @@ html {
 }
 
 .help-buttons button, .login aside .btn-login .btn-login-action, .register aside .btn-login .btn-login-action, .passwordreset aside .btn-login .btn-login-action, #forgot-password-modal #password-reset aside .btn-login .btn-login-action, .login-register .login-provider, .financial-assistance-wrapper .financial-assistance-form .login-provider, .financial-assistance-wrapper .financial-assistance-form .login-provider, .login .form-actions.form-third-party-auth button[type="submit"], .register .form-actions.form-third-party-auth button[type="submit"], .passwordreset .form-actions.form-third-party-auth button[type="submit"], #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"], .login-register .nav-btn, .financial-assistance-wrapper .financial-assistance-form .nav-btn, .financial-assistance-wrapper .financial-assistance-form .nav-btn, .login-register .button-secondary-login, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login, .wrapper-authorize .btn-authorization-cancel {
-    box-shadow: none;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    background: transparent;
-    color: #ffffff;
+    box-shadow: 0 2px 1px 0 #0a4a67;
+    background: #3a843d;
+    color: #fff;
 }
 
 .help-buttons button, .login aside .btn-login .btn-login-action, .register aside .btn-login .btn-login-action, .passwordreset aside .btn-login .btn-login-action, #forgot-password-modal #password-reset aside .btn-login .btn-login-action, .login-register .login-provider, .financial-assistance-wrapper .financial-assistance-form .login-provider, .login .form-actions.form-third-party-auth button[type="submit"], .register .form-actions.form-third-party-auth button[type="submit"], .passwordreset .form-actions.form-third-party-auth button[type="submit"], #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"], .login-register .nav-btn, .financial-assistance-wrapper .financial-assistance-form .nav-btn, .login-register .button-secondary-login, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login, .wrapper-authorize .btn-authorization-cancel {
     box-shadow: none;
-    border: 1px solid #fff;
+    border: 1px solid #4dc31c;
     padding: 10px 20px;
-    background: transparent;
+    background: #3a843d;
     color: #ffffff;
 }
 
@@ -34,14 +32,24 @@ html {
 }
 
 .help-buttons button:hover, .login aside .btn-login .btn-login-action:hover, .register aside .btn-login .btn-login-action:hover, .passwordreset aside .btn-login .btn-login-action:hover, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:hover, .login-register .login-provider:hover, .financial-assistance-wrapper .financial-assistance-form .login-provider:hover, .login .form-actions.form-third-party-auth button[type="submit"]:hover, .register .form-actions.form-third-party-auth button[type="submit"]:hover, .passwordreset .form-actions.form-third-party-auth button[type="submit"]:hover, #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"]:hover, .login-register .nav-btn:hover, .financial-assistance-wrapper .financial-assistance-form .nav-btn:hover, .login-register .button-secondary-login:hover, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login:hover, .wrapper-authorize .btn-authorization-cancel:hover, .help-buttons button:active, .login aside .btn-login .btn-login-action:active, .register aside .btn-login .btn-login-action:active, .passwordreset aside .btn-login .btn-login-action:active, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:active, .login-register .login-provider:active, .financial-assistance-wrapper .financial-assistance-form .login-provider:active, .login .form-actions.form-third-party-auth button[type="submit"]:active, .register .form-actions.form-third-party-auth button[type="submit"]:active, .passwordreset .form-actions.form-third-party-auth button[type="submit"]:active, #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"]:active, .login-register .nav-btn:active, .financial-assistance-wrapper .financial-assistance-form .nav-btn:active, .login-register .button-secondary-login:active, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login:active, .wrapper-authorize .btn-authorization-cancel:active, .help-buttons button:focus, .login aside .btn-login .btn-login-action:focus, .register aside .btn-login .btn-login-action:focus, .passwordreset aside .btn-login .btn-login-action:focus, #forgot-password-modal #password-reset aside .btn-login .btn-login-action:focus, .login-register .login-provider:focus, .financial-assistance-wrapper .financial-assistance-form .login-provider:focus, .login .form-actions.form-third-party-auth button[type="submit"]:focus, .register .form-actions.form-third-party-auth button[type="submit"]:focus, .passwordreset .form-actions.form-third-party-auth button[type="submit"]:focus, #forgot-password-modal #password-reset .form-actions.form-third-party-auth button[type="submit"]:focus, .login-register .nav-btn:focus, .financial-assistance-wrapper .financial-assistance-form .nav-btn:focus, .login-register .button-secondary-login:focus, .financial-assistance-wrapper .financial-assistance-form .button-secondary-login:focus, .wrapper-authorize .btn-authorization-cancel:focus {
-    box-shadow: 0 2px 1px 0 #0a4a67;
-    background: #3a843d;
+    background: #4cae50;
     color: #fff;
 }
 .btn-brand:hover, .btn-brand.is-hovered, .btn-brand:focus, .btn-brand.is-focused {
     border-color: #4dc31c;
     background-color: #4cae50;
     color: #fcfcfc;
+}
+
+.btn-blue, .dashboard-banner .wrapper-msg .msg.has-actions .donate-actions .action-donate, .login-register .action-primary, .financial-assistance-wrapper .financial-assistance-form .action-primary, .verification-process .action-primary-blue, .verification-process .carousel .wrapper-task .controls .control .action, .verification-process .carousel .wrapper-task .msg .list-actions .action-retakephotos a, .verification-process .carousel #wrapper-review .review-task-name .list-actions .action-editname a, .verification-process.step-select-track .register-choice-audit .action-select input, .verification-process.step-confirmation .course-info .options .action-course, .verification-process.step-confirmation .course-info .course-actions .action-dashboard, .reverify-blocked .action-primary, .wrapper-authorize .btn-authorization-allow, .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn {
+    box-shadow: 0 2px 1px 0 #0a4a67;
+    background: #3a843d;
+    color: #fff;
+}
+
+.btn-blue:hover, .dashboard-banner .wrapper-msg .msg.has-actions .donate-actions .action-donate:hover, .login-register .action-primary:hover, .financial-assistance-wrapper .financial-assistance-form .action-primary:hover, .verification-process .action-primary-blue:hover, .verification-process .carousel .wrapper-task .controls .control .action:hover, .verification-process .carousel .wrapper-task .msg .list-actions .action-retakephotos a:hover, .verification-process .carousel #wrapper-review .review-task-name .list-actions .action-editname a:hover, .verification-process.step-select-track .register-choice-audit .action-select input:hover, .verification-process.step-confirmation .course-info .options .action-course:hover, .verification-process.step-confirmation .course-info .course-actions .action-dashboard:hover, .reverify-blocked .action-primary:hover, .wrapper-authorize .btn-authorization-allow:hover, .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn:hover, .btn-blue:active, .dashboard-banner .wrapper-msg .msg.has-actions .donate-actions .action-donate:active, .login-register .action-primary:active, .financial-assistance-wrapper .financial-assistance-form .action-primary:active, .verification-process .action-primary-blue:active, .verification-process .carousel .wrapper-task .controls .control .action:active, .verification-process .carousel .wrapper-task .msg .list-actions .action-retakephotos a:active, .verification-process .carousel #wrapper-review .review-task-name .list-actions .action-editname a:active, .verification-process.step-select-track .register-choice-audit .action-select input:active, .verification-process.step-confirmation .course-info .options .action-course:active, .verification-process.step-confirmation .course-info .course-actions .action-dashboard:active, .reverify-blocked .action-primary:active, .wrapper-authorize .btn-authorization-allow:active, .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn:active, .btn-blue:focus, .dashboard-banner .wrapper-msg .msg.has-actions .donate-actions .action-donate:focus, .login-register .action-primary:focus, .financial-assistance-wrapper .financial-assistance-form .action-primary:focus, .verification-process .action-primary-blue:focus, .verification-process .carousel .wrapper-task .controls .control .action:focus, .verification-process .carousel .wrapper-task .msg .list-actions .action-retakephotos a:focus, .verification-process .carousel #wrapper-review .review-task-name .list-actions .action-editname a:focus, .verification-process.step-select-track .register-choice-audit .action-select input:focus, .verification-process.step-confirmation .course-info .options .action-course:focus, .verification-process.step-confirmation .course-info .course-actions .action-dashboard:focus, .reverify-blocked .action-primary:focus, .wrapper-authorize .btn-authorization-allow:focus, .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn:focus {
+    background: #4cae50;
+    color: #fff;
 }
 
 
@@ -96,6 +104,31 @@ html {
     padding: 20px 30px;
     min-height: 120px;
     vertical-align: top;
+}
+
+.home>header .title>.heading-group {
+  display: none;
+}
+.home>header .title:before {
+  content: 'Welcome to the Sol-Tec Self-Learning Portal';
+  color: #222222;
+  font: normal 2em/1.4em "Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: 0;
+  text-shadow: 0 1px rgba(255,255,255,0.6);
+  text-transform: none;
+}
+
+.home>header .title:after {
+  content: '\a Below you can find all the courses currently available';
+  white-space: pre;
+  color: #ffffff;
+  font: normal 1em/1em Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
 }
 
 .wrapper-footer {
@@ -239,23 +272,6 @@ input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disab
         cursor: pointer;
         background-color: #1790c7;
         background-image: none;
-}
-
-h1 {
-    color: #222222;
-    font: normal 2em/1.4em "Open Sans",Verdana,Geneva,sans-serif,sans-serif;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-h2, .home>header .title>.heading-group p, section.outside-app h1 {
-    color: #ffffff;
-    font: normal 1em/1em Georgia,Cambria,"Times New Roman",Times,serif;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
 }
 
 .header-global .nav-courseware li .btn, .header-global .nav-courseware div .btn, .login .form-actions button[type="submit"], .register .form-actions button[type="submit"], .passwordreset .form-actions button[type="submit"], #forgot-password-modal #password-reset .form-actions button[type="submit"], .view-survey .action-primary {
