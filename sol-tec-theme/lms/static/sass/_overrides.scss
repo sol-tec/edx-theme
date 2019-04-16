@@ -112,7 +112,7 @@ html {
 .home>header .title:before {
   content: 'Welcome to the Sol-Tec Self-Learning Portal';
   color: #222222;
-  font: normal 2em/1.4em "Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+  font: normal 2em/1.4em "Segoe UI","Open Sans",sans-serif;
   letter-spacing: 1px;
   text-align: left;
   margin-bottom: 0;
@@ -124,7 +124,7 @@ html {
   content: '\a Below you can find all the courses currently available';
   white-space: pre;
   color: #ffffff;
-  font: normal 1em/1em Georgia,Cambria,"Times New Roman",Times,serif;
+  font: normal 1em/1em "Segoe UI","Open Sans",sans-serif;
   letter-spacing: 1px;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -228,7 +228,7 @@ html {
     box-sizing: border-box;
     border-radius: 3px;
     display: block;
-    font: normal 1.2rem/1.6rem "Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+    font: normal 1.2rem/1.6rem "Segoe UI","Open Sans",sans-serif;
     letter-spacing: 1px;
     padding: 10px 0;
     background-image: none;
@@ -259,7 +259,7 @@ input[type="submit"], input[type="button"], button, .button {
     text-align: center;
     text-decoration: none;
     text-shadow: 0 -1px 1px #000042;
-    font: normal 1.2rem/1.6rem "Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+    font: normal 1.2rem/1.6rem "Segoe UI","Open Sans",sans-serif;
     letter-spacing: 1px;
     padding: 4px 20px;
     text-transform: uppercase;
