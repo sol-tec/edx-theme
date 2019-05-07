@@ -19,12 +19,7 @@ header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-
     color: #fff;
 }
 
-input[type="submit"], input[type="button"], button, .button {
-    box-shadow: none;
-    background-color: #252c42;
-    color: #fff;
-}
-button {
+input[type="submit"], input[type="button"], button:not(forgot-password), .button {
     box-shadow: none !important;
     background-color: #252c42 !important;
     color: #fff;
