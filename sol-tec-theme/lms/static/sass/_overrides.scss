@@ -9,6 +9,7 @@ html {
 header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-global .nav-courseware li .btn, .login-register .nav-btn {
     box-shadow: none !important;
     background-color: #252c42 !important;
+	background-image: none !important;
     color: #fff;
 }
 header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global .nav-courseware li .btn:hover, .login-register .nav-btn:hover, button:hover {
@@ -24,7 +25,7 @@ header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .h
     color: #fff;
 }
 
-input[type="submit"], input[type="button"], button:not(.forgot-password):not(facet-option), .button {
+input[type="submit"], input[type="button"], button:not(.forgot-password):not(.facet-option), .button {
     box-shadow: none !important;
     background-color: #252c42 !important;
     color: #fff;
@@ -38,11 +39,11 @@ input[type="submit"], input[type="button"], button:not(.forgot-password):not(fac
 }
 
 .home>header .title .course-search .search-button:hover {
-	background-color: #454c62;
+	background-color: #454c62 !important;
 }
 
 button:hover:not(:disabled), .button:hover:not(:disabled) {
-	background-color: #454c62;
+	background-color: #454c62 !important;
 }
 
 .home>header .title .course-search .search-input:focus
