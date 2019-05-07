@@ -47,11 +47,28 @@ html {
     color: #fff;
 }
 
-.btn-blue:hover, .dashboard-banner .wrapper-msg .msg.has-actions .donate-actions .action-donate:hover, .login-register .action-primary:hover, .financial-assistance-wrapper .financial-assistance-form .action-primary:hover, .verification-process .action-primary-blue:hover, .verification-process .carousel .wrapper-task .controls .control .action:hover, .verification-process .carousel .wrapper-task .msg .list-actions .action-retakephotos a:hover, .verification-process .carousel #wrapper-review .review-task-name .list-actions .action-editname a:hover, .verification-process.step-select-track .register-choice-audit .action-select input:hover, .verification-process.step-confirmation .course-info .options .action-course:hover, .verification-process.step-confirmation .course-info .course-actions .action-dashboard:hover, .reverify-blocked .action-primary:hover, .wrapper-authorize .btn-authorization-allow:hover, .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn:hover, .btn-blue:active, .dashboard-banner .wrapper-msg .msg.has-actions .donate-actions .action-donate:active, .login-register .action-primary:active, .financial-assistance-wrapper .financial-assistance-form .action-primary:active, .verification-process .action-primary-blue:active, .verification-process .carousel .wrapper-task .controls .control .action:active, .verification-process .carousel .wrapper-task .msg .list-actions .action-retakephotos a:active, .verification-process .carousel #wrapper-review .review-task-name .list-actions .action-editname a:active, .verification-process.step-select-track .register-choice-audit .action-select input:active, .verification-process.step-confirmation .course-info .options .action-course:active, .verification-process.step-confirmation .course-info .course-actions .action-dashboard:active, .reverify-blocked .action-primary:active, .wrapper-authorize .btn-authorization-allow:active, .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn:active, .btn-blue:focus, .dashboard-banner .wrapper-msg .msg.has-actions .donate-actions .action-donate:focus, .login-register .action-primary:focus, .financial-assistance-wrapper .financial-assistance-form .action-primary:focus, .verification-process .action-primary-blue:focus, .verification-process .carousel .wrapper-task .controls .control .action:focus, .verification-process .carousel .wrapper-task .msg .list-actions .action-retakephotos a:focus, .verification-process .carousel #wrapper-review .review-task-name .list-actions .action-editname a:focus, .verification-process.step-select-track .register-choice-audit .action-select input:focus, .verification-process.step-confirmation .course-info .options .action-course:focus, .verification-process.step-confirmation .course-info .course-actions .action-dashboard:focus, .reverify-blocked .action-primary:focus, .wrapper-authorize .btn-authorization-allow:focus, .wrapper-msg.wrapper-auto-cert .auto-cert-message .has-actions .msg-actions .btn:focus {
-    background: #4cae50;
+
+.btn-login {
+    box-shadow: none;
+    background: #252c42;
     color: #fff;
 }
 
+.search-button {
+	background: #252c42;
+	border: 2px solid #050c22;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 3px;
+}
+
+.header-global a {
+	color: #fff;
+}
+.header-global a:hover {
+	color: #fff;
+}
 
 .doc-link {
     float: right;
@@ -190,6 +207,8 @@ html {
     background-color: #4cae50;
     color: #fff;
 }
+
+
 
 .verification-process .report-receipt-provider .provider-buttons-logos .complete-order button:hover, .dashboard .my-courses .course .details .enter-course:hover, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .verification-cta .btn:hover, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .credit-action .credit-btn:hover, .btn-secondary:hover, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link:hover, .account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-link .u-field-link:hover, .courseware-bookmarks-button .bookmarks-list-button:hover, .verification-process .report-receipt-provider .provider-buttons-logos .complete-order button:focus, .dashboard .my-courses .course .details .enter-course:focus, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .verification-cta .btn:focus, .dashboard .my-courses .course .wrapper-messages-primary .message.message-status .credit-action .credit-btn:focus, .btn-secondary:focus, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link:focus, .account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-link .u-field-link:focus, .courseware-bookmarks-button .bookmarks-list-button:focus {
     border: 1px solid transparent;
