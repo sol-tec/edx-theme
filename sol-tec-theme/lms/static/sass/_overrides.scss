@@ -13,7 +13,7 @@ html {
     color: #fff;
 }
 
-.header-global .nav-courseware li .btn, .login-register .nav-btn, header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
+.header-global .nav-courseware li .btn, .login-register .nav-btn, .login-register .action-primary, header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
     box-shadow: none;
     background-color: #252c42;
     color: #fff;
@@ -25,9 +25,13 @@ input[type="submit"], input[type="button"], button, .button {
     color: #fff;
 }
 button {
-    box-shadow: none;
+    box-shadow: none !important;
     background-color: #252c42 !important;
-	background: #252c42 !important;
+    color: #fff;
+}
+button:hover {
+    box-shadow: none !important;
+    background-color: #454c62 !important;
     color: #fff;
 }
 
