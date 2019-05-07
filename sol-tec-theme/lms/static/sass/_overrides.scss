@@ -13,19 +13,19 @@ html {
     color: #fff;
 }
 
-header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-global .nav-courseware li .btn, .login-register .nav-btn, header.course-profile .intro-inner-wrapper .intro .main-cta a.register, button {
+header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-global .nav-courseware li .btn, .login-register .nav-btn {
     box-shadow: none;
     background-color: #454c62 !important;
     color: #fff;
 }
 
-input[type="submit"], input[type="button"], button:not(forgot-password), .button {
+input[type="submit"], input[type="button"], button:not(.forgot-password), .button {
     box-shadow: none !important;
     background-color: #252c42 !important;
     color: #fff;
 }
 
-header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global .nav-courseware li .btn:hover, .login-register .nav-btn:hover, header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, button:hover {
+header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global .nav-courseware li .btn:hover, .login-register .nav-btn:hover, button:hover {
     box-shadow: none;
     background-color: #454c62 !important;
     color: #fff;
@@ -236,39 +236,6 @@ button:hover:not(:disabled), .button:hover:not(:disabled) {
     background-color: none;
     color: none;
     text-align: center;
-}
-
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta > a.find-courses, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart {
-    border: 1px solid #000663;
-    border-bottom: 1px solid #00003a;
-    border-radius: 5px;
-    box-shadow: inset 0 1px 0 0 #2592c0;
-    color: #fff;
-    display: inline-block;
-    font-size: inherit;
-    font-weight: bold;
-    background-color: #126f9a;
-    padding: 7px 18px;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 0 -1px 1px #000042;
-    box-sizing: border-box;
-    border-radius: 3px;
-    display: block;
-    font: normal 1.2rem/1.6rem "Segoe UI","Open Sans",sans-serif;
-    letter-spacing: 1px;
-    padding: 10px 0;
-    background-image: none;
-    text-transform: uppercase;
-    text-align: center;
-    width: 48.82117%
-}
-
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta > a.find-courses:hover:not(:disabled), .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled), .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart:hover:not(:disabled) {
-    cursor: pointer;
-    background-color: #1790c7;
-    background-image: none;
-
 }
 
 input[type="submit"], input[type="button"], button, .button {
