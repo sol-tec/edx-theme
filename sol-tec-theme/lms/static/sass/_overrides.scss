@@ -24,6 +24,12 @@ input[type="submit"], input[type="button"], button, .button {
     background-color: #252c42;
     color: #fff;
 }
+button {
+    box-shadow: none;
+    background-color: #252c42;
+	background: #252c42;
+    color: #fff;
+}
 
 .header-global .nav-courseware li .btn:hover, .login-register .nav-btn:hover, header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, button:hover {
     background-color: #454c62;
@@ -169,6 +175,7 @@ button:hover:not(:disabled), .button:hover:not(:disabled) {
 }
 
 .course-info .details {
+	font: normal 1em/1.6em "Segoe UI","Open Sans",sans-serif;
 	font-family: "Segoe UI","Open Sans",sans-serif;
 }
 
