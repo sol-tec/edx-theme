@@ -27,7 +27,7 @@ header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-
     color: #fff;
 }
 
-header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global, .header-global .nav-courseware div .btn:hover, .login-register .nav-btn:hover, .courses-container .courses .course .course-image .cover-image .learn-more:hover, button:hover:not(:disabled), .button:hover:not(:disabled)  {
+header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global .nav-courseware div .btn:hover, .login-register .nav-btn:hover, .courses-container .courses .course .course-image .cover-image .learn-more:hover, button:hover:not(:disabled), .button:hover:not(:disabled)  {
     box-shadow: none !important;
     background-color: #CDEA3B !important;
 	background-image: none !important;
@@ -104,7 +104,7 @@ button:hover:not(:disabled), .button:hover:not(:disabled) {
     position: relative;
     width: 100%;
     height: 76px;
-    background-color: #49AF57;
+    background-color: #49AF57 !important;
 }
 
 .header-global.slim {
