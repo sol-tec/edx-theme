@@ -20,35 +20,23 @@ html {
     color: #fff;
 }
 
-header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-global .nav-courseware div .btn, .login-register .nav-btn, .courses-container .courses .course .course-image .cover-image .learn-more, input[type="submit"], input[type="button"], button:not(.forgot-password):not(.facet-option), .button {
+header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-global .nav-courseware div .btn, .login-register .nav-btn, .courses-container .courses .course .course-image .cover-image .learn-more, input[type="submit"], input[type="button"], button:not(.forgot-password):not(.facet-option), .button, .login .form-actions button[type="submit"], .register .form-actions button[type="submit"], .passwordreset .form-actions button[type="submit"], #forgot-password-modal #password-reset .form-actions button[type="submit"], .view-survey .action-primary, .dashboard .my-courses .course .details .enter-course,  {
     box-shadow: none !important;
     background-color: #49AF57 !important;
 	background-image: none !important;
     color: #fff;
 }
 
-header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global .nav-courseware div .btn:hover, .login-register .nav-btn:hover, .courses-container .courses .course .course-image .cover-image .learn-more:hover, input[type="submit"]:hover, input[type="button"]:hover, button:not(.forgot-password):not(.facet-option):hover, .button:hover, button:hover:not(:disabled), .button:hover:not(:disabled)  {
+header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global .nav-courseware div .btn:hover, .login-register .nav-btn:hover, .courses-container .courses .course .course-image .cover-image .learn-more:hover, input[type="submit"]:hover, input[type="button"]:hover, button:not(.forgot-password):not(.facet-option):hover, .button:hover, button:hover:not(:disabled), .button:hover:not(:disabled), .login .form-actions button[type="submit"]:hover, .register .form-actions button[type="submit"]:hover, .passwordreset .form-actions button[type="submit"]:hover, #forgot-password-modal #password-reset .form-actions button[type="submit"]:hover, .view-survey .action-primary:hover, .dashboard .my-courses .course .details .enter-course:hover  {
     box-shadow: none !important;
     background-color: #69CF77 !important;
 	background-image: none !important;
     color: #fff;
 }
 
-.login .form-actions button[type="submit"], .register .form-actions button[type="submit"], .passwordreset .form-actions button[type="submit"], #forgot-password-modal #password-reset .form-actions button[type="submit"], .view-survey .action-primary
-{
-    box-shadow: none;
-    background-color: #252c42;
-    color: #fff;
-}
-
 .home>header .title .course-search .search-button {
-	background-color: #252c42;
-	border: 2px solid #050c22;
+	border: 2px solid #298F37;
     border-radius: 3px;
-}
-
-.home>header .title .course-search .search-button:hover {
-	background-color: #454c62 !important;
 }
 
 .home>header .title .course-search .search-input:focus
@@ -74,6 +62,14 @@ header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .h
 }
 .header-global .nav-global li a:hover {
 	color: #eee;
+}
+
+.header-global .primary>a:hover {
+	background-color: #69CF77;
+}
+
+button:not(.forgot-password):not(.facet-option) {
+	background-color: none;
 }
 
 .find-courses .search-facets .facet-option:hover {
