@@ -97,6 +97,9 @@ site_status_msg = get_site_status_msg(course_id)
               </a>
             </li>
           % endif
+		  <li class="item nav-global-06">
+			<a class="btn" href="http://www.sol-tec.com">${_("Sol-Tec.com")}</a>
+		  </li>
           %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
             <li class="item">
               ## Translators: This is short for "System administration".

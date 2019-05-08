@@ -22,7 +22,7 @@ html {
 
 header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-global .nav-courseware div .btn, .login-register .nav-btn, .courses-container .courses .course .course-image .cover-image .learn-more, input[type="submit"], input[type="button"], button:not(.forgot-password):not(.facet-option), .button, .login .form-actions button[type="submit"], .register .form-actions button[type="submit"], .passwordreset .form-actions button[type="submit"], #forgot-password-modal #password-reset .form-actions button[type="submit"], .view-survey .action-primary, .dashboard .my-courses .course .details .enter-course,  {
     box-shadow: none !important;
-	border: none;
+	border: 1px solid #298F37;
     background-color: #49AF57 !important;
 	background-image: none !important;
     color: #fff;
@@ -33,6 +33,10 @@ header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .h
     background-color: #69CF77 !important;
 	background-image: none !important;
     color: #fff;
+}
+
+.dashboard .my-courses .course .details .enter-course {
+	line-height: 23.68px;
 }
 
 .home>header .title .course-search .search-button {
@@ -215,7 +219,7 @@ button:not(.forgot-password):not(.facet-option) {
 
 }
 
-.wrapper-account-settings .wrapper-header .account-nav .account-nav-link, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link {
+.wrapper-account-settings .wrapper-header .account-nav .account-nav-link, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link, .find-courses .filters .clear-filters {
 	color: #fff;
 }
 
