@@ -20,16 +20,16 @@ html {
     color: #fff;
 }
 
-header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-global .nav-courseware div .btn, .login-register .nav-btn, .courses-container .courses .course .course-image .cover-image .learn-more {
+header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .header-global .nav-courseware div .btn, .login-register .nav-btn, .courses-container .courses .course .course-image .cover-image .learn-more, input[type="submit"], input[type="button"], button:not(.forgot-password):not(.facet-option), .button {
     box-shadow: none !important;
-    background-color: #ADCA1B !important;
+    background-color: #49AF57 !important;
 	background-image: none !important;
     color: #fff;
 }
 
-header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global .nav-courseware div .btn:hover, .login-register .nav-btn:hover, .courses-container .courses .course .course-image .cover-image .learn-more:hover, button:hover:not(:disabled), .button:hover:not(:disabled)  {
+header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .header-global .nav-courseware div .btn:hover, .login-register .nav-btn:hover, .courses-container .courses .course .course-image .cover-image .learn-more:hover, input[type="submit"]:hover, input[type="button"]:hover, button:not(.forgot-password):not(.facet-option):hover, .button:hover, button:hover:not(:disabled), .button:hover:not(:disabled)  {
     box-shadow: none !important;
-    background-color: #CDEA3B !important;
+    background-color: #69CF77 !important;
 	background-image: none !important;
     color: #fff;
 }
@@ -41,12 +41,6 @@ header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover, .h
     color: #fff;
 }
 
-input[type="submit"], input[type="button"], button:not(.forgot-password):not(.facet-option), .button {
-    box-shadow: none !important;
-    background-color: #252c42 !important;
-    color: #fff;
-}
-
 .home>header .title .course-search .search-button {
 	background-color: #252c42;
 	border: 2px solid #050c22;
@@ -54,10 +48,6 @@ input[type="submit"], input[type="button"], button:not(.forgot-password):not(.fa
 }
 
 .home>header .title .course-search .search-button:hover {
-	background-color: #454c62 !important;
-}
-
-button:hover:not(:disabled), .button:hover:not(:disabled) {
 	background-color: #454c62 !important;
 }
 
